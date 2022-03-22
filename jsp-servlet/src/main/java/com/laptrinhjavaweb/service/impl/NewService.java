@@ -1,5 +1,6 @@
 package com.laptrinhjavaweb.service.impl;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -13,6 +14,9 @@ public class NewService implements INewService{
 
 	@Inject
 	private INewDAO newDAO;
+	
+	@Inject
+	private ICategoryDAO categoryDAO;
 	
 	@Override
 	public List<NewModel> findByCategoryId(Long categoryId) {
@@ -29,7 +33,19 @@ public class NewService implements INewService{
 	@Override
 	public NewModel update(NewModel updateNew) {
 		NewModel oldNew = newDAO.findOne(updateNew.getId());
-		
-		return null;
+		updateNew.setCreateddate(oldNew.getCreateddate());
+		updateNew.setCreatedby(oldNew.getCreatedby());
+		updateNew.setModifieddate(new Timestamp(System.currentTimeMillis()));
+//		CategoryModel category = categoryDAO.findOneByCode(updateNew.getCategoryCode());
+//		updateNew.setCategoryid(category.getId());
+		newDAO.update(updateNew);
+		return newDAO.findOne(updateNew.getId());
+	}
+
+	@Override
+	public void delete(long[] ids) {
+		for (long id : ids) {
+			newDAO.delete(id);
+		}
 	}
 }

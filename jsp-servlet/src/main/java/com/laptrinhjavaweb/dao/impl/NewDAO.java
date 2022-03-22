@@ -34,7 +34,19 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 
 	@Override
 	public void update(NewModel updateNew) {
-		
+		StringBuilder sql = new StringBuilder("UPDATE news SET title = ?, thumbnail = ?,");
+		sql.append(" shortdescription = ?, content = ?, categoryid = ?,");
+		sql.append(" createddate = ?, createdby = ?, modifieddate = ?, modifiedby = ? WHERE id = ?");
+		update(sql.toString(), updateNew.getTitle(), updateNew.getThumbnail(), updateNew.getShortdescription(),
+				updateNew.getContent(), updateNew.getCategoryid(), updateNew.getCreateddate(), 
+				updateNew.getCreatedby(), updateNew.getModifieddate(), 
+				updateNew.getModifiedby(), updateNew.getId());
+	}
+
+	@Override
+	public void delete(long id) {
+		String sql = "DELETE FROM news WHERE id = ?";
+		update(sql,id);
 	}
 
 }
