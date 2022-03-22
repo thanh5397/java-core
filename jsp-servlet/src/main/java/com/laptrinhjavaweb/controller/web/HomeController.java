@@ -36,4 +36,8 @@ public class HomeController extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 	}
+	
+	public void test() {
+		
+	}
 }
