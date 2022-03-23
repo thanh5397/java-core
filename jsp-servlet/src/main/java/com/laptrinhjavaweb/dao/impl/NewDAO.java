@@ -1,10 +1,5 @@
 package com.laptrinhjavaweb.dao.impl;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.List;
 
 import com.laptrinhjavaweb.dao.INewDAO;

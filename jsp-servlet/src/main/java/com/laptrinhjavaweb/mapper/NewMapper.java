@@ -21,6 +21,12 @@ public class NewMapper implements RowMapper<NewModel>{
 			newModel.setModifieddate(rs.getTimestamp("modifieddate"));
 			newModel.setCreatedby(rs.getString("createdby"));
 			newModel.setModifiedby(rs.getString("modifiedby"));
+			if (rs.getTimestamp("modifieddate") != null) {
+				newModel.setModifieddate(rs.getTimestamp("modifieddate"));
+			}
+			if (rs.getString("modifiedby") != null) {
+				newModel.setModifiedby(rs.getString("modifiedby"));
+			}
 			return newModel;
 		} catch (SQLException e) {
 			return null;

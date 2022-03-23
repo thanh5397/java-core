@@ -26,6 +26,8 @@ public class NewService implements INewService{
 
 	@Override
 	public NewModel save(NewModel newModel) {
+		newModel.setCreateddate(new Timestamp(System.currentTimeMillis()));
+		newModel.setCreatedby("");
 		Long newId = newDAO.save(newModel);
 		return newDAO.findOne(newId);
 	}
@@ -36,6 +38,7 @@ public class NewService implements INewService{
 		updateNew.setCreateddate(oldNew.getCreateddate());
 		updateNew.setCreatedby(oldNew.getCreatedby());
 		updateNew.setModifieddate(new Timestamp(System.currentTimeMillis()));
+		updateNew.setModifiedby("");
 //		CategoryModel category = categoryDAO.findOneByCode(updateNew.getCategoryCode());
 //		updateNew.setCategoryid(category.getId());
 		newDAO.update(updateNew);

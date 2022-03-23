@@ -8,6 +8,7 @@ public class AbstractModel {
 		private Timestamp modifieddate;
 		private String createdby;
 		private String modifiedby;
+		private long[] ids;
 	  
 		public long getId() {
 			return id;
@@ -38,5 +39,12 @@ public class AbstractModel {
 		}
 		public void setModifiedby(String modifiedby) {
 			this.modifiedby = modifiedby;
+		}
+		public long[] getIds() {
+			return ids;
+		}
+		public void setIds(long[] ids) {
+			this.ids = ids;
 		} 
+		
 }
