@@ -14,13 +14,9 @@ import com.laptrinhjavaweb.dto.NewDTO;
 public class NewAPI {
 
         @RequestMapping(value = "/new", method = RequestMethod.POST)
-
         @ResponseBody
-
         public NewDTO createNew(@RequestBody NewDTO model) {
-
                 return model;
-
         }
 
 }
