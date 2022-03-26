@@ -1,7 +1,11 @@
 package com.laptrinhjavaweb.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -11,6 +15,9 @@ public class RoleEntity extends BaseEntity {
 	private String code;
 	@Column
 	private String name;
+	
+	@ManyToMany(mappedBy = "roles")
+    private List<UserEntity> users = new ArrayList<>();
 	
 	public String getCode() {
 		return code;
