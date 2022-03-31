@@ -1,6 +1,10 @@
 package com.laptrinhjavaweb.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.laptrinhjavaweb.converter.NewConverter;
@@ -39,14 +43,25 @@ public class NewService implements INewService {
 	}
 
 	@Override
-	public NewDTO update(NewDTO newDTO) {
-		NewEntity oldNew = newRepository.findOne(newDTO.getId());
-		NewEntity newEntity = newConverter.toNewEntity(newDTO, oldNew);
-		CategoryEntity categoryEntity = categoryRepository.findOneByCode(newDTO.getCategoryCode());
-		newEntity.setCategoryEntity(categoryEntity);
-		newEntity = newRepository.save(newEntity);
-		return newConverter.toNewDTO(newEntity);
+	public void delete(long[] ids) {
+		for(long id : ids) {
+			newRepository.delete(id);
+		}
 	}
-	
-	
+
+	@Override
+	public List<NewDTO> findAll(Pageable pageable) {
+		List<NewDTO> results = new ArrayList<>();
+		List<NewEntity> entities = newRepository.findAll(pageable).getContent();
+		for (NewEntity newEntity : entities) {
+			NewDTO newDTO = newConverter.toNewDTO(newEntity);
+			results.add(newDTO);
+		}
+		return results;
+	}
+
+	@Override
+	public int totalItem() {
+		return (int) newRepository.count();
+	}
 }
