@@ -6,15 +6,14 @@ $( "#login").click(function() {
 	
 	$.ajax({
         type: "POST",
-        url: "/api/login",
-        data: json, 
-        contentType: "application/json; charset=utf-8",
-        dataType: 'json',
+        url: "/login",
+        data: username,
+        	  password,
+//        contentType: "application/json; charset=utf-8",
+        dataType: 'text',
         success: function(data)
         {
-//        	$.each(data, function(index, currEmp) {
-                console.log(data); //to print name of employee
-//            }); 
+//        	alert(JSON.stringify(data));
         }
     });
 });

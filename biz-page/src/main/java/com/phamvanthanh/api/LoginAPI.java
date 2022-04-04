@@ -17,12 +17,13 @@ public class LoginAPI {
 	private IUserService userService;
 	
 	@PostMapping(value = "/login")
-	public String login(@RequestBody UserDTO userDTO) {
+	public UserDTO login(@RequestBody UserDTO userDTO) {
 		 UserDTO user = userService.findOneByUserName(userDTO.getUserName());
-		 if(user != null) {
-			 return "redirect:/home";
-		 } else {
-			 return "index";
-		 }
+//		 if(user != null) {
+//			 return "redirect:/home";
+//		 } else {
+//			 return "index";
+//		 }
+		 return user;
 	}
 }
