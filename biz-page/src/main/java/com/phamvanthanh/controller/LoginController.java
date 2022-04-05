@@ -21,7 +21,7 @@ public class LoginController {
 	}
 	
 	@PostMapping(value = "/login")
-	public String login(@RequestParam("username") String userName,@RequestParam("password") String password) {
+	public String login(@RequestParam("userName") String userName,@RequestParam("password") String password) {
 		 UserDTO user = userService.findOneByUserName(userName);
 //		 if(user != null) {
 //			 return "redirect:/home";

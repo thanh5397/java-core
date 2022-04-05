@@ -7,8 +7,10 @@ $( "#login").click(function() {
 	$.ajax({
         type: "POST",
         url: "/login",
-        data: username,
-        	  password,
+        data: {
+        	  userName:username,
+        	  password:password,
+       	},
 //        contentType: "application/json; charset=utf-8",
         dataType: 'text',
         success: function(data)
