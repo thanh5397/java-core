@@ -7,6 +7,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "user")
 public class UserEntity extends BaseEntity {
+	
 	@Column(name = "username",unique = true, nullable = false, length = 255)
 	private String userName;
 	@Column(name = "password")
