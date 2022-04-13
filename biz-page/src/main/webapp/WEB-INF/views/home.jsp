@@ -361,11 +361,11 @@
             <figure>
               <img src="assets/img/portfolio/app1.jpg" class="img-fluid" alt="">
               <a href="assets/img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="bi bi-plus"></i></a>
-              <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
+              <a href="portfolio-details.jsp" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
             </figure>
 
             <div class="portfolio-info">
-              <h4><a href="portfolio-details.html">App 1</a></h4>
+              <h4><a href='<c:url value="portfolio-details.jsp"/>'>App 1</a></h4>
               <p>App</p>
             </div>
           </div>
