@@ -54,6 +54,7 @@
 	          	<a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>
 	          	<a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Twitter</a>
 	          </div>
+	          <div id ="feedback"></div>
 		      </div>
 				</div>
 			</div>

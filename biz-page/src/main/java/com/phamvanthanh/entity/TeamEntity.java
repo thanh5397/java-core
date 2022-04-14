@@ -14,8 +14,6 @@ public class TeamEntity extends BaseEntity{
 	private String avatar;
 	
 	private String name;
-	@Column(name = "departmentname")
-	private String departmentName;
 	
 	@ManyToMany(mappedBy = "linkedTeams")
 	List<DepartmentEntity> departments;
@@ -34,14 +32,6 @@ public class TeamEntity extends BaseEntity{
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getDepartmentName() {
-		return departmentName;
-	}
-
-	public void setDepartmentName(String departmentName) {
-		this.departmentName = departmentName;
 	}
 
 	public List<DepartmentEntity> getDepartments() {

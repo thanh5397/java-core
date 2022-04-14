@@ -6,16 +6,26 @@ $( "#login").click(function() {
 	
 	$.ajax({
         type: "POST",
-        url: "/login",
-        data: {
-        	  userName:username,
-        	  password:password,
-       	},
-//        contentType: "application/json; charset=utf-8",
-        dataType: 'text',
+        url: "/api/login",
+        data: json,
+        contentType: "application/json; charset=utf-8",
+        dataType: 'json',
         success: function(data)
         {
-//        	alert(JSON.stringify(data));
+//       		var json = "<h4>Ajax Response</h4>&lt;pre&gt;"
+//                + JSON.stringify(data, null, 4) + "&lt;/pre&gt;";
+//            var json = JSON.stringify(data, null, 4);
+//			$('#feedback').html(json);
+//            console.log("SUCCESS : ", data);
+		},
+        error: function (e) {
+
+            var json = "<h4>Ajax Response</h4>&lt;pre&gt;"
+                + e.responseText + "&lt;/pre&gt;";
+            $('#feedback').html(json);
+
+            console.log("ERROR : ", e);
+
         }
     });
 });
