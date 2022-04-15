@@ -8,14 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.phamvanthanh.service.IContactService;
 
 @Controller
-public class HomeController {
-	
+public class ContactController {
 	@Autowired
 	private IContactService contactService;
 	
-	@GetMapping(value= "/home")
-	public String showHome(Model model) {
-		model.addAttribute("contact", contactService.findFirst());
-		return "home";
-	}
+//	@GetMapping(value= "/home")
+//	public String showContact(Model model) {
+//		model.addAttribute("contact", contactService.findFirst());
+//		return "home";
+//	}
 }

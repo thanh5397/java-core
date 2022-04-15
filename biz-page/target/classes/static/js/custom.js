@@ -12,11 +12,10 @@ $( "#login").click(function() {
         dataType: 'json',
         success: function(data)
         {
-//       		var json = "<h4>Ajax Response</h4>&lt;pre&gt;"
-//                + JSON.stringify(data, null, 4) + "&lt;/pre&gt;";
-//            var json = JSON.stringify(data, null, 4);
-//			$('#feedback').html(json);
-//            console.log("SUCCESS : ", data);
+       		var json = "<h4>Ajax Response</h4>&lt;pre&gt;"
+                + JSON.stringify(data, null, 4) + "&lt;/pre&gt;";
+			$('#feedback')s.html(json);
+            console.log("SUCCESS : ", data);
 		},
         error: function (e) {
 
