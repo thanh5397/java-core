@@ -701,7 +701,7 @@
         </div>
 
         <div class="row contact-info">
-
+		  <c:forEach var="contact" items="${contacts}">
           <div class="col-md-4">
             <div class="contact-address">
               <i class="bi bi-geo-alt"></i>
@@ -725,6 +725,7 @@
               <p><a href="mailto:info@example.com">${contact.email}</a></p>
             </div>
           </div>
+          </c:forEach>
 
         </div>
 

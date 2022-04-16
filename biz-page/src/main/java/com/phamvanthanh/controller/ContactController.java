@@ -9,8 +9,8 @@ import com.phamvanthanh.service.IContactService;
 
 @Controller
 public class ContactController {
-	@Autowired
-	private IContactService contactService;
+//	@Autowired
+//	private IContactService contactService;
 	
 //	@GetMapping(value= "/home")
 //	public String showContact(Model model) {

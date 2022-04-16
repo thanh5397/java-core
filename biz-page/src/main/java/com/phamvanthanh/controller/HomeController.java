@@ -15,7 +15,7 @@ public class HomeController {
 	
 	@GetMapping(value= "/home")
 	public String showHome(Model model) {
-		model.addAttribute("contact", contactService.findFirst());
+		model.addAttribute("contacts", contactService.findAll());
 		return "home";
 	}
 }

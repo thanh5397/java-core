@@ -1,3 +1,4 @@
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>  
   <footer id="footer">
     <div class="footer-top">
       <div class="container">
@@ -21,13 +22,13 @@
 
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
+            <c:forEach var="contact" items="${contacts}">
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              ${contact.address}<br>
+              <strong>Phone:</strong> ${contact.phoneNumber}<br>
+              <strong>Email:</strong> ${contact.email}<br>
             </p>
+            </c:forEach>
 
             <div class="social-links">
               <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
