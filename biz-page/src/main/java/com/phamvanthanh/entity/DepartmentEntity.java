@@ -18,13 +18,6 @@ public class DepartmentEntity extends BaseEntity{
 	
 	@ManyToMany
 	@JoinTable(
-	  name = "team_department", 
-	  joinColumns = @JoinColumn(name = "department_id"), 
-	  inverseJoinColumns = @JoinColumn(name = "team_id"))
-	List<TeamEntity> linkedTeams;
-	
-	@ManyToMany
-	@JoinTable(
 	  name = "testimonial_department", 
 	  joinColumns = @JoinColumn(name = "department_id"), 
 	  inverseJoinColumns = @JoinColumn(name = "testimonialid"))
@@ -36,14 +29,6 @@ public class DepartmentEntity extends BaseEntity{
 
 	public void setDepartmentName(String departmentName) {
 		this.departmentName = departmentName;
-	}
-
-	public List<TeamEntity> getLinkedTeams() {
-		return linkedTeams;
-	}
-
-	public void setLinkedTeams(List<TeamEntity> linkedTeams) {
-		this.linkedTeams = linkedTeams;
 	}
 
 	public List<TeamEntity> getLinkedTestimonial() {
