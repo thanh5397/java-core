@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.phamvanthanh.entity.ClientEntity;
 
 @Repository
-public interface ClientRepository extends JpaRepository<ClientEntity, Long>  {
+public interface ClientRepository extends JpaRepository<ClientEntity, Long> {
 	List<ClientEntity> findAll();
 }
