@@ -8,6 +8,8 @@ import javax.persistence.Table;
 public class AboutEntity extends BaseEntity {
 	private String name;
 	private String description;
+	private String image;
+	private String icon;
 	
 	public String getName() {
 		return name;
@@ -21,6 +23,16 @@ public class AboutEntity extends BaseEntity {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	public String getIcon() {
+		return icon;
+	}
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
 }

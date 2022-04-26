@@ -8,6 +8,7 @@ import javax.persistence.Table;
 public class ServiceEntity extends BaseEntity  {
 	private String name;
 	private String description;
+	private String icon;
 	
 	public String getName() {
 		return name;
@@ -20,5 +21,11 @@ public class ServiceEntity extends BaseEntity  {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public String getIcon() {
+		return icon;
+	}
+	public void setIcon(String icon) {
+		this.icon = icon;
 	}
 }

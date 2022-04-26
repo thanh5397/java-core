@@ -22,6 +22,12 @@ public class MemberEntity extends BaseEntity  {
     @JoinColumn(name = "department_id")
 	private DepartmentEntity department;
 	
+	public TestimonialEntity getTestimonial() {
+		return testimonial;
+	}
+	public void setTestimonial(TestimonialEntity testimonial) {
+		this.testimonial = testimonial;
+	}
 	public String getAvatar() {
 		return avatar;
 	}

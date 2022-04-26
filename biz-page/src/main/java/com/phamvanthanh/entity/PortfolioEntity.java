@@ -11,6 +11,7 @@ import javax.persistence.Table;
 public class PortfolioEntity extends BaseEntity {
 	private String image;
 	private String name;
+	private String filter;
 	@ManyToOne
 	@JoinColumn(name = "category_id")
 	private CategoryEntity category;
@@ -41,5 +42,11 @@ public class PortfolioEntity extends BaseEntity {
 	}
 	public void setPortfolioDetail(PortfolioDetailEntity portfolioDetail) {
 		this.portfolioDetail = portfolioDetail;
+	}
+	public String getFilter() {
+		return filter;
+	}
+	public void setFilter(String filter) {
+		this.filter = filter;
 	}
 }

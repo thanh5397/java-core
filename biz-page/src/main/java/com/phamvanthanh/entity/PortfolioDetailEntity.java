@@ -3,6 +3,7 @@ package com.phamvanthanh.entity;
 import java.sql.Timestamp;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -15,8 +16,10 @@ public class PortfolioDetailEntity extends BaseEntity {
 	private String title;
 	private String category;
 	private String client;
+	@Column(name = "projectdate")
 	private Timestamp projectDate;
 	private String projectURL;
+	@Column(name = "shortdescription")
 	private String shortDescription;
 	private String content;
 	@OneToOne(cascade = CascadeType.ALL)
