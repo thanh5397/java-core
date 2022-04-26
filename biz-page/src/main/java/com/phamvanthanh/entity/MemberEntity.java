@@ -10,9 +10,17 @@ import javax.persistence.Table;
 public class MemberEntity extends BaseEntity  {
 	private String avatar;
 	private String name;
+	
 	@ManyToOne 
     @JoinColumn(name = "team_id")
 	private TeamEntity team;
+	@ManyToOne 
+    @JoinColumn(name = "testimonial_id")
+	private TestimonialEntity testimonial;
+	
+	@ManyToOne 
+    @JoinColumn(name = "department_id")
+	private DepartmentEntity department;
 	
 	public String getAvatar() {
 		return avatar;
@@ -32,4 +40,11 @@ public class MemberEntity extends BaseEntity  {
 	public void setTeam(TeamEntity team) {
 		this.team = team;
 	}
+	public DepartmentEntity getDepartment() {
+		return department;
+	}
+	public void setDepartment(DepartmentEntity department) {
+		this.department = department;
+	}
+	
 }

@@ -2,11 +2,10 @@ package com.phamvanthanh.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,12 +15,9 @@ public class DepartmentEntity extends BaseEntity{
 	@Column(name = "departmentname")
 	private String departmentName;
 	
-	@ManyToMany
-	@JoinTable(
-	  name = "testimonial_department", 
-	  joinColumns = @JoinColumn(name = "department_id"), 
-	  inverseJoinColumns = @JoinColumn(name = "testimonialid"))
-	List<TeamEntity> linkedTestimonial;
+	@OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
+	private List<MemberEntity> members;
+	
 
 	public String getDepartmentName() {
 		return departmentName;
@@ -31,11 +27,13 @@ public class DepartmentEntity extends BaseEntity{
 		this.departmentName = departmentName;
 	}
 
-	public List<TeamEntity> getLinkedTestimonial() {
-		return linkedTestimonial;
+	public List<MemberEntity> getMembers() {
+		return members;
 	}
 
-	public void setLinkedTestimonial(List<TeamEntity> linkedTestimonial) {
-		this.linkedTestimonial = linkedTestimonial;
+	public void setMembers(List<MemberEntity> members) {
+		this.members = members;
 	}
+	
+	
 }
