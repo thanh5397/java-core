@@ -28,3 +28,6 @@ $( "#login").click(function() {
         }
     });
 });
+$( "#detail").click(function() {
+	
+});

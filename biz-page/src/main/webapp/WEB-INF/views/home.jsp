@@ -271,11 +271,11 @@
 	            <figure>
 	              <img src="${portfolio.image}" class="img-fluid" alt="">
 	              <a href="${portfolio.image}" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="${portfolio.name}"><i class="bi bi-plus"></i></a>
-	              <a href="portfolio-details.jsp" class="lWink-details" title="More Details"><i class="bi bi-link"></i></a>
+	              <a id="detail" href="#" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
 	            </figure>
 	
 	            <div class="portfolio-info">
-	              <h4><a href='<c:url value="portfolio-details.jsp"/>'>${portfolio.name}</a></h4>
+	              <h4><a href="#" id="detail">${portfolio.name}</a></h4>
 	              	<p>${category.categoryName}</p>
 	            </div>
 	          </div>
