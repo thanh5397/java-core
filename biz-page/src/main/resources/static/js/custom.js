@@ -1,4 +1,4 @@
-$( "#login").click(function() {
+$("#login").click(function() {
 	var username = $("#username").val();
 	var password = $("#password").val();
 	var json = '{"userName":"'+username+'","password":"'+password+'"}';
@@ -14,7 +14,7 @@ $( "#login").click(function() {
         {
        		var json = "<h4>Ajax Response</h4>&lt;pre&gt;"
                 + JSON.stringify(data, null, 4) + "&lt;/pre&gt;";
-			$('#feedback')s.html(json);
+			$('#feedback').html(json);
             console.log("SUCCESS : ", data);
 		},
         error: function (e) {
@@ -28,6 +28,26 @@ $( "#login").click(function() {
         }
     });
 });
-$( "#detail").click(function() {
+$(".portfolio-wrap figure a").on("click", function(){
+        var dataId = $(this).data("id");
+        $.get(
+		    `/detail/${dataId}`,
+		    function (data) {
+		        window.location.href = `/detail/${dataId}`;
+		    }
+		);
+//        $.ajax({
+//	        type: "GET",
+//	        url: "/detail/" + dataId,
+//	        data: dataId,
+//	        contentType: "application/text; charset=utf-8",
+//	        dataType: 'text',
+//	        success: function()
+//	        {
+	        	
+//			},
+//	        error: function (e) {
 	
+//	        }
+//    	});
 });

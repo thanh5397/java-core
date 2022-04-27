@@ -21,6 +21,7 @@ public class PortfolioDetailEntity extends BaseEntity {
 	private String projectURL;
 	@Column(name = "shortdescription")
 	private String shortDescription;
+	@Column(columnDefinition = "TEXT")
 	private String content;
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "portfolio_id", referencedColumnName = "id")
