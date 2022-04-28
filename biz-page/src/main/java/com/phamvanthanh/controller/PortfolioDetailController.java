@@ -14,7 +14,7 @@ public class PortfolioDetailController {
 	private IPortfolioDetailService portfolioDetailService;
 	
 	@GetMapping(value= "/detail/{id}")
-	public String getDetailPortfolio(@PathVariable(value="id") Long id,Model model) {
+	public String getDetailPortfolio(@PathVariable(value="id",required = false) Long id,Model model) {
 		try {
 			model.addAttribute("detail", portfolioDetailService.findOne(id));
 		} catch (Exception e) {

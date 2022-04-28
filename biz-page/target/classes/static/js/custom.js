@@ -30,12 +30,14 @@ $("#login").click(function() {
 });
 $(".portfolio-wrap figure a").on("click", function(){
         var dataId = $(this).data("id");
-        $.get(
-		    `/detail/${dataId}`,
-		    function (data) {
-		        window.location.href = `/detail/${dataId}`;
-		    }
-		);
+        	if(!!dataId) {
+	        	$.get(
+	    		    `/detail/${dataId}`,
+	    		    function (data) {
+	    		        window.location.href = `/detail/${dataId}`;
+	    		    }
+	        	);
+        	}
 //        $.ajax({
 //	        type: "GET",
 //	        url: "/detail/" + dataId,
