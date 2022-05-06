@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>WebShop</title>
+  <title>IT Solution</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -56,8 +56,8 @@
           <div class="carousel-item active" style="background-image: url(assets/img/hero-carousel/1.jpg)">
             <div class="carousel-container">
               <div class="container">
-                <h2 class="animate__animated animate__fadeInDown">We are professional</h2>
-                <p class="animate__animated animate__fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h2 class="animate__animated animate__fadeInDown">Dịch vụ tư vấn</h2>
+                <p class="animate__animated animate__fadeInUp">Chúng tôi cam kết cung cấp cho khách hàng những dịch vụ tư vấn và giải pháp tối ưu nhất, phù hợp với nhu cầu và thách thức riêng của mỗi doanh nghiệp, tổ chức.</p>
                 <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
               </div>
             </div>
@@ -66,8 +66,8 @@
           <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/2.jpg)">
             <div class="carousel-container">
               <div class="container">
-                <h2 class="animate__animated animate__fadeInDown">At vero eos et accusamus</h2>
-                <p class="animate__animated animate__fadeInUp">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.</p>
+                <h2 class="animate__animated animate__fadeInDown">Dịch vụ triển khai</h2>
+                <p class="animate__animated animate__fadeInUp">Công ty TNHH Giải pháp Công nghệ Cộng (TechPlus) thực hiện việc chuyển giao công nghệ và nghiệp vụ theo phương pháp triển khai quy chuẩn, kết hợp với kinh nghiệm triển khai trên các mô hình và đối tượng khác nhau để đảm bảo mọi dự án thực hiện đều thành công.</p>
                 <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
               </div>
             </div>
@@ -76,28 +76,8 @@
           <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/3.jpg)">
             <div class="carousel-container">
               <div class="container">
-                <h2 class="animate__animated animate__fadeInDown">Temporibus autem quibusdam</h2>
-                <p class="animate__animated animate__fadeInUp">Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem accusantium.</p>
-                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/4.jpg)">
-            <div class="carousel-container">
-              <div class="container">
-                <h2 class="animate__animated animate__fadeInDown">Nam libero tempore</h2>
-                <p class="animate__animated animate__fadeInUp">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum.</p>
-                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/5.jpg)">
-            <div class="carousel-container">
-              <div class="container">
-                <h2 class="animate__animated animate__fadeInDown">Magnam aliquam quaerat</h2>
-                <p class="animate__animated animate__fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h2 class="animate__animated animate__fadeInDown">Dịch vụ hỗ trợ, bảo hành và bảo trì</h2>
+                <p class="animate__animated animate__fadeInUp">Cùng với phát triển và triển khai, Công ty TNHH Giải pháp Công nghệ Cộng (TechPlus) cung cấp dịch vụ vận hành, hỗ trợ, bảo hành và bảo trì trong suốt vòng đời của sản phẩm. Khách hàng sẽ được cung cấp các công cụ và dịch vụ hỗ trợ chuyên nghiệp từ đội ngũ chuyên gia tư vấn nội địa cũng như đội ngũ hỗ trợ từ chính hãng.</p>
                 <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
               </div>
             </div>
@@ -139,8 +119,8 @@
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h3>About Us</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <h3>VỀ CHÚNG TÔI</h3>
+          <p>Công ty TNHH Đầu tư Dịch vụ và Giải pháp Công nghệ CQL ra đời nhằm cung cấp cho xã hội các giải pháp công nghệ thông tin tiên tiến nhất. Với triết ký kinh doanh bằng năng lực, sự tận tụy với khách hàng, nắm bắt xu hướng phát triển CNTT của thế giới, CQL đã giúp các doanh nghiệp và tổ chức trên khắp Việt Nam kinh doanh có hiệu quả, cũng như hỗ trợ công tác quản lý của các cơ quan Nhà nước.</p>
         </header>
 
         <div class="row about-cols">
@@ -168,7 +148,7 @@
       <div class="container" data-aos="fade-up">
 
         <header class="section-header wow fadeInUp">
-          <h3>Services</h3>
+          <h3>DỊCH VỤ & GIẢI PHÁP</h3>
           <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus, ad pro quaestio laboramus. Ei ubique vivendum pro. At ius nisl accusam lorenta zanos paradigno tridexa panatarel.</p>
         </header>
 
@@ -199,7 +179,7 @@
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h3>Our Skills</h3>
+          <h3>Kỹ năng</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
         </header>
 
@@ -248,7 +228,7 @@
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h3 class="section-title">Our Portfolio</h3>
+          <h3 class="section-title">Sản phẩm</h3>
         </header>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100"">
@@ -292,7 +272,7 @@
       <div class="container" data-aos="zoom-in">
 
         <header class="section-header">
-          <h3>Our Clients</h3>
+          <h3>Khách hàng & Đối tác</h3>
         </header>
 
         <div class="clients-slider swiper">
@@ -312,7 +292,7 @@
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h3>Testimonials</h3>
+          <h3>Đánh giá của khách hàng</h3>
         </header>
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -344,7 +324,7 @@
     <section id="team">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
-          <h3>Team</h3>
+          <h3>Đội ngũ</h3>
           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
 
@@ -380,8 +360,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h3>Contact Us</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <h3>Liên hệ với chúng tôi</h3>
+          <p>Để tìm hiểu thêm về các sản phẩm của chúng tôi và các ưu đãi đặc biệt</p>
         </div>
 
         <div class="row contact-info">
@@ -389,7 +369,7 @@
           <div class="col-md-4">
             <div class="contact-address">
               <i class="bi bi-geo-alt"></i>
-              <h3>Address</h3>
+              <h3>Trụ sở</h3>
               <address>${contact.address}</address>
             </div>
           </div>
@@ -397,7 +377,7 @@
           <div class="col-md-4">
             <div class="contact-phone">
               <i class="bi bi-phone"></i>
-              <h3>Phone Number</h3>
+              <h3>Điện thoại</h3>
               <p><a href="tel:+155895548855">${contact.phoneNumber}</a></p>
             </div>
           </div>
@@ -417,24 +397,24 @@
           <form action="forms/contact.php" method="post" role="form" class="php-email-form">
             <div class="row">
               <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                <input type="text" name="name" class="form-control" id="name" placeholder="Tên của bạn" required>
               </div>
               <div class="form-group col-md-6">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Địa chỉ email" required>
               </div>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Chủ đề" required>
             </div>
             <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              <textarea class="form-control" name="message" rows="5" placeholder="Tin nhắn" required></textarea>
             </div>
             <div class="my-3">
               <div class="loading">Loading</div>
               <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
+              <div class="sent-message">Tin nhắn của bạn đã được gửi đến đội ngũ chúng tôi.Cảm ơn bạn!</div>
             </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
+            <div class="text-center"><button type="submit">Để lại lời nhắn</button></div>
           </form>
         </div>
 

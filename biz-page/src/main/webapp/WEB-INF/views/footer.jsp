@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>  
   <footer id="footer">
     <div class="footer-top">
@@ -5,27 +7,27 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>WebShop</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+            <h3>IT Solution</h3>
+            <p>Chúng tôi là một trong những công ty hàng đầu của Việt Nam trong lĩnh vực năng lượng, với sứ mệnh giải quyết các thách thức về năng lượng, chống lại ô nhiễm môi trường và biến đổi khí hậu trên thế giới.</p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Trang chủ</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Giới thiệu</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Dịch vụ</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Điều khoản dịch vụ</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Chính sách bảo mật</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
+            <h4>Liên hệ với chúng tôi</h4>
             <c:forEach var="contact" items="${contacts}">
-            <p>
-              ${contact.address}<br>
-              <strong>Phone:</strong> ${contact.phoneNumber}<br>
+              <p>
+              <strong>Trụ sở:</strong>${contact.address}<br>
+              <strong>Điện thoại:</strong> ${contact.phoneNumber}<br>
               <strong>Email:</strong> ${contact.email}<br>
             </p>
             </c:forEach>
@@ -41,10 +43,10 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
+            <h4>Đăng ký nhận tin</h4>
+            <p>Hãy đăng ký để được tư vấn chi tiết.</p>
             <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
+              <input type="email" name="email" placeholder="Email"><input type="submit" value="Đăng ký">
             </form>
           </div>
 
@@ -54,16 +56,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong>BizPage</strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!--
-        All the links in the footer should remain intact.
-        You can delete the links only if you purchased the pro version.
-        Licensing information: https://bootstrapmade.com/license/
-        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
-      -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        &copy; 2021 BizPage - Công ty cổ phần Giải pháp Công nghệ Việt Nam
       </div>
     </div>
   </footer>

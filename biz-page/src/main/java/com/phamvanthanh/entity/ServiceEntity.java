@@ -1,5 +1,6 @@
 package com.phamvanthanh.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -7,6 +8,7 @@ import javax.persistence.Table;
 @Table(name = "service")
 public class ServiceEntity extends BaseEntity  {
 	private String name;
+	@Column(columnDefinition = "TEXT")
 	private String description;
 	private String icon;
 	
