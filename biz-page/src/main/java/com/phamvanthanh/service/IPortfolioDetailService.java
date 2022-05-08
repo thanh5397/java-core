@@ -1,7 +1,7 @@
 package com.phamvanthanh.service;
 
-import com.phamvanthanh.entity.PortfolioDetailEntity;
+import com.phamvanthanh.dto.PortfolioDetailDTO;
 
 public interface IPortfolioDetailService {
-	PortfolioDetailEntity findOne(Long id);
+	PortfolioDetailDTO findOne(Long id);
 }

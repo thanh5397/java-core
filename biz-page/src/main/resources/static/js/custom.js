@@ -32,9 +32,13 @@ $(".portfolio-wrap figure a").on("click", function(){
         var dataId = $(this).data("id");
         	if(!!dataId) {
 	        	$.get(
-	    		    `/detail/${dataId}`,
+	    		    `/api/detail/${dataId}`,
 	    		    function (data) {
-	    		        window.location.href = `/detail/${dataId}`;
+	    		    	window.location.href = `/detail`;
+//	    		    	var json =  JSON.stringify(data, null, 4)
+//	    		    	alert(json);
+	    		    	alert(data.client);
+	    		    	$('#client').text(data.client);
 	    		    }
 	        	);
         	}

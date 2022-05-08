@@ -135,7 +135,7 @@
               <h3>${detail.title}</h3>
               <ul>
                 <li><strong>Category</strong>: ${detail.category}</li>
-                <li><strong>Client</strong>: ${detail.client}</li>
+                <li><strong>Client</strong>: <div id="client" data-value=""></div></li>
                 <li><strong>Project date</strong>: ${detail.projectDate}</li>
                 <li><strong>Project URL</strong>: <a href="#">${detail.projectURL}</a></li>
               </ul>

@@ -22,4 +22,9 @@ public class PortfolioDetailController {
 		}
 		return "portfolio-details";
 	}
+	
+	@GetMapping(value= "/detail")
+	public String showDetailPortfolio() {
+		return "portfolio-details";
+	}
 }

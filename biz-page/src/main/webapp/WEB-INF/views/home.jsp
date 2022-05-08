@@ -108,6 +108,7 @@
             <i class="bi ${service.icon}"></i>
             <h4 class="title"><a href="">${service.name}</a></h4>
             <p class="description">${service.description}</p>
+            <div id="client"></div>
           </div>
 		</c:forEach>
         </div>
@@ -149,7 +150,7 @@
 
         <header class="section-header wow fadeInUp">
           <h3>DỊCH VỤ & GIẢI PHÁP</h3>
-          <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus, ad pro quaestio laboramus. Ei ubique vivendum pro. At ius nisl accusam lorenta zanos paradigno tridexa panatarel.</p>
+          <p>Chúng tôi cung cấp các giải pháp công nghệ với chất lượng tối ưu nhằm thỏa mãn tối đa nhu cầu của khách hàng.</p>
         </header>
 
         <div class="row">
