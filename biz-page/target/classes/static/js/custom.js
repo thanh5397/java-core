@@ -28,6 +28,9 @@ $("#login").click(function() {
         }
     });
 });
+$("#contact").click(function() {
+	$('#content').load('contact');
+});
 $(".portfolio-wrap figure a").on("click", function(){
         var dataId = $(this).data("id");
         	if(!!dataId) {
