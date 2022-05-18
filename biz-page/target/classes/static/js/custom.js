@@ -41,7 +41,8 @@ $(".portfolio-wrap figure a").on("click", function(){
 //	    		    	var json =  JSON.stringify(data, null, 4)
 //	    		    	alert(json);
 	    		    	alert(data.client);
-	    		    	$('#client').text(data.client);
+	    		    	$("#client").show().html(data.client);
+//	    		    	$('#client').text(data.client);
 	    		    }
 	        	);
         	}

@@ -13,7 +13,7 @@ public class PortfolioDetailConverter {
 		return portfolioDetailDTO;
 	}
 	
-	public PortfolioDetailEntity toUserEntity(PortfolioDetailDTO portfolioDetailDTO) {
+	public PortfolioDetailEntity toEntity(PortfolioDetailDTO portfolioDetailDTO) {
 		PortfolioDetailEntity portfolioDetailEntity = new PortfolioDetailEntity();
 		portfolioDetailEntity.setClient(portfolioDetailDTO.getClient());
 		return portfolioDetailEntity;
