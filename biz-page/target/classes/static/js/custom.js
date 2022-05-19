@@ -31,6 +31,11 @@ $("#login").click(function() {
 $("#contact").click(function() {
 	$('#content').load('contact');
 });
+$(document).on('click','#btn-edit',function(){
+		$('#address').attr('contenteditable', 'true');
+		$("#phoneNumber").attr('contenteditable', 'true');
+		$("#email").attr('contenteditable', 'true');
+});
 $(".portfolio-wrap figure a").on("click", function(){
         var dataId = $(this).data("id");
         	if(!!dataId) {

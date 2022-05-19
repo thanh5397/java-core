@@ -42,10 +42,11 @@
                   <tbody>
                   <c:forEach items="${contacts}" var="contact">
 	                  <tr>
-	                    <td>${contact.address}</td>
-	                    <td>${contact.phoneNumber}</td>
-	                    <td>${contact.email}</td>
-	                    <td> #</td>
+	                  	<td style="display: none;">${contact.id }</td>
+	                    <td id="address" style="width:500px;max-width: 500px;word-break: break-all;white-space: pre-wrap;">${contact.address}</td>
+	                    <td id="phoneNumber"' style="width:200px;max-width: 200px;word-break: break-all;white-space: pre-wrap;">${contact.phoneNumber}</td>
+	                    <td id="email" style="width:200px;max-width: 200px;word-break: break-all;white-space: pre-wrap;">${contact.email}</td>
+	                    <td style="width:100px;max-width: 200px;word-break: break-all;white-space: pre-wrap;"><button id="btn-edit" type="button" class="btn btn-light">Sửa</button><button id="btn-xoa" type="button" class="btn btn-light">Xóa</button></td>
 	                  </tr>
                   </c:forEach>
                   </tbody>
