@@ -8,6 +8,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="tbl_detail_user_japan")
 public class TblDetailUserJapanEntity {
+	
 	private int userId;
 	private int groupId;
 	private int detailUserJapanId;

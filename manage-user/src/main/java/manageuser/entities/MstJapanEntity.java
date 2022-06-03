@@ -1,11 +1,14 @@
 package manageuser.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="mst_japan")
 public class MstJapanEntity {
+	
+	@Id
 	private String codeLevel;
 	private String nameLevel;
 	

@@ -4,11 +4,14 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="user_infor")
 public class UserInforEntity {
+	@Id
+	private int userId;
 	private String loginName;
 	private int groupId;
 	private String groupName;
@@ -28,7 +31,6 @@ public class UserInforEntity {
 	private List<Integer> arrBirthday;
 	private List<Integer> arrStartDate;
 	private List<Integer> arrEndDate;
-	private int userId;
 	private int total;
 	
 	public String getLoginName() {

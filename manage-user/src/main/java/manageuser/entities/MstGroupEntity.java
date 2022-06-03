@@ -1,16 +1,14 @@
 package manageuser.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="mst_group")
 public class MstGroupEntity {
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int groupId;
 	private String groupName;
 	

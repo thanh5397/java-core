@@ -3,12 +3,15 @@ package manageuser.entities;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="tbl_user")
 public class TblUserEntity {
+	@Id
 	private int userId;
+	
 	private int groupId;
 	private String loginName;
 	private String password;
