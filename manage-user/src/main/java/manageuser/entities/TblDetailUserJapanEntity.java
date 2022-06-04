@@ -15,6 +15,8 @@ public class TblDetailUserJapanEntity {
 	private Date endDate;
 	private int total;
 	
+	
+	
 	public int getUserId() {
 		return userId;
 	}

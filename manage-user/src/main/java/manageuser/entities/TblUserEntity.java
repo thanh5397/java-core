@@ -1,12 +1,16 @@
 package manageuser.entities;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.apache.tomcat.jni.Address;
 
 @Entity
 @Table(name="tbl_user")
@@ -26,6 +30,9 @@ public class TblUserEntity {
 	private Date birthday;
 	private int rule;
 	private String salt;
+	
+	@ManyToMany(mappedBy = "tbl_users")
+    private List<MstJapanEntity> mstJapanEntities;
 	
 	public int getUserId() {
 		return userId;
