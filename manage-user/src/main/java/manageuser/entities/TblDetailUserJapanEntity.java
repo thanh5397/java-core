@@ -10,8 +10,6 @@ import javax.persistence.Table;
 public class TblDetailUserJapanEntity {
 	
 	private int userId;
-	private int groupId;
-	private int detailUserJapanId;
 	private String codeLevel;
 	private Date startDate;
 	private Date endDate;
@@ -22,18 +20,6 @@ public class TblDetailUserJapanEntity {
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
-	}
-	public int getGroupId() {
-		return groupId;
-	}
-	public void setGroupId(int groupId) {
-		this.groupId = groupId;
-	}
-	public int getDetailUserJapanId() {
-		return detailUserJapanId;
-	}
-	public void setDetailUserJapanId(int detailUserJapanId) {
-		this.detailUserJapanId = detailUserJapanId;
 	}
 	public String getCodeLevel() {
 		return codeLevel;

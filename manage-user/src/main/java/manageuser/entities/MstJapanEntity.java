@@ -12,6 +12,8 @@ public class MstJapanEntity {
 	private String codeLevel;
 	private String nameLevel;
 	
+	
+	
 	public String getCodeLevel() {
 		return codeLevel;
 	}

@@ -1,4 +1,4 @@
-package manageuser.entities;
+package manageuser.dto;
 
 import java.util.Date;
 import java.util.List;
@@ -7,10 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="user_infor")
-public class UserInforEntity {
-	@Id
+public class UserInforDTO {
 	private int userId;
 	private String loginName;
 	private int groupId;

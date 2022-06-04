@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,6 +14,8 @@ public class TblUserEntity {
 	@Id
 	private int userId;
 	
+	@ManyToOne
+	@JoinColumn(name = "group_id")
 	private int groupId;
 	private String loginName;
 	private String password;
