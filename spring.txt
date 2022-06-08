@@ -1,0 +1,6 @@
+cày java spring boot
+Web.xml được định nghĩa ánh xạ giữa đường dẫn URL và servlet xử lý các yêu cầu với các đường dẫn đó. 
+File web.xml cung cấp thông tin triển khai và cấu hình cho các thành phần Web bao gồm một ứng dụng Web. 
+Các file servlet được mô tả trong web.xml.Nó đại diện cho cốt lõi của ứng dụng java.
+File web.xml nằm trong thư mục WEB-INF của ứng dụng web.
+
