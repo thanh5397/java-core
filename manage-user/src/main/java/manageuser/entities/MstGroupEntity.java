@@ -13,18 +13,16 @@ import javax.persistence.Table;
 public class MstGroupEntity {
 	
 	@Id
-	private int groupId;
+	private Integer groupId;
 	private String groupName;
 	
 	@OneToMany(mappedBy = "mst_group", cascade = CascadeType.ALL)
 	private List<TblUserEntity> tblUserEntities;
 	
-	
-	
-	public int getGroupId() {
+	public Integer getGroupId() {
 		return groupId;
 	}
-	public void setGroupId(int groupId) {
+	public void setGroupId(Integer groupId) {
 		this.groupId = groupId;
 	}
 	public String getGroupName() {

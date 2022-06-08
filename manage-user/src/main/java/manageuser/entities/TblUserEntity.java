@@ -3,14 +3,13 @@ package manageuser.entities;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import org.apache.tomcat.jni.Address;
 
 @Entity
 @Table(name="tbl_user")
@@ -31,8 +30,12 @@ public class TblUserEntity {
 	private int rule;
 	private String salt;
 	
-	@ManyToMany(mappedBy = "tbl_users")
-    private List<MstJapanEntity> mstJapanEntities;
+	@OneToMany(
+	        mappedBy = "tbl_user",
+	        cascade = CascadeType.ALL,
+	        orphanRemoval = true
+	    )
+    private List<TblDetailUserJapanEntity> mstJapans;
 	
 	public int getUserId() {
 		return userId;
@@ -100,4 +103,11 @@ public class TblUserEntity {
 	public void setSalt(String salt) {
 		this.salt = salt;
 	}
+	public List<TblDetailUserJapanEntity> getMstJapans() {
+		return mstJapans;
+	}
+	public void setMstJapans(List<TblDetailUserJapanEntity> mstJapans) {
+		this.mstJapans = mstJapans;
+	}
+	
 }
