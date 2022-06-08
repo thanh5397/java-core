@@ -1,0 +1,9 @@
+manageruser
++Tầng repository:viết câu truy vấn bằng modify query
++Tầng dto: chưa thể hiện được các mối quan hệ relationship
++Tầng converter: thiếu 1 số thuộc tính do issue từ tầng dto
++Xây dựng chức năng login:
++tìm hiểu session trong spring boot
+configuration message source
+https://www.baeldung.com/spring-custom-validation-message-source
+https://stackoverflow.com/questions/46659679/spring-boot-application-and-messagesource
