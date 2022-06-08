@@ -4,3 +4,8 @@ File web.xml cung cấp thông tin triển khai và cấu hình cho các thành 
 Các file servlet được mô tả trong web.xml.Nó đại diện cho cốt lõi của ứng dụng java.
 File web.xml nằm trong thư mục WEB-INF của ứng dụng web.
 
++ học lại hết sql
+
+--ghế gaming
+https://shopee.vn/-M%C3%A3-LIFEBKM1-gi%E1%BA%A3m-10-t%E1%BB%91i-%C4%91a-1-tri%E1%BB%87u-%C4%91%C6%A1n-t%E1%BB%AB-500k-(M%E1%BB%9AI)-Gh%E1%BA%BF-gaming-ch%C6%A1i-game-D%C3%A0y-d%E1%BA%B7n-n%C3%A2ng-h%E1%BA%A1-ng%E1%BA%A3-l%C6%B0ng-i.114292639.7802619871?sp_atk=5d2a1b2a-bcc6-46aa-aa68-0dc22706ecc4&xptdk=5d2a1b2a-bcc6-46aa-aa68-0dc22706ecc4
+
