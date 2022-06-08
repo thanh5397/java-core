@@ -7,3 +7,5 @@ manageruser
 configuration message source
 https://www.baeldung.com/spring-custom-validation-message-source
 https://stackoverflow.com/questions/46659679/spring-boot-application-and-messagesource
++về check lại xem khoảng cách để ghế với bàn làm việc của mình đã thoải mái hay chưa
+chỗ ngồi có là nguyên nhân mắt mình bị cận không
