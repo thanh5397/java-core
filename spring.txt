@@ -10,3 +10,22 @@ File web.xml nằm trong thư mục WEB-INF của ứng dụng web.
 https://shopee.vn/-M%C3%A3-LIFEBKM1-gi%E1%BA%A3m-10-t%E1%BB%91i-%C4%91a-1-tri%E1%BB%87u-%C4%91%C6%A1n-t%E1%BB%AB-500k-(M%E1%BB%9AI)-Gh%E1%BA%BF-gaming-ch%C6%A1i-game-D%C3%A0y-d%E1%BA%B7n-n%C3%A2ng-h%E1%BA%A1-ng%E1%BA%A3-l%C6%B0ng-i.114292639.7802619871?sp_atk=5d2a1b2a-bcc6-46aa-aa68-0dc22706ecc4&xptdk=5d2a1b2a-bcc6-46aa-aa68-0dc22706ecc4
 
 ++Không phải tự nghĩ,mà là làm theo người ta
+@Component: là một annotation của class.
+ Nó dùng để đánh dấu class Java là một bean.
+ Một class Java được đánh dấu @Component được tìm thấy trong classpath. 
+ Spring Framework chọn nó và cấu hình trong ngữ cảnh ứng dụng như một Spring Bean.
+ 
+Spring Beans chính là những Java Object mà từ đó tạo nên khung sườn của một Spring application.Chúng được cài đặt, lắp ráp và quản lý bởi Spring IoC container. Những bean này được tạo ra bởi configuration metadata được cung cấp từ container, ví dụ, trong tag nằm trong file XML.
+
+Spring Beans
+Các bean được define trong spring framework là singleton bean.
+ Có một thuộc trính trong bean với tên là “singleton” nếu được gán giá trị là true thì bean đó sẽ trở thành singleton, nếu là false thì bean đó sẽ trở thành prototype bean. 
+ Mặc định nếu không được định nghĩa giá trị của nó sẽ là true. 
+ Vì thế tất cả các bean trong spring framework mặc định sẽ là singleton bean.
+ 
+ Caused by: java.lang.IllegalStateException: Cannot load driver class: com.mysql.cj.jdbc.Driver
+ lỗi thiếu thư viện mysql
+ 
+ getter-setter
+ 
+ @RequestMapping: nó được sử dụng để map các request. Nó có nhiều phần tử tùy chọn như consumes, header, method, name, params, path, produces, và value. Chúng tôi sử dụng nó với lớp cũng như phương thức.

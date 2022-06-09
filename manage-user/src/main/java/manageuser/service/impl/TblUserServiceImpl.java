@@ -1,0 +1,48 @@
+package manageuser.service.impl;
+
+import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+import java.sql.SQLException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import manageuser.converter.TblUserConverter;
+import manageuser.dto.TblUserDTO;
+import manageuser.entities.TblUserEntity;
+import manageuser.repository.TblUserRepository;
+import manageuser.service.ITblUserService;
+import manageuser.utils.Common;
+
+@Service
+public class TblUserServiceImpl implements ITblUserService {
+	
+	@Autowired
+	TblUserRepository tblUserRepository;
+	
+	@Autowired
+	TblUserConverter tblUserConverter;
+
+	@Override
+	public boolean existTblUser(String loginName, String password) {
+		TblUserDTO tblUserDTO = new TblUserDTO();
+		TblUserEntity tblUserEntity = tblUserRepository.findUserByLoginName(loginName);
+		tblUserDTO = tblUserConverter.toDTO(tblUserEntity);
+		boolean isExist = false;
+		
+		try {
+			if (tblUserDTO != null) {
+//				String salt = tblUserDTO.getSalt();
+				String passwordChecked = tblUserDTO.getPassword();
+//				String passwordEncrypted = Common.encryptPassword(password, salt);
+				isExist = Common.compareString(password, passwordChecked);
+			}
+		} catch (Exception e) {
+			System.out.println("TblUserServiceImpl: existTblUser: " + e.getMessage());
+			throw e;
+		}
+		
+		return isExist;
+	}
+
+}

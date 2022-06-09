@@ -3,6 +3,7 @@ package manageuser.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -22,7 +23,7 @@ public class LoginController {
 		return "ADM001";
 	}
 	@PostMapping("/Login.do")
-	public String processLogin(Model model,@RequestParam(value = Constant.PARAM_LOGIN_NAME,required=false) String loginName,@RequestParam(value = Constant.PARAM_PASSWORD,required=false) String password) {
+	public String processLogin(Model model,@RequestParam(value = Constant.PARAM_LOGIN_NAME,required=false) String loginName,@RequestParam(value = Constant.PARAM_PASSWORD,required=false) String password,HttpServletRequest request) {
 		try {
 			ValidateUser validateUser = new ValidateUser();
 //			String loginName = request.getParameter(Constant.PARAM_LOGIN_NAME);

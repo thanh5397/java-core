@@ -20,14 +20,10 @@ import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import manageuser.dao.TblUserDao;
-import manageuser.dao.impl.TblUserDaoImpl;
+
 import manageuser.entities.MstGroupEntity;
 import manageuser.entities.MstJapanEntity;
-import manageuser.logics.MstGroupLogic;
-import manageuser.logics.MstJapanLogic;
-import manageuser.logics.impl.MstGroupLogicImpl;
-import manageuser.logics.impl.MstJapanLogicImpl;
+
 
 
 public class Common {
@@ -56,17 +52,18 @@ public class Common {
 	}
 
 	public static boolean checkLogin(HttpSession session) throws ClassNotFoundException, SQLException, IOException {
-		boolean isLogin = false;
-		if (session != null) {
-			String loginName =  (String) session.getAttribute(Constant.PARAM_LOGIN_NAME);
-			if (!Common.checkBlank(loginName)) {
-				TblUserDao tblUserDao = new TblUserDaoImpl();
-				if (tblUserDao.checkAdminByLoginName(loginName) == 0) {
-					isLogin = true;
-				}
-			}
-		}
-		return isLogin;
+//		boolean isLogin = false;
+//		if (session != null) {
+//			String loginName =  (String) session.getAttribute(Constant.PARAM_LOGIN_NAME);
+//			if (!Common.checkBlank(loginName)) {
+//				TblUserDao tblUserDao = new TblUserDaoImpl();
+//				if (tblUserDao.checkAdminByLoginName(loginName) == 0) {
+//					isLogin = true;
+//				}
+//			}
+//		}
+//		return isLogin;
+		return true;
 	}
 
 	public static String replaceWildcard(String strInput) {
@@ -108,18 +105,18 @@ public class Common {
 	public static List<Integer> getListPaging(int totalUser, int limit, int currentPage)
 			throws NumberFormatException, IOException {
 		List<Integer> listPaging = null;
-		try {
-			int totalPage = getTotalPage(totalUser, limit);
-			int limitPage = Integer.parseInt(ConfigProperties.getConfigProperties(Constant.LIMIT_PAGE));
-			int startPage = (int) Math.ceil((double) currentPage / limitPage) * limitPage - (limitPage - 1);
-			listPaging = new ArrayList<Integer>();
-			for (int i = startPage; i <= startPage + 2 && i <= totalPage; i++) {
-				listPaging.add(i);
-			}
-		} catch (NumberFormatException | IOException e) {
-			System.out.println("Common: getListPaging: " + e.getMessage());
-			throw e;
-		}
+//		try {
+//			int totalPage = getTotalPage(totalUser, limit);
+//			int limitPage = Integer.parseInt(ConfigProperties.getConfigProperties(Constant.LIMIT_PAGE));
+//			int startPage = (int) Math.ceil((double) currentPage / limitPage) * limitPage - (limitPage - 1);
+//			listPaging = new ArrayList<Integer>();
+//			for (int i = startPage; i <= startPage + 2 && i <= totalPage; i++) {
+//				listPaging.add(i);
+//			}
+//		} catch (NumberFormatException | IOException e) {
+//			System.out.println("Common: getListPaging: " + e.getMessage());
+//			throw e;
+//		}
 		return listPaging;
 	}
 
@@ -131,13 +128,13 @@ public class Common {
 
 	public static int getLimit() throws NumberFormatException, IOException {
 		int limit;
-		try {
-			limit = Integer.parseInt(ConfigProperties.getConfigProperties(Constant.LIMIT));
-		} catch (NumberFormatException | IOException e) {
-			System.out.println("Common: getLimit: " + e.getMessage());
-			throw e;
-		}
-		return limit;
+//		try {
+//			limit = Integer.parseInt(ConfigProperties.getConfigProperties(Constant.LIMIT));
+//		} catch (NumberFormatException | IOException e) {
+//			System.out.println("Common: getLimit: " + e.getMessage());
+//			throw e;
+//		}
+		return 0;
 	}
 
 	public static int getTotalPage(int totalUser, int limit) {
@@ -304,38 +301,38 @@ public class Common {
 	}
 	
 	public static void setDataLogic(HttpServletRequest request) throws ClassNotFoundException, SQLException, IOException {
-		MstGroupLogic mstGroupLogic = new MstGroupLogicImpl();
-		MstJapanLogic mstJapanLogic = new MstJapanLogicImpl();
-		List<MstGroupEntity> listMstGroupEntities = null;
-		List<MstJapanEntity> listMstJapanEntities = null;
-		List<Integer> listYears = null;
-		List<Integer> listYearsEndDate = null;
-		List<Integer> listMonths = null;
-		List<Integer> listDays = null;
-		Date currentDate = null;
-		int yearNow = Constant.NUMBER_ZERO;
-
-		try {
-			listMstGroupEntities = mstGroupLogic.getAllMstGroup();
-			listMstJapanEntities = mstJapanLogic.getAllMstJapan();
-
-			currentDate = Common.getCurrentDate();
-			List<Integer> dateArray = Common.convertDateToArray(currentDate);
-			yearNow = dateArray.get(2);
-			listYears = Common.getListYear(Constant.START_YEAR_PULL_DOWN, yearNow);
-			listYearsEndDate = Common.getListYear(Constant.START_YEAR_PULL_DOWN, yearNow + 1);
-			listMonths = Common.getListMonth();
-			listDays = Common.getListDay();
-
-			request.setAttribute(Constant.PARAM_LIST_GROUP, listMstGroupEntities);
-			request.setAttribute(Constant.PARAM_LIST_JAPAN, listMstJapanEntities);
-			request.setAttribute(Constant.PARAM_LIST_YEAR, listYears);
-			request.setAttribute(Constant.PARAM_LIST_YEAR_END_DATE, listYearsEndDate);
-			request.setAttribute(Constant.PARAM_LIST_MONTH, listMonths);
-			request.setAttribute(Constant.PARAM_LIST_DAY, listDays);
-		} catch (ClassNotFoundException | SQLException | IOException e) {
-			System.out.println("Common: setDataLogic: " + e.getMessage());
-			throw e;
-		}
+//		MstGroupLogic mstGroupLogic = new MstGroupLogicImpl();
+//		MstJapanLogic mstJapanLogic = new MstJapanLogicImpl();
+//		List<MstGroupEntity> listMstGroupEntities = null;
+//		List<MstJapanEntity> listMstJapanEntities = null;
+//		List<Integer> listYears = null;
+//		List<Integer> listYearsEndDate = null;
+//		List<Integer> listMonths = null;
+//		List<Integer> listDays = null;
+//		Date currentDate = null;
+//		int yearNow = Constant.NUMBER_ZERO;
+//
+//		try {
+//			listMstGroupEntities = mstGroupLogic.getAllMstGroup();
+//			listMstJapanEntities = mstJapanLogic.getAllMstJapan();
+//
+//			currentDate = Common.getCurrentDate();
+//			List<Integer> dateArray = Common.convertDateToArray(currentDate);
+//			yearNow = dateArray.get(2);
+//			listYears = Common.getListYear(Constant.START_YEAR_PULL_DOWN, yearNow);
+//			listYearsEndDate = Common.getListYear(Constant.START_YEAR_PULL_DOWN, yearNow + 1);
+//			listMonths = Common.getListMonth();
+//			listDays = Common.getListDay();
+//
+//			request.setAttribute(Constant.PARAM_LIST_GROUP, listMstGroupEntities);
+//			request.setAttribute(Constant.PARAM_LIST_JAPAN, listMstJapanEntities);
+//			request.setAttribute(Constant.PARAM_LIST_YEAR, listYears);
+//			request.setAttribute(Constant.PARAM_LIST_YEAR_END_DATE, listYearsEndDate);
+//			request.setAttribute(Constant.PARAM_LIST_MONTH, listMonths);
+//			request.setAttribute(Constant.PARAM_LIST_DAY, listDays);
+//		} catch (ClassNotFoundException | SQLException | IOException e) {
+//			System.out.println("Common: setDataLogic: " + e.getMessage());
+//			throw e;
+//		}
 	}
 }

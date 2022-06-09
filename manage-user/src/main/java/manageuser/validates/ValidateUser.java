@@ -1,43 +1,40 @@
 package manageuser.validates;
 
-import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import manageuser.entities.UserInforEntity;
-import manageuser.logics.MstGroupLogic;
-import manageuser.logics.MstJapanLogic;
-import manageuser.logics.TblUserLogic;
-import manageuser.logics.impl.MstGroupLogicImpl;
-import manageuser.logics.impl.MstJapanLogicImpl;
-import manageuser.logics.impl.TblUserLogicImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+
+import manageuser.service.ITblUserService;
 import manageuser.utils.Common;
 import manageuser.utils.Constant;
-import manageuser.utils.MessageErrorProperties;
 
 public class ValidateUser {
+	
+    @Autowired
+    MessageSource messageSource;
+    
+    @Autowired
+    ITblUserService tblUserService;
 
-	public List<String> validateLogin(String loginName, String password)
-			throws ClassNotFoundException, SQLException, IOException, NoSuchAlgorithmException {
+	public List<String> validateLogin(String loginName, String password) {
 			List<String> listError = new ArrayList<String>();
 			try {
 				if (Common.compareString(Constant.EMPTY_STRING, loginName)) {
-					String loginNameER001 = MessageErrorProperties.getMessageError(Constant.ER001_LOGIN_NAME);
+					String loginNameER001 = messageSource.getMessage(Constant.ER001_LOGIN_NAME , null , null);
 					listError.add(loginNameER001);
 				}
 	
 				if (Common.compareString(Constant.EMPTY_STRING, password)) {
-					String passwordER001 = MessageErrorProperties.getMessageError(Constant.ER001_PASSWORD);
+					String passwordER001 = messageSource.getMessage(Constant.ER001_PASSWORD , null , null);
 					listError.add(passwordER001);
 				}
 	
 				if (listError.size() == 0) {
-					boolean isExist = tblUserLogic.existLogin(loginName, password);
+					boolean isExist = tblUserService.existTblUser(loginName, password);
 					if (!isExist) {
-						String ER016 = MessageErrorProperties.getMessageError(Constant.ER016);
+						String ER016 = messageSource.getMessage(Constant.ER016 , null , null);
 						listError.add(ER016);
 					}
 				}

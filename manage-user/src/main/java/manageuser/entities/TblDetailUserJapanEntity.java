@@ -1,60 +1,43 @@
 package manageuser.entities;
 
-import java.util.Date;
-
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="tbl_detail_user_japan")
 public class TblDetailUserJapanEntity {
+	
+	@EmbeddedId
+    private TblDetailUserJapanId id = new TblDetailUserJapanId();
 	@ManyToOne(fetch = FetchType.LAZY)
     @MapsId("userId")
-	private int userId;
+	private TblUserEntity tblUserEntity;
 	@ManyToOne(fetch = FetchType.LAZY)
     @MapsId("codeLevel")
-	private String codeLevel;
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date startDate;
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date endDate;
-	private int total;
-	
-	public int getUserId() {
-		return userId;
-	}
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-	public String getCodeLevel() {
-		return codeLevel;
-	}
-	public void setCodeLevel(String codeLevel) {
-		this.codeLevel = codeLevel;
-	}
-	public Date getStartDate() {
-		return startDate;
-	}
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-	public Date getEndDate() {
-		return endDate;
-	}
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
-	public int getTotal() {
-		return total;
-	}
-	public void setTotal(int total) {
-		this.total = total;
-	}
+	private MstJapanEntity mstJapanEntity;
 	
 	
+	
+	public TblDetailUserJapanId getId() {
+		return id;
+	}
+	public void setId(TblDetailUserJapanId id) {
+		this.id = id;
+	}
+	public TblUserEntity getTblUserEntity() {
+		return tblUserEntity;
+	}
+	public void setTblUserEntity(TblUserEntity tblUserEntity) {
+		this.tblUserEntity = tblUserEntity;
+	}
+	public MstJapanEntity getMstJapanEntity() {
+		return mstJapanEntity;
+	}
+	public void setMstJapanEntity(MstJapanEntity mstJapanEntity) {
+		this.mstJapanEntity = mstJapanEntity;
+	}
 }

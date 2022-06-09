@@ -1,8 +1,11 @@
 package manageuser.converter;
 
+import org.springframework.stereotype.Component;
+
 import manageuser.dto.TblUserDTO;
 import manageuser.entities.TblUserEntity;
 
+@Component
 public class TblUserConverter {
 	public TblUserEntity toEntity(TblUserDTO tblUserDTO) {
 		TblUserEntity tblUserEntity = new TblUserEntity();
@@ -20,7 +23,7 @@ public class TblUserConverter {
 		tblUserEntity.setMstJapans(tblUserDTO.getMstJapans());
 		return tblUserEntity;
 	}
-	public TblUserDTO toEntity(TblUserEntity tblUserEntity) {
+	public TblUserDTO toDTO(TblUserEntity tblUserEntity) {
 		TblUserDTO tblUserDTO = new TblUserDTO();
 		tblUserDTO.setUserId(tblUserEntity.getUserId());
 		tblUserDTO.setGroupId(tblUserEntity.getGroupId());

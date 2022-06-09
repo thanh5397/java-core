@@ -30,10 +30,13 @@ $(document).on('click','#btn_login',function(){
 	var password = $("#password").val();
 	$.ajax({
         type: "POST",
-        url: "/api/login",
-        data: json,
-        contentType: "application/json; charset=utf-8",
-        dataType: 'json',
+        url: "/Login.do",
+        data: {
+			    "loginName" : username,
+			    "password" : password
+			   },
+        contentType: "application/text; charset=UTF-8",
+        dataType: 'text',
         success: function(data)
         {
        		var json = "<h4>Ajax Response</h4>&lt;pre&gt;"
