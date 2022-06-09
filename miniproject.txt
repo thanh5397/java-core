@@ -2,10 +2,20 @@ manageruser
 +Tầng repository:viết câu truy vấn bằng modify query
 +Tầng dto: chưa thể hiện được các mối quan hệ relationship
 +Tầng converter: thiếu 1 số thuộc tính do issue từ tầng dto
-+Xây dựng chức năng login:
++Chức năng login:20%
++Chức năng ListUser:0%
++Chức năng AddUser:0%
++Chức năng ViewUser:0%
++Chức năng DeleteUser:0%
++Chức năng logout:0%
++Hiển thị MH lỗi:0% 
 +tìm hiểu session trong spring boot
 configuration message source
 https://www.baeldung.com/spring-custom-validation-message-source
 https://stackoverflow.com/questions/46659679/spring-boot-application-and-messagesource
 +về check lại xem khoảng cách để ghế với bàn làm việc của mình đã thoải mái hay chưa
 chỗ ngồi có là nguyên nhân mắt mình bị cận không
++nhớ lại làm gì cho mất thời gian
++chỗ làm việc phải thoải mái,bàn rộng rãi,ghế gaming thì mới ngồi lâu được
++mệt mỏi nhỉ
++không dùng query string
