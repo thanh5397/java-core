@@ -1,9 +1,11 @@
 package manageuser.entities;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -14,8 +16,8 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name="mst_japan")
 public class MstJapanEntity {
-	
 	@Id
+    @Column(name = "code_level")
 	private String codeLevel;
 	private String nameLevel;
 	@Temporal(TemporalType.TIMESTAMP)
@@ -24,12 +26,7 @@ public class MstJapanEntity {
 	private Date endDate;
 	private int total;
 	
-    @OneToMany(
-            mappedBy = "mst_japan",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-        )
-    private List<TblDetailUserJapanEntity> tblUsers;
+	private List<TblDetailUserJapanEntity> tblDetailUserJapanEntities = new ArrayList<TblDetailUserJapanEntity>();
 	
 	public String getCodeLevel() {
 		return codeLevel;
@@ -42,12 +39,6 @@ public class MstJapanEntity {
 	}
 	public void setNameLevel(String nameLevel) {
 		this.nameLevel = nameLevel;
-	}
-	public List<TblDetailUserJapanEntity> getTblUsers() {
-		return tblUsers;
-	}
-	public void setTblUsers(List<TblDetailUserJapanEntity> tblUsers) {
-		this.tblUsers = tblUsers;
 	}
 	public Date getStartDate() {
 		return startDate;

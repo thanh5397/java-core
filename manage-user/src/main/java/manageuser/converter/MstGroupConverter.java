@@ -1,8 +1,10 @@
 package manageuser.converter;
 
+import org.springframework.stereotype.Component;
+
 import manageuser.dto.MstGroupDTO;
 import manageuser.entities.MstGroupEntity;
-
+@Component
 public class MstGroupConverter {
 	public MstGroupEntity toEntity(MstGroupDTO mstGroupDTO) {
 		MstGroupEntity mstGroupEntity = new MstGroupEntity();

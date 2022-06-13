@@ -14,7 +14,7 @@ import manageuser.entities.TblUserEntity;
 public interface TblUserRepository extends JpaRepository<TblUserEntity, Integer>{
 	TblUserEntity findUserByLoginName(String loginName);
 	int checkAdminByLoginName(String loginName);
-	long countTotalUserByGroupIdAndFullName(int groupId, String fullName);
+//	long countTotalUserByGroupIdAndFullName(int groupId, String fullName);
 //phải custom lại query
 //	List<UserInforDTO> getListUsers(int offset, int limit, int groupId, String fullName, String sortType,
 //			String sortByFullName, String sortByCodeLevel, String sortByEndDate);

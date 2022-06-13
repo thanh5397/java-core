@@ -3,11 +3,12 @@ package manageuser.dto;
 import java.util.Date;
 import java.util.List;
 
+import manageuser.entities.MstGroupEntity;
+import manageuser.entities.MstJapanEntity;
 import manageuser.entities.TblDetailUserJapanEntity;
 
 public class TblUserDTO {
 	private int userId;
-	private int groupId;
 	private String loginName;
 	private String password;
 	private String fullName;
@@ -17,19 +18,15 @@ public class TblUserDTO {
 	private Date birthday;
 	private int rule;
 	private String salt;
-    private List<TblDetailUserJapanEntity> mstJapans;
-    
+	private List<TblDetailUserJapanEntity> tblDetailUserJapanEntities;
+	
+	private MstGroupEntity mstGroupEntity;
+	
 	public int getUserId() {
 		return userId;
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
-	}
-	public int getGroupId() {
-		return groupId;
-	}
-	public void setGroupId(int groupId) {
-		this.groupId = groupId;
 	}
 	public String getLoginName() {
 		return loginName;
@@ -85,12 +82,17 @@ public class TblUserDTO {
 	public void setSalt(String salt) {
 		this.salt = salt;
 	}
-	public List<TblDetailUserJapanEntity> getMstJapans() {
-		return mstJapans;
+	public List<TblDetailUserJapanEntity> getTblDetailUserJapanEntities() {
+		return tblDetailUserJapanEntities;
 	}
-	public void setMstJapans(List<TblDetailUserJapanEntity> mstJapans) {
-		this.mstJapans = mstJapans;
+	public void setTblDetailUserJapanEntities(List<TblDetailUserJapanEntity> tblDetailUserJapanEntities) {
+		this.tblDetailUserJapanEntities = tblDetailUserJapanEntities;
 	}
-    
-    
+	public MstGroupEntity getMstGroupEntity() {
+		return mstGroupEntity;
+	}
+	public void setMstGroupEntity(MstGroupEntity mstGroupEntity) {
+		this.mstGroupEntity = mstGroupEntity;
+	}
+	
 }

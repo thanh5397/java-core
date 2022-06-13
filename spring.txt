@@ -29,3 +29,5 @@ Các bean được define trong spring framework là singleton bean.
  getter-setter
  
  @RequestMapping: nó được sử dụng để map các request. Nó có nhiều phần tử tùy chọn như consumes, header, method, name, params, path, produces, và value. Chúng tôi sử dụng nó với lớp cũng như phương thức.
+ 
+ 

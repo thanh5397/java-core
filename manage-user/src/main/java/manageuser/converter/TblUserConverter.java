@@ -10,7 +10,6 @@ public class TblUserConverter {
 	public TblUserEntity toEntity(TblUserDTO tblUserDTO) {
 		TblUserEntity tblUserEntity = new TblUserEntity();
 		tblUserEntity.setUserId(tblUserDTO.getUserId());
-		tblUserEntity.setGroupId(tblUserDTO.getGroupId());
 		tblUserEntity.setLoginName(tblUserDTO.getLoginName());
 		tblUserEntity.setPassword(tblUserDTO.getPassword());
 		tblUserEntity.setFullName(tblUserDTO.getFullName());
@@ -20,13 +19,13 @@ public class TblUserConverter {
 		tblUserEntity.setBirthday(tblUserDTO.getBirthday());
 		tblUserEntity.setRule(tblUserDTO.getRule());
 		tblUserEntity.setSalt(tblUserDTO.getSalt());
-		tblUserEntity.setMstJapans(tblUserDTO.getMstJapans());
+		tblUserEntity.setTblDetailUserJapanEntities(tblUserDTO.getTblDetailUserJapanEntities());
+		tblUserEntity.setMstGroupEntity(tblUserDTO.getMstGroupEntity());
 		return tblUserEntity;
 	}
 	public TblUserDTO toDTO(TblUserEntity tblUserEntity) {
 		TblUserDTO tblUserDTO = new TblUserDTO();
 		tblUserDTO.setUserId(tblUserEntity.getUserId());
-		tblUserDTO.setGroupId(tblUserEntity.getGroupId());
 		tblUserDTO.setLoginName(tblUserEntity.getLoginName());
 		tblUserDTO.setPassword(tblUserEntity.getPassword());
 		tblUserDTO.setFullName(tblUserEntity.getFullName());
@@ -36,7 +35,8 @@ public class TblUserConverter {
 		tblUserDTO.setBirthday(tblUserEntity.getBirthday());
 		tblUserDTO.setRule(tblUserEntity.getRule());
 		tblUserDTO.setSalt(tblUserEntity.getSalt());
-		tblUserDTO.setMstJapans(tblUserEntity.getMstJapans());
+		tblUserDTO.setTblDetailUserJapanEntities(tblUserEntity.getTblDetailUserJapanEntities());
+		tblUserDTO.setMstGroupEntity(tblUserEntity.getMstGroupEntity());
 		return tblUserDTO;
 	}
 }

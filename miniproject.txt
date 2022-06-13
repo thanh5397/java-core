@@ -52,3 +52,4 @@ mua hẳn kobo forma
 1.mua lại của thằng Huy
 2.mua 1 cái mới ở cửa hàng
 3.mua 1 con iphone 5s dùng tạm
++@onetomany relationship

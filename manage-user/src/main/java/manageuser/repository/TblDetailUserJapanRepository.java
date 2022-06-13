@@ -13,7 +13,7 @@ import manageuser.entities.TblDetailUserJapanEntity;
 @Repository
 public interface TblDetailUserJapanRepository extends JpaRepository<TblDetailUserJapanEntity, Integer>{
 	boolean existsById(int id);
-	Long deleteByUserId(int id);
+	Long deleteByPrimaryKey(int id);
 	@Modifying
 	@Query("INSERT INTO tbl_detail_user_japan (userId,codeLevel,startDate,endDate,total) VALUES (:userId,:codeLevel,:startDate,:endDate,:total)")
 	public void insertTblDetailUserJapanById(@Param("userId") Integer id,@Param("codeLevel") String codeLevel,@Param("startDate") Date startDate,@Param("endDate") Date endDate,@Param("total") Date total);

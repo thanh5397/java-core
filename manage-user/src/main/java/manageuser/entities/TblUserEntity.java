@@ -4,22 +4,19 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="tbl_user")
 public class TblUserEntity {
-	@Id
 	private int userId;
-	
-	@ManyToOne
-	@JoinColumn(name = "group_id")
-	private int groupId;
+
 	private String loginName;
 	private String password;
 	private String fullName;
@@ -30,24 +27,19 @@ public class TblUserEntity {
 	private int rule;
 	private String salt;
 	
-	@OneToMany(
-	        mappedBy = "tbl_user",
-	        cascade = CascadeType.ALL,
-	        orphanRemoval = true
-	    )
-    private List<TblDetailUserJapanEntity> mstJapans;
+	@ManyToOne 
+	@PrimaryKeyJoinColumn 
+    private MstGroupEntity mstGroupEntity;
 	
+    private List<TblDetailUserJapanEntity> tblDetailUserJapanEntities;
+	
+    @Id
+    @Column(name = "user_id")
 	public int getUserId() {
 		return userId;
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
-	}
-	public int getGroupId() {
-		return groupId;
-	}
-	public void setGroupId(int groupId) {
-		this.groupId = groupId;
 	}
 	public String getLoginName() {
 		return loginName;
@@ -103,11 +95,19 @@ public class TblUserEntity {
 	public void setSalt(String salt) {
 		this.salt = salt;
 	}
-	public List<TblDetailUserJapanEntity> getMstJapans() {
-		return mstJapans;
+
+    @OneToMany(mappedBy = "primaryKey.tbl_user",
+            cascade = CascadeType.ALL)
+	public List<TblDetailUserJapanEntity> getTblDetailUserJapanEntities() {
+		return tblDetailUserJapanEntities;
 	}
-	public void setMstJapans(List<TblDetailUserJapanEntity> mstJapans) {
-		this.mstJapans = mstJapans;
+	public void setTblDetailUserJapanEntities(List<TblDetailUserJapanEntity> tblDetailUserJapanEntities) {
+		this.tblDetailUserJapanEntities = tblDetailUserJapanEntities;
 	}
-	
+	public MstGroupEntity getMstGroupEntity() {
+		return mstGroupEntity;
+	}
+	public void setMstGroupEntity(MstGroupEntity mstGroupEntity) {
+		this.mstGroupEntity = mstGroupEntity;
+	}
 }

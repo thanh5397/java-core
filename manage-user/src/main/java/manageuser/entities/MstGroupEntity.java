@@ -3,6 +3,7 @@ package manageuser.entities;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -16,7 +17,7 @@ public class MstGroupEntity {
 	private Integer groupId;
 	private String groupName;
 	
-	@OneToMany(mappedBy = "mst_group", cascade = CascadeType.ALL)
+	@OneToMany
 	private List<TblUserEntity> tblUserEntities;
 	
 	public Integer getGroupId() {
