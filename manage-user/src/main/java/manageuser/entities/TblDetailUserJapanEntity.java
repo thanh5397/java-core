@@ -4,13 +4,14 @@ import java.util.Date;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@Entity
+@Entity(name="TblDetailUserJapanEntity")
 @Table(name="tbl_detail_user_japan")
 public class TblDetailUserJapanEntity {
 	
@@ -19,10 +20,12 @@ public class TblDetailUserJapanEntity {
 	
 	@ManyToOne
     @MapsId("codeLevel")
+	@JoinColumn(name = "code_level")
     private MstJapanEntity mstJapanEntity;
  
     @ManyToOne
     @MapsId("userId")
+    @JoinColumn(name = "user_id")
     private TblUserEntity tblUserEntity;
 	
 	@Temporal(TemporalType.TIMESTAMP)

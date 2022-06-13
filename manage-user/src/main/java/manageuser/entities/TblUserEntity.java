@@ -3,7 +3,6 @@ package manageuser.entities;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -12,34 +11,48 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
-@Entity
+@Entity(name="TblUserEntity")
 @Table(name="tbl_user")
 public class TblUserEntity {
+	@Id
+    @Column(name = "user_id")
 	private int userId;
-
+	private int groupId;
+	@Column(length = 255)
 	private String loginName;
+	@Column(length = 255)
 	private String password;
+	@Column(length = 255)
 	private String fullName;
+	@Column(length = 255)
 	private String fullNameKana;
+	@Column(length = 255)
 	private String email;
+	@Column(length = 255)
 	private String tel;
 	private Date birthday;
 	private int rule;
+	@Column(length = 255)
 	private String salt;
 	
 	@ManyToOne 
-	@PrimaryKeyJoinColumn 
+	@PrimaryKeyJoinColumn
     private MstGroupEntity mstGroupEntity;
 	
-    private List<TblDetailUserJapanEntity> tblDetailUserJapanEntities;
+	@OneToMany(mappedBy = "tblUserEntity")
+    List<TblDetailUserJapanEntity> tblDetailUserJapanEntities;
 	
-    @Id
-    @Column(name = "user_id")
 	public int getUserId() {
 		return userId;
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
+	}
+	public int getGroupId() {
+		return groupId;
+	}
+	public void setGroupId(int groupId) {
+		this.groupId = groupId;
 	}
 	public String getLoginName() {
 		return loginName;
@@ -95,19 +108,18 @@ public class TblUserEntity {
 	public void setSalt(String salt) {
 		this.salt = salt;
 	}
-
-    @OneToMany(mappedBy = "primaryKey.tbl_user",
-            cascade = CascadeType.ALL)
-	public List<TblDetailUserJapanEntity> getTblDetailUserJapanEntities() {
-		return tblDetailUserJapanEntities;
-	}
-	public void setTblDetailUserJapanEntities(List<TblDetailUserJapanEntity> tblDetailUserJapanEntities) {
-		this.tblDetailUserJapanEntities = tblDetailUserJapanEntities;
-	}
 	public MstGroupEntity getMstGroupEntity() {
 		return mstGroupEntity;
 	}
 	public void setMstGroupEntity(MstGroupEntity mstGroupEntity) {
 		this.mstGroupEntity = mstGroupEntity;
 	}
+	public List<TblDetailUserJapanEntity> getTblDetailUserJapanEntities() {
+		return tblDetailUserJapanEntities;
+	}
+	public void setTblDetailUserJapanEntities(List<TblDetailUserJapanEntity> tblDetailUserJapanEntities) {
+		this.tblDetailUserJapanEntities = tblDetailUserJapanEntities;
+	}
+	
+	
 }

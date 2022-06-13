@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class TblDetailUserJapanId implements Serializable{
+public class TblDetailUserJapanId implements Serializable {
 	@Column(name="code_level")
 	private String codeLevel;
 	@Column(name="user_id")

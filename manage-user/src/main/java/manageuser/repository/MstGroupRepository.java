@@ -10,5 +10,5 @@ import manageuser.entities.MstGroupEntity;
 @Repository
 public interface MstGroupRepository extends JpaRepository<MstGroupEntity, Integer> {
 	List<MstGroupEntity> findAll();
-	String findGroupNameById(int id);
+	String findGroupNameByGroupId(int groupId);
 }
