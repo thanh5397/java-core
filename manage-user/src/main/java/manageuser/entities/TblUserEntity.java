@@ -17,7 +17,6 @@ public class TblUserEntity {
 	@Id
     @Column(name = "user_id")
 	private int userId;
-	private int groupId;
 	@Column(length = 255)
 	private String loginName;
 	@Column(length = 255)
@@ -47,12 +46,6 @@ public class TblUserEntity {
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
-	}
-	public int getGroupId() {
-		return groupId;
-	}
-	public void setGroupId(int groupId) {
-		this.groupId = groupId;
 	}
 	public String getLoginName() {
 		return loginName;
