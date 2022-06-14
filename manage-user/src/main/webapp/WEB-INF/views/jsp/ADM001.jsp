@@ -8,11 +8,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script language="Javascript" src="js/script.js"></script>
     <title>ユーザ管理</title>
 </head>
 
-<body onload="setFocus()">
+<body>
     <form action="" method="">
         <center>
             <table class="tbl_input" cellpadding="4" cellspacing="0" width="400px">
@@ -60,6 +61,6 @@
             </table>
         </center>
     </form>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </body>
-
 </html>

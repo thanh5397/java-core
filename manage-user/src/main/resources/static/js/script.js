@@ -1,13 +1,13 @@
-function setFocus(){
-    document.getElementById("first").focus();
-}
+//function setFocus(){
+//    document.getElementById("first").focus();
+//}
 function showHide() {
     var lblLevelJapans = document.getElementsByClassName('lbl-level-japan');
     for(let i = 0; i < lblLevelJapans.length; i ++)
         if(lblLevelJapans[i].style.display == "")
             lblLevelJapans[i].style.display = "none";
         else lblLevelJapans[i].style.display = "";
-}
+};
 
 function showDeleteDialog (message, userId) {
     if (!confirm(message)){
@@ -24,10 +24,12 @@ function showDeleteDialog (message, userId) {
     	document.body.appendChild(formDelete);
     	formDelete.submit();
     }
-}
-$(document).on('click','#btn_login',function(){
+};
+$(document).on("click",".btn_login",function() {
 	var username = $("#loginName").val();
 	var password = $("#password").val();
+	alert(username);
+	alert(password);
 	$.ajax({
         type: "POST",
         url: "/Login.do",
@@ -39,6 +41,7 @@ $(document).on('click','#btn_login',function(){
         dataType: 'text',
         success: function(data)
         {
+        	alert("true");
        		var json = "<h4>Ajax Response</h4>&lt;pre&gt;"
                 + JSON.stringify(data, null, 4) + "&lt;/pre&gt;";
 			$('#feedback').html(json);

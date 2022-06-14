@@ -42,6 +42,6 @@ public class ValidateUser {
 				System.out.println("ValidateUser: validateLogin: " + e.getMessage());
 				throw e;
 			}
-			return listError;
+		return listError;
 	}
 }
