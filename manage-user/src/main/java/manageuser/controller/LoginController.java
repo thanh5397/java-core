@@ -6,17 +6,22 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import manageuser.utils.Constant;
 import manageuser.validates.ValidateUser;
 
 @Controller
 public class LoginController {
+	
+	@Autowired
+	ValidateUser validateUser;
 	
 	@GetMapping("/Login.do")
 	public String showLogin() {
@@ -25,7 +30,6 @@ public class LoginController {
 	@PostMapping("/Login.do")
 	public String processLogin(Model model,@RequestParam(value = Constant.PARAM_LOGIN_NAME,required=false) String loginName,@RequestParam(value = Constant.PARAM_PASSWORD,required=false) String password,HttpServletRequest request) {
 		try {
-			ValidateUser validateUser = new ValidateUser();
 //			String loginName = request.getParameter(Constant.PARAM_LOGIN_NAME);
 //			String password = request.getParameter(Constant.PARAM_PASSWORD);
 			List<String> listError = new ArrayList<String>();

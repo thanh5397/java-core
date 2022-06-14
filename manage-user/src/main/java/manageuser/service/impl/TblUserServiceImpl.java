@@ -23,11 +23,11 @@ public class TblUserServiceImpl implements ITblUserService {
 	public boolean existTblUser(String loginName, String password) {
 		TblUserDTO tblUserDTO = new TblUserDTO();
 		TblUserEntity tblUserEntity = tblUserRepository.findUserByLoginName(loginName);
-		tblUserDTO = tblUserConverter.toDTO(tblUserEntity);
 		boolean isExist = false;
 		
 		try {
-			if (tblUserDTO != null) {
+			if (tblUserEntity != null) {
+				tblUserDTO = tblUserConverter.toDTO(tblUserEntity);
 //				String salt = tblUserDTO.getSalt();
 				String passwordChecked = tblUserDTO.getPassword();
 //				String passwordEncrypted = Common.encryptPassword(password, salt);

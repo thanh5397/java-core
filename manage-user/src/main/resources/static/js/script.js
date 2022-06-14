@@ -28,8 +28,6 @@ function showDeleteDialog (message, userId) {
 $(document).on("click",".btn_login",function() {
 	var username = $("#loginName").val();
 	var password = $("#password").val();
-	alert(username);
-	alert(password);
 	$.ajax({
         type: "POST",
         url: "/Login.do",
@@ -37,11 +35,11 @@ $(document).on("click",".btn_login",function() {
 			    "loginName" : username,
 			    "password" : password
 			   },
-        contentType: "application/text; charset=UTF-8",
+       	contentType: "application/text; charset=UTF-8",
         dataType: 'text',
         success: function(data)
         {
-        	alert("true");
+        	alert(data);
        		var json = "<h4>Ajax Response</h4>&lt;pre&gt;"
                 + JSON.stringify(data, null, 4) + "&lt;/pre&gt;";
 			$('#feedback').html(json);
@@ -50,7 +48,7 @@ $(document).on("click",".btn_login",function() {
         error: function (e) {
 
             var json = "<h4>Ajax Response</h4>&lt;pre&gt;"
-                + e.responseText + "&lt;/pre&gt;";
+               + e.responseText + "&lt;/pre&gt;";
             $('#feedback').html(json);
 
             console.log("ERROR : ", e);
