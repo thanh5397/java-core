@@ -30,8 +30,6 @@ public class LoginController {
 	@PostMapping("/Login.do")
 	public String processLogin(Model model,@RequestParam(value = Constant.PARAM_LOGIN_NAME,required=false) String loginName,@RequestParam(value = Constant.PARAM_PASSWORD,required=false) String password,HttpServletRequest request) {
 		try {
-//			String loginName = request.getParameter(Constant.PARAM_LOGIN_NAME);
-//			String password = request.getParameter(Constant.PARAM_PASSWORD);
 			List<String> listError = new ArrayList<String>();
 			listError = validateUser.validateLogin(loginName, password);
 			if (listError.size() == 0) {
@@ -48,7 +46,6 @@ public class LoginController {
 			}
 		} catch (Exception e) {
 			System.out.println("LoginController: doPost: " + e.getMessage());
-//			response.sendRedirect(contextPath + Constant.SYSTEM_ERROR_DO + Constant.QUERY_STRING_TYPE + Constant.ER015);
 			return "redirect:/" + Constant.SYSTEM_ERROR_DO + Constant.QUERY_STRING_TYPE + Constant.ER015;
 		}
 		

@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <form action="" name="loginForm">
+    <form action="/Login.do" name="loginForm" method="post">
         <center>
             <table class="tbl_input" cellpadding="4" cellspacing="0" width="400px">
                 <tr>
@@ -28,7 +28,7 @@
                     <c:when test="${listError.size() > 0}">
                         <c:forEach var="error" items="${listError}">
                             <tr>
-                                <td colspan="2">${error}</td>
+                                <td style="color:red" colspan="2">${error}</td>
                             </tr>
                         </c:forEach>
                     </c:when>
@@ -55,7 +55,7 @@
                 <tr>
                     <td></td>
                     <td align="left">
-                        <input class="btn btn_wider btn_login" type="button" value="ログイン" />
+                        <input class="btn btn_wider" type="submit" value="ログイン" />
                     </td>
                 </tr>
             </table>

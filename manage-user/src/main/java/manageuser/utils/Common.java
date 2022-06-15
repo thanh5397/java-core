@@ -335,4 +335,14 @@ public class Common {
 //			throw e;
 //		}
 	}
+
+	public static String convertIntToString(int intInput,String defaultStr) {
+		String output;
+		try {
+			output = String.valueOf(intInput);
+		} catch (NullPointerException e) {
+			output = defaultStr;
+		}
+		return output;
+	}
 }

@@ -149,7 +149,7 @@ public class TblUserDaoImpl extends BaseDaoImpl implements TblUserDao {
 			}
 			boolean checkWhiteList = false;
 			if (sortType != null && !Common.compareString(sortType, Constant.EMPTY_STRING)) {
-				listColumnNames = Common.getListColumnName(connection, "tbl_user");
+				listColumnNames.addAll(Common.getListColumnName(connection, "tbl_user"));
 				listColumnNames.addAll(Common.getListColumnName(connection, "tbl_detail_user_japan"));
 				listColumnNames.addAll(Common.getListColumnName(connection, "mst_japan"));
 				for (String column : listColumnNames) {

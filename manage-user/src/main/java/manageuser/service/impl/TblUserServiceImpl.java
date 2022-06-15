@@ -41,4 +41,10 @@ public class TblUserServiceImpl implements ITblUserService {
 		return isExist;
 	}
 
+	@Override
+	public int getCountTotalUser(int groupId, String fullName) {
+		int count = (int) tblUserRepository.countTotalUserByMstGroupEntityAndFullName(groupId,fullName);
+		return count;
+	}
+
 }

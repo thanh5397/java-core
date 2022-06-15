@@ -172,7 +172,7 @@ public class Constant {
 	public static final String EMPTY_STRING = "";
 	public static final String STRING_VALUE_ZERO = "0";
 	
-	public static final int GROUP_ID_ERROR = -1;
+	public static final String GROUP_ID_ERROR = "-1";
 	public static final int USER_ID_ERROR = -1;
 	
 	public static final String SORT_TYPE_FULL_NAME = "full_name";
@@ -183,7 +183,7 @@ public class Constant {
 	
 	public static final int OFFSET_DEFAULT = 0;
 	public static final int GROUP_ID_DEFAUL = 0;
-	public static final int CURRENT_PAGE_DEFAULT = 1;
+	public static final String CURRENT_PAGE_DEFAULT = "1";
 
 	public static final String SYMBOL_SPLIT_DATE = "/";
 	public static final int START_YEAR_PULL_DOWN = 1900;

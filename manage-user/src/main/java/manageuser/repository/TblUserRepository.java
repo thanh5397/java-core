@@ -1,6 +1,7 @@
 package manageuser.repository;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -8,15 +9,25 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import manageuser.dto.UserInforDTO;
 import manageuser.entities.TblUserEntity;
 
 @Repository
 public interface TblUserRepository extends JpaRepository<TblUserEntity, Integer>{
 	TblUserEntity findUserByLoginName(String loginName);
-//	long countTotalUserByGroupIdAndFullName(int groupId, String fullName);
+	long countTotalUserByMstGroupEntityAndFullName(int groupId, String fullName);
 //phải custom lại query
-//	List<UserInforDTO> getListUsers(int offset, int limit, int groupId, String fullName, String sortType,
-//			String sortByFullName, String sortByCodeLevel, String sortByEndDate);
+	@Modifying
+	@Query(value = "SELECT u.user_id, u.full_name, u.birthday, g.group_name,"
+			+ "u.email, u.tel, j.name_level, duj.end_date, duj.total "
+			+ "FROM tbl_user u INNER JOIN mst_group g USING (group_id) "
+			+ "LEFT JOIN tbl_detail_user_japan duj USING(user_id) "
+			+ "LEFT JOIN mst_japan j USING (code_level) "
+			+ "WHERE u.rule = ? "
+			+ "AND (:fullName is null or full_name LIKE %:fullName%) "
+			+ "AND (:groupId = 0 or group_id = :groupId) ", nativeQuery = true)
+	List<UserInforDTO> getListUsers(int offset, int limit, int groupId, String fullName, String sortType,
+			String sortByFullName, String sortByCodeLevel, String sortByEndDate);
 // phải custom lại query	
 //	boolean existEmailByUserIdAndEmail(int userId, String email);
 // phải check lại hoạt động	

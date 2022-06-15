@@ -55,12 +55,13 @@ mua hẳn kobo forma
 <<<<<<< Updated upstream
 +@onetomany relationship
 
-ma buu pham: EB901451394VN
 =======
 >>>>>>> Stashed changes
 +Update DTO,Converter theo tầng Entity
 +Manageuser:
 +LoginController:Dung jquery hay dung spring controller
 => Dung spring controller
+
++ Làm project manageruser trong ngày hôm nay
 
 

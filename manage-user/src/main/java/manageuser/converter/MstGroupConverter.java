@@ -17,7 +17,7 @@ public class MstGroupConverter {
 		MstGroupDTO mstGroupDTO = new MstGroupDTO();
 		mstGroupDTO.setGroupId(mstGroupEntity.getGroupId());
 		mstGroupDTO.setGroupName(mstGroupEntity.getGroupName());
-//		mstGroupDTO.setTblUserEntities(mstGroupEntity.getTblUserEntities());
+		mstGroupDTO.setTblUserEntities(mstGroupEntity.getTblUserEntities());
 		return mstGroupDTO;
 	}
 }
