@@ -30,4 +30,10 @@ Các bean được define trong spring framework là singleton bean.
  
  @RequestMapping: nó được sử dụng để map các request. Nó có nhiều phần tử tùy chọn như consumes, header, method, name, params, path, produces, và value. Chúng tôi sử dụng nó với lớp cũng như phương thức.
  
+ Lộ trình: Cày xong bài manageuser
+ + code ListUser,de vcl luon
+ + code API get,post,put,delete
+ biz-page:code admin:chủ yếu là nhiều,chứ độ khó thì ít
+ +update cv
+ +rai cv
  

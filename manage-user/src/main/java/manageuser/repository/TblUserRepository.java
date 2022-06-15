@@ -25,7 +25,11 @@ public interface TblUserRepository extends JpaRepository<TblUserEntity, Integer>
 			+ "LEFT JOIN mst_japan j USING (code_level) "
 			+ "WHERE u.rule = ? "
 			+ "AND (:fullName is null or full_name LIKE %:fullName%) "
-			+ "AND (:groupId = 0 or group_id = :groupId) ", nativeQuery = true)
+			+ "AND (:groupId = 0 or group_id = :groupId) "
+			+ "ORDER BY CASE WHEN :sortType = 'full_name' THEN full_name :sortByFullName,code_level :sortByCodeLevel,end_date :sortByEndDate"
+					 		+ "WHEN :sortType = 'code_level' THEN code_level :sortByCodeLevel,full_name :sortByFullName,end_date :sortByEndDate"
+					 		+ "WHEN :sortType = 'end_date' THEN end_date :sortByEndDate,full_name :sortByFullName,code_level :sortByCodeLevel"
+					 		, nativeQuery = true)
 	List<UserInforDTO> getListUsers(int offset, int limit, int groupId, String fullName, String sortType,
 			String sortByFullName, String sortByCodeLevel, String sortByEndDate);
 // phải custom lại query	
