@@ -33,7 +33,6 @@ ER016
 
 + existTblUser
 
-https://shopee.vn/-M%C3%A3-LIFEBKM1-gi%E1%BA%A3m-10-t%E1%BB%91i-%C4%91a-1-tri%E1%BB%87u-%C4%91%C6%A1n-t%E1%BB%AB-500k-(M%E1%BB%9AI)-Gh%E1%BA%BF-gaming-ch%C6%A1i-game-D%C3%A0y-d%E1%BA%B7n-n%C3%A2ng-h%E1%BA%A1-ng%E1%BA%A3-l%C6%B0ng-i.114292639.7802619871?sp_atk=5d2a1b2a-bcc6-46aa-aa68-0dc22706ecc4&xptdk=5d2a1b2a-bcc6-46aa-aa68-0dc22706ecc4
 + con máy đọc sách ppw5 mang đi dán skin cho khỏi xước,để ở nhà,không dùng ốp (dùng để đọc truyện tranh,sách chữ,koreader cũng kệ ko quan tâm)
 + đọc truyện bằng trình duyệt thường hay koreader:
 koreader: ưu điểm: đọc nhanh,ko lag,giật,có thể tùy chỉnh
@@ -63,5 +62,6 @@ mua hẳn kobo forma
 => Dung spring controller
 
 + Làm project manageruser trong ngày hôm nay
++ pageable dùng thư viện có sắn của sping
 
 

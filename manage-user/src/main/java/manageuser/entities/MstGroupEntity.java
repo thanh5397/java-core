@@ -1,7 +1,5 @@
 package manageuser.entities;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -20,7 +18,7 @@ public class MstGroupEntity {
 	private String groupName;
 	
 	@OneToMany(mappedBy = "mstGroupEntity",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<TblUserEntity> tblUserEntities = new ArrayList<TblUserEntity>();
+	private List<TblUserEntity> tblUserEntities;
 	
 	public Integer getGroupId() {
 		return groupId;

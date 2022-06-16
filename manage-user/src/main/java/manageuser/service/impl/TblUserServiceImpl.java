@@ -1,10 +1,17 @@
 package manageuser.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import manageuser.converter.MstGroupConverter;
 import manageuser.converter.TblUserConverter;
+import manageuser.dto.MstGroupDTO;
 import manageuser.dto.TblUserDTO;
+import manageuser.dto.UserInforDTO;
+import manageuser.entities.MstGroupEntity;
 import manageuser.entities.TblUserEntity;
 import manageuser.repository.TblUserRepository;
 import manageuser.service.ITblUserService;
@@ -18,6 +25,9 @@ public class TblUserServiceImpl implements ITblUserService {
 	
 	@Autowired
 	TblUserConverter tblUserConverter;
+	
+	@Autowired
+	MstGroupConverter mstGroupConverter;
 
 	@Override
 	public boolean existTblUser(String loginName, String password) {
@@ -43,8 +53,24 @@ public class TblUserServiceImpl implements ITblUserService {
 
 	@Override
 	public int getCountTotalUser(int groupId, String fullName) {
-		int count = (int) tblUserRepository.countTotalUserByMstGroupEntityAndFullName(groupId,fullName);
-		return count;
+//		MstGroupEntity mstGroupEntity = new MstGroupEntity();
+//		mstGroupEntity = mstGroupConverter.toEntity(mstGroupDTO);
+		long count = tblUserRepository.countTotalUserByMstGroupEntity_groupIdAndFullName(groupId,fullName);
+		int i = 0;
+		return i;
+	}
+
+	@Override
+	public List<UserInforDTO> getListUsers(int rule, int offset, int limit, int groupId, String fullName,
+			String sortType, String sortByFullName, String sortByCodeLevel, String sortByEndDate) {
+		List<UserInforDTO> listUserInfor = new ArrayList<UserInforDTO>();
+		try {
+			listUserInfor = tblUserRepository.getListUsers(rule, offset, limit, groupId, fullName, sortType, sortByFullName, sortByCodeLevel, sortByEndDate);
+		} catch (Exception e) {
+			System.out.println("TblUserLogicImpl: getListUsers: " + e.getMessage());
+			throw e;
+		}
+		return listUserInfor;
 	}
 
 }

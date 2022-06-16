@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import manageuser.dto.MstGroupDTO;
 import manageuser.dto.UserInforDTO;
 import manageuser.entities.MstGroupEntity;
 import manageuser.service.IMstGroupService;
@@ -42,9 +43,7 @@ public class ListUserController {
 											@RequestParam(value = Constant.PARAM_CURRENT_PAGE,required=false,defaultValue=Constant.CURRENT_PAGE_DEFAULT) String currentPage) {
 		try {
 			HttpSession session = request.getSession();
-			MstGroupLogic mstGroupLogic = new MstGroupLogicImpl();
-			TblUserLogic tblUserLogic = new TblUserLogicImpl();
-			List<MstGroupEntity> listMstGroupEntities = null;
+			List<MstGroupDTO> listMstGroupEntities = null;
 			List<UserInforDTO> listUserInfor = null;
 			List<Integer> listPaging = null;
 
@@ -60,6 +59,13 @@ public class ListUserController {
 //			String sortByCodeLevel = request.getParameter(Constant.PARAM_SORT_BY_CODE_LEVEL);
 //			String sortByEndDate = request.getParameter(Constant.PARAM_SORT_BY_END_DATE);
 //			String type = request.getParameter(Constant.PARAM_TYPE);
+			MstGroupDTO mstGroupDTO = new MstGroupDTO();
+			groupId = Constant.GROUP_ID_DEFAUL;
+			fullName = Constant.EMPTY_STRING;
+			sortType = Constant.SORT_TYPE_FULL_NAME;
+			sortByFullName = Constant.SORT_ASC;
+			sortByCodeLevel = Constant.SORT_ASC;
+			sortByEndDate = Constant.SORT_DESC;
 
 			if (type == null) {
 				type = Constant.EMPTY_STRING;
@@ -118,7 +124,8 @@ public class ListUserController {
 					currentPage = (String) session.getAttribute(Constant.PARAM_CURRENT_PAGE);
 					break;
 				}
-				totalUser = tblUserService.getCountTotalUser(groupId,fullName);
+//				mstGroupDTO = mstGroupService.findMstGroupByGroupId(groupId);
+				//totalUser = tblUserService.getCountTotalUser(groupId,fullName);
 				if (totalUser > 0) {
 					totalPage = Common.getTotalPage(totalUser, limit);
 					if (totalPage > 1) {
@@ -137,9 +144,8 @@ public class ListUserController {
 					String message = messageSource.getMessage(Constant.MSG005,null,null);
 					model.addAttribute(Constant.PARAM_MESSAGE, message);
 				}
-				listMstGroupEntities = mstGroupLogic.getAllMstGroup();
-				listUserInfor = tblUserLogic.getListUsers(offset, limit, groupId, fullName, sortType, sortByFullName,
-						sortByCodeLevel, sortByEndDate);
+				listMstGroupEntities = mstGroupService.findAll();
+				listUserInfor = tblUserService.getListUsers(1, offset, limit, groupId, fullName, sortType, sortByFullName, sortByCodeLevel, sortByEndDate);
 	
 				model.addAttribute(Constant.PARAM_LIST_GROUP, listMstGroupEntities);
 				model.addAttribute(Constant.PARAM_LIST_USER_INFO, listUserInfor);

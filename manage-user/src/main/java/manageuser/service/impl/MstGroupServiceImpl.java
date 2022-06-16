@@ -33,5 +33,13 @@ public class MstGroupServiceImpl implements IMstGroupService {
 		}
 		return listMstGroupDTO;
 	}
+
+	@Override
+	public MstGroupDTO findMstGroupByGroupId(int groupId) {
+		MstGroupDTO mstGroupDTO = new MstGroupDTO();
+		MstGroupEntity mstGroupEntity = mstGroupRepository.findMstGroupByGroupId(groupId);
+		mstGroupDTO = mstGroupConverter.toDTO(mstGroupEntity);
+		return mstGroupDTO;
+	}
 	
 }
