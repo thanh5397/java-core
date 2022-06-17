@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import manageuser.converter.MstGroupConverter;
 import manageuser.converter.TblUserConverter;
-import manageuser.dto.MstGroupDTO;
 import manageuser.dto.TblUserDTO;
 import manageuser.dto.UserInforDTO;
-import manageuser.entities.MstGroupEntity;
 import manageuser.entities.TblUserEntity;
 import manageuser.repository.TblUserRepository;
 import manageuser.service.ITblUserService;
@@ -65,7 +64,9 @@ public class TblUserServiceImpl implements ITblUserService {
 			String sortType, String sortByFullName, String sortByCodeLevel, String sortByEndDate) {
 		List<UserInforDTO> listUserInfor = new ArrayList<UserInforDTO>();
 		try {
-			listUserInfor = tblUserRepository.getListUsers(rule, offset, limit, groupId, fullName, sortType, sortByFullName, sortByCodeLevel, sortByEndDate);
+			Sort sortable = null;
+			
+			listUserInfor = tblUserRepository.getListUsers(rule, offset, limit, groupId, fullName);
 		} catch (Exception e) {
 			System.out.println("TblUserLogicImpl: getListUsers: " + e.getMessage());
 			throw e;
