@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.domain.Sort.Order;
 import org.springframework.stereotype.Service;
 
 import manageuser.converter.MstGroupConverter;
@@ -65,8 +69,31 @@ public class TblUserServiceImpl implements ITblUserService {
 		List<UserInforDTO> listUserInfor = new ArrayList<UserInforDTO>();
 		try {
 			Sort sortable = null;
-			
-			listUserInfor = tblUserRepository.getListUsers(rule, offset, limit, groupId, fullName);
+			Pageable pageable = null;
+			Order previousOrder = null;
+			if(sortType.equals("full_name")) {
+				previousOrder = sortable.getOrderFor(sortType);
+				sortable = Sort.by(
+						previousOrder.getDirection().isAscending() ? Sort.Order.desc("full_name") : Sort.Order.asc("full_name"),
+						Sort.Order.desc("code_level"),
+						Sort.Order.desc("end_date"));
+			} else if(sortType.equals("code_level")) {
+				previousOrder = sortable.getOrderFor(sortType);
+				sortable = Sort.by(
+						previousOrder.getDirection().isAscending() ? Sort.Order.desc("code_level") : Sort.Order.asc("code_level"),
+						Sort.Order.desc("full_name"),
+						Sort.Order.desc("end_date"));
+			} else if(sortType.equals("end_date")) {
+				previousOrder = sortable.getOrderFor(sortType);
+				sortable = Sort.by(
+						previousOrder.getDirection().isAscending() ? Sort.Order.desc("end_date") : Sort.Order.asc("end_date"),
+						Sort.Order.desc("full_name"),
+						Sort.Order.desc("code_level"));
+			} else {
+				sortable = Sort.by(Sort.Order.asc("full_name"),Sort.Order.asc("code_level"),Sort.Order.desc("end_date"));
+			}
+			pageable = PageRequest.of(offset, limit);
+			listUserInfor = tblUserRepository.getListUsers(rule, offset, limit, groupId, fullName,pageable,sortable);
 		} catch (Exception e) {
 			System.out.println("TblUserLogicImpl: getListUsers: " + e.getMessage());
 			throw e;
