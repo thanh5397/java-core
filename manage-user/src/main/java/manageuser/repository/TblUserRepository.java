@@ -1,10 +1,9 @@
 package manageuser.repository;
 
 import java.util.Date;
-import java.util.List;
 
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -30,9 +29,9 @@ public interface TblUserRepository extends JpaRepository<TblUserEntity, Integer>
 			+ "AND (:groupId = 0 or u.group_id = :groupId) "
 			+ "LIMIT :limit OFFSET :offset"		 		
 			, nativeQuery = true)
-	List<UserInforDTO> getListUsers(@Param("rule") int rule,@Param("offset") int offset,
+	Page<UserInforDTO> getListUsers(@Param("rule") int rule,@Param("offset") int offset,
 			@Param("limit") int limit,@Param("groupId") int groupId
-			,@Param("fullName") String fullName,Pageable pageable,Sort sort);
+			,@Param("fullName") String fullName,Pageable pageable);
 // phải custom lại query	
 //	boolean existEmailByUserIdAndEmail(int userId, String email);
 // phải check lại hoạt động	

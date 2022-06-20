@@ -2,6 +2,8 @@ package manageuser.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+
 import manageuser.dto.UserInforDTO;
 
 public interface ITblUserService {

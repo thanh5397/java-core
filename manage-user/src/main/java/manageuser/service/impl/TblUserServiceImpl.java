@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.domain.Sort.Order;
 import org.springframework.stereotype.Service;
 
@@ -92,8 +92,8 @@ public class TblUserServiceImpl implements ITblUserService {
 			} else {
 				sortable = Sort.by(Sort.Order.asc("full_name"),Sort.Order.asc("code_level"),Sort.Order.desc("end_date"));
 			}
-			pageable = PageRequest.of(offset, limit);
-			listUserInfor = tblUserRepository.getListUsers(rule, offset, limit, groupId, fullName,pageable,sortable);
+			pageable = PageRequest.of(0, limit,sortable);
+			listUserInfor = (List<UserInforDTO>) tblUserRepository.getListUsers(rule, offset, limit, groupId, fullName,pageable);
 		} catch (Exception e) {
 			System.out.println("TblUserLogicImpl: getListUsers: " + e.getMessage());
 			throw e;
