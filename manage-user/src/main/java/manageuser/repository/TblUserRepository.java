@@ -20,9 +20,9 @@ public interface TblUserRepository extends JpaRepository<TblUserEntity, Integer>
 	@Modifying
 	@Query("SELECT new UserInforDTO(u.userId, u.fullName, u.birthday, g.groupName,"
 			+ "u.email, u.tel, j.nameLevel, duj.endDate, duj.total) "
-			+ "FROM TblUserEntity u INNER JOIN MstGroupEntity g ON u.mstGroupEntity.groupId = g.groupId "
-			+ "LEFT JOIN TblDetailUserJapanEntity duj USING(userId) "
-			+ "LEFT JOIN MstJapanEntity j USING (codeLevel) "
+			+ "FROM TblUserEntity u INNER JOIN MstGroupEntity g "
+			+ "LEFT JOIN TblDetailUserJapanEntity duj "
+			+ "LEFT JOIN MstJapanEntity j "
 			+ "WHERE u.rule = :rule "
 			+ "AND (:fullName is null or u.fullName LIKE %:fullName%) "
 			+ "AND (:groupId = 0 or u.mstGroupEntity.groupId = :groupId) "
