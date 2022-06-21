@@ -20,13 +20,16 @@ import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.stereotype.Component;
 
-import manageuser.entities.MstGroupEntity;
-import manageuser.entities.MstJapanEntity;
-
-
-
+@Component
 public class Common {
+	
+	@Autowired
+    MessageSource messageSource;
+	
 	public static String encryptPassword(String password, String salt)
 			throws NoSuchAlgorithmException, UnsupportedEncodingException {
 		String passwordEncrypted = "";
@@ -126,15 +129,15 @@ public class Common {
 		return offer;
 	}
 
-	public static int getLimit() throws NumberFormatException, IOException {
+	public int getLimit() throws NumberFormatException, IOException {
 		int limit;
-//		try {
-//			limit = Integer.parseInt(ConfigProperties.getConfigProperties(Constant.LIMIT));
-//		} catch (NumberFormatException | IOException e) {
-//			System.out.println("Common: getLimit: " + e.getMessage());
-//			throw e;
-//		}
-		return 0;
+		try {
+			limit = Integer.parseInt(messageSource.getMessage(Constant.LIMIT , null , null));
+		} catch (NumberFormatException e) {
+			System.out.println("Common: getLimit: " + e.getMessage());
+			throw e;
+		}
+		return limit;
 	}
 
 	public static int getTotalPage(int totalUser, int limit) {

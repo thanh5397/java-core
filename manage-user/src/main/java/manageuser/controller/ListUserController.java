@@ -7,7 +7,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +31,9 @@ public class ListUserController {
 	@Autowired
 	IMstGroupService mstGroupService;
 	
+	@Autowired
+	Common common;
+	
 	@GetMapping("/ListUser.do")
 	public String showListUser(Model model,HttpServletRequest request,@RequestParam(value = Constant.PARAM_GROUP_ID,required=false,defaultValue=Constant.GROUP_ID_ERROR) int groupId,
 											@RequestParam(value = Constant.PARAM_FULL_NAME,required=false) String fullName,
@@ -51,7 +53,7 @@ public class ListUserController {
 			int totalPage = Constant.NUMBER_ZERO;
 //			int currentPage = Constant.CURRENT_PAGE_DEFAULT;
 			int offset = Constant.OFFSET_DEFAULT;
-			int limit = Common.getLimit();
+			int limit = common.getLimit();
 //			int groupId = Common.convertStringToInt(request.getParameter(Constant.PARAM_GROUP_ID), Constant.GROUP_ID_DEFAUL);
 //			String fullName = request.getParameter(Constant.PARAM_FULL_NAME);
 //			String sortType = request.getParameter(Constant.PARAM_SORT_TYPE);

@@ -2,6 +2,7 @@ package manageuser.entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -29,8 +30,10 @@ public class TblDetailUserJapanEntity {
     private TblUserEntity tblUserEntity;
 	
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="start_date")
 	private Date startDate;
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="end_date")
 	private Date endDate;
 	private int total;
 	

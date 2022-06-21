@@ -71,29 +71,28 @@ public class TblUserServiceImpl implements ITblUserService {
 			Sort sortable = null;
 			Pageable pageable = null;
 			Order previousOrder = null;
-			if(sortType.equals("full_name")) {
+			if(sortType.equals("fullName")) {
+				sortable = Sort.by(
+						sortByFullName.equals("ASC") ? Sort.Order.desc("fullName") : Sort.Order.asc("fullName"),
+						Sort.Order.desc("codeLevel"),
+						Sort.Order.desc("endDate"));
+			} else if(sortType.equals("codeLevel")) {
 				previousOrder = sortable.getOrderFor(sortType);
 				sortable = Sort.by(
-						previousOrder.getDirection().isAscending() ? Sort.Order.desc("full_name") : Sort.Order.asc("full_name"),
-						Sort.Order.desc("code_level"),
-						Sort.Order.desc("end_date"));
-			} else if(sortType.equals("code_level")) {
+						sortByCodeLevel.equals("ASC") ? Sort.Order.desc("codeLevel") : Sort.Order.asc("codeLevel"),
+						Sort.Order.desc("fullName"),
+						Sort.Order.desc("endDate"));
+			} else if(sortType.equals("endDate")) {
 				previousOrder = sortable.getOrderFor(sortType);
 				sortable = Sort.by(
-						previousOrder.getDirection().isAscending() ? Sort.Order.desc("code_level") : Sort.Order.asc("code_level"),
-						Sort.Order.desc("full_name"),
-						Sort.Order.desc("end_date"));
-			} else if(sortType.equals("end_date")) {
-				previousOrder = sortable.getOrderFor(sortType);
-				sortable = Sort.by(
-						previousOrder.getDirection().isAscending() ? Sort.Order.desc("end_date") : Sort.Order.asc("end_date"),
-						Sort.Order.desc("full_name"),
-						Sort.Order.desc("code_level"));
+						sortByEndDate.equals("ASC") ? Sort.Order.desc("endDate") : Sort.Order.asc("endDate"),
+						Sort.Order.desc("fullName"),
+						Sort.Order.desc("codeLevel"));
 			} else {
-				sortable = Sort.by(Sort.Order.asc("full_name"),Sort.Order.asc("code_level"),Sort.Order.desc("end_date"));
+				sortable = Sort.by(Sort.Order.asc("fullName"),Sort.Order.asc("codeLevel"),Sort.Order.desc("endDate"));
 			}
 			pageable = PageRequest.of(0, limit,sortable);
-			listUserInfor = (List<UserInforDTO>) tblUserRepository.getListUsers(rule, offset, limit, groupId, fullName,pageable);
+			listUserInfor = tblUserRepository.getListUsers(rule, offset, limit, groupId, fullName);
 		} catch (Exception e) {
 			System.out.println("TblUserLogicImpl: getListUsers: " + e.getMessage());
 			throw e;

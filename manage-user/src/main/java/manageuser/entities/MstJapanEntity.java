@@ -14,7 +14,7 @@ public class MstJapanEntity {
 	@Id
     @Column(name = "code_level",length = 255)
 	private String codeLevel;
-	@Column(length = 255)
+	@Column(length = 255,name="name_level")
 	private String nameLevel;
 	
 	@OneToMany(mappedBy = "mstJapanEntity")

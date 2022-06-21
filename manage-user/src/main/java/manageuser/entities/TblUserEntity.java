@@ -11,19 +11,22 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 @Entity(name="TblUserEntity")
 @Table(name="tbl_user")
 public class TblUserEntity {
 	@Id
     @Column(name = "user_id")
 	private int userId;
-	@Column(length = 255)
+	@Column(length = 255,name="login_name")
 	private String loginName;
-	@Column(length = 255)
+	@Column(length = 255,name="password")
 	private String password;
-	@Column(length = 255)
+	@Column(length = 255,name="full_name")
 	private String fullName;
-	@Column(length = 255)
+	@Column(length = 255,name="full_name_kana")
 	private String fullNameKana;
 	@Column(length = 255)
 	private String email;
@@ -36,6 +39,7 @@ public class TblUserEntity {
 	
 	@ManyToOne 
 	@PrimaryKeyJoinColumn
+	@Fetch(FetchMode.JOIN)
     private MstGroupEntity mstGroupEntity;
 	
 	@OneToMany(mappedBy = "tblUserEntity")

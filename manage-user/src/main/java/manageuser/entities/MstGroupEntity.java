@@ -3,18 +3,24 @@ package manageuser.entities;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 @Entity(name="MstGroupEntity")
 @Table(name="mst_group")
 public class MstGroupEntity {
 	
 	@Id
+	@Column(name="group_id")
 	private Integer groupId;
+	@Column(name="group_name")
 	private String groupName;
 	
 	@OneToMany(mappedBy = "mstGroupEntity",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
