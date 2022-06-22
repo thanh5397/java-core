@@ -16,7 +16,7 @@ public class LoginAPI {
 	
 	@PostMapping(value = "/api/login")
 	public UserDTO login(@RequestBody UserDTO userDTO) {
-		 UserDTO user = userService.findOneByUserName(userDTO.getUserName());
+		 UserDTO user = userService.findOne(userDTO);
 		 return user;
 	}
 }

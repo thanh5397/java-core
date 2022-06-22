@@ -3,6 +3,8 @@ package com.phamvanthanh.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,5 +43,22 @@ public class ContactServiceImpl implements IContactService{
 		contactEntity = contactConverter.toEntity(contactDTO,oldContactEntity);
 		contactEntity = contactRepository.save(contactEntity);
 		return contactConverter.toDTO(contactEntity);
+	}
+
+	@Override
+	@Transactional
+	public boolean delete(Long id) {
+		int deletedRow;
+		boolean deleteConfirm = false;
+		try {
+			deletedRow = contactRepository.deleteById(id);
+			if(deletedRow > 0) {
+				deleteConfirm = true;
+			}
+		} catch (Exception e) {
+			deleteConfirm = false;
+			throw e;
+		}
+		return deleteConfirm;
 	}
 }

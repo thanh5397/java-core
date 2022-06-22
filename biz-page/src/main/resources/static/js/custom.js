@@ -1,17 +1,18 @@
 $("#login").click(function() {
 	var username = $("#username").val();
 	var password = $("#password").val();
-	var json = '{"userName":"'+username+'","password":"'+password+'"}';
-	var obj = jQuery.parseJSON(json);
+	var json = {userName:username,password:password};
+	var obj = JSON.stringify(json);
 	
 	$.ajax({
         type: "POST",
         url: "/api/login",
-        data: json,
+        data: obj,
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
         success: function(data)
         {
+        	alert(data);
        		var json = "<h4>Ajax Response</h4>&lt;pre&gt;"
                 + JSON.stringify(data, null, 4) + "&lt;/pre&gt;";
 			$('#feedback').html(json);
@@ -54,10 +55,8 @@ $(document).on('click','#btn-dongy',function(){
 	var address = $('#address').text();
 	var phoneNumber = $('#phoneNumber').text();
 	var email = $('#email').text();
-	var json = '{"address":"'+address+'","phoneNumber":"'+phoneNumber+'","email":"'+email+'"}';
-	alert(json);
-	var obj = jQuery.parseJSON(json);
-	alert(obj);
+	var json = {id:dataId,address:address,phoneNumber:phoneNumber,email:email};
+	var obj = JSON.stringify(json);
 	$.ajax({
 		type: "PUT",
 	    url: "/api/contact/" + dataId,
@@ -65,9 +64,44 @@ $(document).on('click','#btn-dongy',function(){
 	    contentType: "application/json; charset=utf-8",
         dataType: 'json',
 	    success :function(result) {
-	    	
-	    }  
+	    	var json = JSON.stringify(result);
+	    	var contact = JSON.parse(json);
+	    	$('#example1 tbody tr').empty();
+	    	$('#example1 tbody tr').html(
+	    			'<td style="display: none;" data-id="'+contact.id+'">'+contact.id+'</td>'
+	    			+ '<td id="address" style="width:500px;max-width: 500px;word-break: break-all;white-space: pre-wrap;">'+contact.address+'</td>'
+	    			+ '<td id="phoneNumber" style="width:200px;max-width: 200px;word-break: break-all;white-space: pre-wrap;">'+contact.phoneNumber+'</td>'
+	    			+ '<td id="email" style="width:200px;max-width: 200px;word-break: break-all;white-space: pre-wrap;">'+contact.email+'</td>'
+	    			+ '<td id="function" style="width:100px;max-width: 200px;word-break: break-all;white-space: pre-wrap;">'
+	    			+ '<button id="btn-edit" type="button" class="btn btn-light">Sửa</button>'
+	    			+ '<button id="btn-xoa" type="button" class="btn btn-light">Xóa</button>'
+	    			+ '</td>');
+	    	toastr.success('Cập nhật thành công!');
+	    },
+	    error: function (e) {
+	    	toastr.error('Cập nhật thất bại!');
+	    }
 	});
+});
+$(document).on('click','#btn-xoa',function(){
+	if(confirm("Bạn có muốn xóa dòng này ?")) {
+		var dataId = $('#example1 tbody tr td').data("id");
+		$.ajax({
+			type: "DELETE",
+		    url: "/api/contact/" + dataId,
+		    success :function(result) {
+		    	if(result) {
+		    		$('#btn-xoa').closest("tr").remove();
+			    	toastr.success('Xóa bản ghi thành công!');
+		    	} else {
+		    		toastr.error('Xoá bản ghi thất bại!');
+		    	}
+		    },
+			error: function (e) {
+		    	toastr.error('Xoá bản ghi thất bại!');
+		    }
+		});
+	}
 });
 $(".portfolio-wrap figure a").on("click", function(){
         var dataId = $(this).data("id");
@@ -85,13 +119,12 @@ $(".portfolio-wrap figure a").on("click", function(){
 //	    		    	    success :function(result) {
 //	    		    	         }  
 //	    		    	});
-//	    		    	$.session.set("data", data);
 //	    		    	window.location.href = `/detail`;
-//	    		    	var json =  JSON.stringify(data, null, 4)
+//	    		    	var json =  JSON.parse(data);
 //	    		    	alert(json);
 //	    		    	alert(data.client);
-//	    		    	$("#client").show().html(data.client);
-//	    		    	$('#client').text(data.client);
+//	    		    	$("#client").show().html(json.client);
+//	    		    	$('#client').text(json.client);
 //	    		    }
 //	        	);
         	}

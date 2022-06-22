@@ -18,8 +18,8 @@ public class UserServiceImpl implements IUserService{
 	@Autowired
 	private UserConverter userConverter;
 	
-	public UserDTO findOneByUserName(String userName) {
-		UserEntity userEntity = userRepository.findOneByUserName(userName);
+	public UserDTO findOne(UserDTO userDTO) {
+		UserEntity userEntity = userRepository.findOneByUserNameAndPassword(userDTO.getUserName(),userDTO.getPassword());
 		UserDTO user = userConverter.toUserDTO(userEntity);
 		return user;
 	}

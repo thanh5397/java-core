@@ -21,7 +21,7 @@ public class PortfolioDetailAPI {
 		portfolioDetailDTO = portfolioDetailService.findOne(id);
 		return portfolioDetailDTO;
 	}
-	@PutMapping(value = "/api/detail/{id}")
+	@PutMapping(value = "/api/detail/{id}", produces = "application/json")
 	public PortfolioDetailDTO updatePortfolioDetail(@PathVariable(value="id",required = false) Long id) {
 		PortfolioDetailDTO portfolioDetailDTO = new PortfolioDetailDTO();
 		portfolioDetailDTO = portfolioDetailService.findOne(id);

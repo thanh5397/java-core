@@ -52,4 +52,20 @@ Mặc định, tên và kiểu dữ liệu trong JSON phải trùng khớp với
 
 --@ResponseBody annotation được dùng để thông báo với controller rằng Java Object trả về cho client sẽ tự động ánh xạ sang JSON và chuyển vào HttpResponse.
 
+JSON.stringify() convert một đối tượng JavaScript và chuyển đổi nó thành một chuỗi JSON.
+
+.closest()
+Định nghĩa và sử dụng
+Phương thức closest(): sẽ bắt đầu tìm kiếm từ phần tử hiện tại và đi ngược lên với kết quả trả về là phần tử đầu tiên phù hợp tìm được.
+
+Cây DOM : Phương thức này chạy ngược lên phía trên cây DOM để tìm những phần tử phù hợp với tham số truyền vào
+
+.closest(selector) 
+$('li').closest('.class');
+
+.closest(element)
+$('li').closest('ul');
+
+.closest(): sẽ bắt đầu tìm kiếm từ phần tử hiện tại và đi ngược lên với kết quả trả về là phần tử đầu tiên phù hợp tìm được.
+
  

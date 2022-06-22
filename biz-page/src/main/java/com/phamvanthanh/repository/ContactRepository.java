@@ -11,4 +11,5 @@ import com.phamvanthanh.entity.ContactEntity;
 public interface ContactRepository extends JpaRepository<ContactEntity, Long> {
 	List<ContactEntity> findAll();
 	ContactEntity findOneById(Long id);
+	int deleteById(Long id);
 }

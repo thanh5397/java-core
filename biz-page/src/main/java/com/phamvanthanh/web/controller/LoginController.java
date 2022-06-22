@@ -23,7 +23,7 @@ public class LoginController {
 	
 	@PostMapping(value = "/loginProcess",produces=MediaType.APPLICATION_JSON_VALUE)
 	public String login(@RequestBody UserDTO userDTO) {
-		 UserDTO user = userService.findOneByUserName(userDTO.getUserName());
+		 UserDTO user = userService.findOne(userDTO);
 		 if(user != null) {
 			 return "redirect:/home";
 		 } else {
