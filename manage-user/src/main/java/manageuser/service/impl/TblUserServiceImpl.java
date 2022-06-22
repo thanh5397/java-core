@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -16,7 +15,9 @@ import manageuser.converter.TblUserConverter;
 import manageuser.dto.TblUserDTO;
 import manageuser.dto.UserInforDTO;
 import manageuser.entities.TblUserEntity;
+import manageuser.entities.UserInforEntity;
 import manageuser.repository.TblUserRepository;
+import manageuser.repository.TblUserRepositoryImpl;
 import manageuser.service.ITblUserService;
 import manageuser.utils.Common;
 
@@ -25,6 +26,9 @@ public class TblUserServiceImpl implements ITblUserService {
 	
 	@Autowired
 	TblUserRepository tblUserRepository;
+	
+//	@Autowired
+//	TblUserRepositoryImpl tblUserRepositoryImpl;
 	
 	@Autowired
 	TblUserConverter tblUserConverter;
@@ -67,6 +71,8 @@ public class TblUserServiceImpl implements ITblUserService {
 	public List<UserInforDTO> getListUsers(int rule, int offset, int limit, int groupId, String fullName,
 			String sortType, String sortByFullName, String sortByCodeLevel, String sortByEndDate) {
 		List<UserInforDTO> listUserInfor = new ArrayList<UserInforDTO>();
+		List<UserInforEntity> listUserEntity = new ArrayList<UserInforEntity>();
+		UserInforDTO userInforDTO = new UserInforDTO();
 		try {
 			Sort sortable = null;
 			Pageable pageable = null;
@@ -92,7 +98,12 @@ public class TblUserServiceImpl implements ITblUserService {
 				sortable = Sort.by(Sort.Order.asc("fullName"),Sort.Order.asc("codeLevel"),Sort.Order.desc("endDate"));
 			}
 			pageable = PageRequest.of(0, limit,sortable);
-			listUserInfor = tblUserRepository.getListUsers(rule, offset, limit, groupId, fullName);
+			
+			listUserEntity = tblUserRepository.getListUsers(rule, groupId, fullName);
+			for (UserInforEntity userInforEntity : listUserEntity) {
+//				userInforDTO = 
+			}
+//			listUserInfor = tblUserRepositoryImpl.getListUsers(rule, offset, limit, groupId, fullName, sortType, sortByFullName, sortByCodeLevel, sortByEndDate);
 		} catch (Exception e) {
 			System.out.println("TblUserLogicImpl: getListUsers: " + e.getMessage());
 			throw e;

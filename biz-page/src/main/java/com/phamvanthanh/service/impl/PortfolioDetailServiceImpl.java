@@ -22,7 +22,7 @@ public class PortfolioDetailServiceImpl implements IPortfolioDetailService {
 	public PortfolioDetailDTO findOne(Long id) {
 		PortfolioDetailDTO portfolioDetailDTO = new PortfolioDetailDTO();
 		PortfolioDetailEntity portfolioDetailEntity = new PortfolioDetailEntity();
-		portfolioDetailEntity = portfolioDetailRepository.findOne(id);
+		portfolioDetailEntity = portfolioDetailRepository.findOneById(id);
 		portfolioDetailDTO = portfolioDetailConverter.toDTO(portfolioDetailEntity);
 		return portfolioDetailDTO;
 	}

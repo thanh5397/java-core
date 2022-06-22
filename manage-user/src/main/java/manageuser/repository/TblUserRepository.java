@@ -9,26 +9,25 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import manageuser.dto.UserInforDTO;
 import manageuser.entities.TblUserEntity;
+import manageuser.entities.UserInforEntity;
 
 @Repository
 public interface TblUserRepository extends JpaRepository<TblUserEntity, Integer>{
+	
 	TblUserEntity findUserByLoginName(String loginName);
 	long countTotalUserByMstGroupEntity_groupIdAndFullName(int groupId, String fullName);
 //phải custom lại query
 	@Modifying
-	@Query("SELECT new UserInforDTO(u.userId, u.fullName, u.birthday, g.groupName,"
-			+ "u.email, u.tel, j.nameLevel, duj.endDate, duj.total) "
-			+ "FROM TblUserEntity u INNER JOIN MstGroupEntity g "
-			+ "LEFT JOIN TblDetailUserJapanEntity duj "
-			+ "LEFT JOIN MstJapanEntity j "
+	@Query(value="SELECT u.user_id, u.full_name, u.birthday, g.group_name,"
+			+ "u.email, u.tel, j.name_level, duj.end_date, duj.total "
+			+ "FROM tbl_user u INNER JOIN mst_group g "
+			+ "LEFT JOIN tbl_detail_user_japan duj "
+			+ "LEFT JOIN mst_group j "
 			+ "WHERE u.rule = :rule "
-			+ "AND (:fullName is null or u.fullName LIKE %:fullName%) "
-			+ "AND (:groupId = 0 or u.mstGroupEntity.groupId = :groupId) "
-			+ "LIMIT :limit OFFSET :offset")
-	List<UserInforDTO> getListUsers(@Param("rule") int rule,@Param("offset") int offset,
-			@Param("limit") int limit,@Param("groupId") int groupId
+			+ "AND (:fullName is null or u.full_name LIKE %:fullName%) "
+			+ "AND (:groupId = 0 or u.mstGroupEntity.group_id = :groupId)",nativeQuery = true)
+	List<UserInforEntity> getListUsers(@Param("rule") int rule,@Param("groupId") int groupId
 			,@Param("fullName") String fullName);
 // phải custom lại query	
 //	boolean existEmailByUserIdAndEmail(int userId, String email);

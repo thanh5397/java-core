@@ -42,11 +42,19 @@ $(".portfolio-wrap figure a").on("click", function(){
 	        	$.get(
 	    		    `/api/detail/${dataId}`,
 	    		    function (data) {
-	    		    	window.location.href = `/detail`;
+	    		    	$.ajax({
+	    		    		type: "GET",
+	    		    	    url: "/detail",
+	    		    	    data:data, 
+	    		    	    success :function(result) {
+	    		    	         }  
+	    		    	});
+//	    		    	$.session.set("data", data);
+//	    		    	window.location.href = `/detail`;
 //	    		    	var json =  JSON.stringify(data, null, 4)
 //	    		    	alert(json);
 	    		    	alert(data.client);
-	    		    	$("#client").show().html(data.client);
+//	    		    	$("#client").show().html(data.client);
 //	    		    	$('#client').text(data.client);
 	    		    }
 	        	);
