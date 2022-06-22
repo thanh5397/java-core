@@ -10,4 +10,5 @@ import com.phamvanthanh.entity.ContactEntity;
 @Repository
 public interface ContactRepository extends JpaRepository<ContactEntity, Long> {
 	List<ContactEntity> findAll();
+	ContactEntity findOneById(Long id);
 }

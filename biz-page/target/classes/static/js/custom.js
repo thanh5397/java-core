@@ -31,33 +31,69 @@ $("#login").click(function() {
 $("#contact").click(function() {
 	$('#content').load('contact');
 });
+var data_before;
 $(document).on('click','#btn-edit',function(){
+	    data_before = $('#example1 tbody tr').html();
+		$('#example1 tbody tr').css("background-color", "White");
 		$('#address').attr('contenteditable', 'true');
 		$("#phoneNumber").attr('contenteditable', 'true');
 		$("#email").attr('contenteditable', 'true');
+		$('#function').empty();
+		$('#function').append('<button id="btn-dongy" type="button" class="btn btn-light">Đồng ý</button><button id="btn-huy" type="button" class="btn btn-light">Hủy</button>');
+});
+$(document).on('click','#btn-huy',function(){
+		$('#example1 tbody tr').html(data_before);
+		$('#example1 tbody tr').trigger('change');
+		$('#example1 tbody tr').css("background-color", "DarkGrey");
+		$('#address').attr('contenteditable', 'false');
+		$("#phoneNumber").attr('contenteditable', 'false');
+		$("#email").attr('contenteditable', 'false');
+});
+$(document).on('click','#btn-dongy',function(){
+	var dataId = $('#example1 tbody tr td').data("id");
+	var address = $('#address').text();
+	var phoneNumber = $('#phoneNumber').text();
+	var email = $('#email').text();
+	var json = '{"address":"'+address+'","phoneNumber":"'+phoneNumber+'","email":"'+email+'"}';
+	alert(json);
+	var obj = jQuery.parseJSON(json);
+	alert(obj);
+	$.ajax({
+		type: "PUT",
+	    url: "/api/contact/" + dataId,
+	    data:obj, 
+	    contentType: "application/json; charset=utf-8",
+        dataType: 'json',
+	    success :function(result) {
+	    	
+	    }  
+	});
 });
 $(".portfolio-wrap figure a").on("click", function(){
         var dataId = $(this).data("id");
         	if(!!dataId) {
-	        	$.get(
-	    		    `/api/detail/${dataId}`,
-	    		    function (data) {
-	    		    	$.ajax({
-	    		    		type: "GET",
-	    		    	    url: "/detail",
-	    		    	    data:data, 
-	    		    	    success :function(result) {
-	    		    	         }  
-	    		    	});
+        		window.location.href = '/detail/' + dataId;
+//	        	$.get(
+//	    		    `/api/detail/${dataId}`,
+//	    		    function (data) {
+//	    		    	$.ajax({
+//	    		    		type: "POST",
+//	    		    	    url: "/detail",
+//	    		    	    data:data, 
+//	    		    	    contentType: "application/json; charset=utf-8",
+//	    		            dataType: 'json',
+//	    		    	    success :function(result) {
+//	    		    	         }  
+//	    		    	});
 //	    		    	$.session.set("data", data);
 //	    		    	window.location.href = `/detail`;
 //	    		    	var json =  JSON.stringify(data, null, 4)
 //	    		    	alert(json);
-	    		    	alert(data.client);
+//	    		    	alert(data.client);
 //	    		    	$("#client").show().html(data.client);
 //	    		    	$('#client').text(data.client);
-	    		    }
-	        	);
+//	    		    }
+//	        	);
         	}
 //        $.ajax({
 //	        type: "GET",
@@ -67,10 +103,10 @@ $(".portfolio-wrap figure a").on("click", function(){
 //	        dataType: 'text',
 //	        success: function()
 //	        {
-	        	
+//	        	
 //			},
 //	        error: function (e) {
-	
+//	
 //	        }
 //    	});
 });

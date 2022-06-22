@@ -1,10 +1,13 @@
 package com.phamvanthanh.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.phamvanthanh.converter.ContactConverter;
+import com.phamvanthanh.dto.ContactDTO;
 import com.phamvanthanh.entity.ContactEntity;
 import com.phamvanthanh.repository.ContactRepository;
 import com.phamvanthanh.service.IContactService;
@@ -14,12 +17,29 @@ public class ContactServiceImpl implements IContactService{
 	
 	@Autowired
 	private ContactRepository contactRepository;
+	
+	@Autowired
+	ContactConverter contactConverter;
 
 	@Override
-	public List<ContactEntity> findAll() {
-		return contactRepository.findAll();
+	public List<ContactDTO> findAll() {
+		ContactDTO contactDTO = new ContactDTO();
+		List<ContactDTO> listContactDTO = new ArrayList<ContactDTO>();
+		List<ContactEntity> listContactEntity = new ArrayList<ContactEntity>();
+		listContactEntity = contactRepository.findAll();
+		for (ContactEntity contactEntity : listContactEntity) {
+			contactDTO = contactConverter.toDTO(contactEntity);
+			listContactDTO.add(contactDTO);
+		}
+		return listContactDTO;
 	}
 
-	
-
+	@Override
+	public ContactDTO save(ContactDTO contactDTO) {
+		ContactEntity oldContactEntity = contactRepository.findOneById(contactDTO.getId());
+		ContactEntity contactEntity = new ContactEntity();
+		contactEntity = contactConverter.toEntity(contactDTO,oldContactEntity);
+		contactEntity = contactRepository.save(contactEntity);
+		return contactConverter.toDTO(contactEntity);
+	}
 }

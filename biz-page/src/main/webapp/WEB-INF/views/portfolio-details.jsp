@@ -241,7 +241,7 @@
 
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
-  <script src="js/custom.js"></script>
+  <script src="../js/custom.js"></script>
 </body>
 
 </html>

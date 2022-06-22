@@ -32,5 +32,24 @@ Các bean được define trong spring framework là singleton bean.
  biz-page:code admin:chủ yếu là nhiều,chứ độ khó thì ít
  +update cv
  +rai cv
+ 
+--@RequestBody được dùng để ánh xạ HttpRequest body sang một domain object tự động.
+
+Giả sử chúng ta có Spring controller với login() method nhận vào LoginForm object.
+
+@RestController
+public class RequestBodyExampleController {
+    @PostMapping("/login")
+    public ResponseEntity login (@RequestBody LoginForm form) {
+        System.out.println("User name: " + form.getUsername());
+        System.out.println("Password: " + form.getPassword());
+        return ResponseEntity.ok(HttpStatus.OK);
+    }
+}
+Spring sẽ tự động ánh xạ dữ liệu JSON trong  HttpRequest body sang một Java Type object tương ứng.
+
+Mặc định, tên và kiểu dữ liệu trong JSON phải trùng khớp với tên và kiểu dữ liệu trong Java Type object. 
+
+--@ResponseBody annotation được dùng để thông báo với controller rằng Java Object trả về cho client sẽ tự động ánh xạ sang JSON và chuyển vào HttpResponse.
 
  

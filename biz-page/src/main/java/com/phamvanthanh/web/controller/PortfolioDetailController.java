@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
@@ -14,7 +15,6 @@ import com.phamvanthanh.dto.PortfolioDetailDTO;
 import com.phamvanthanh.service.IPortfolioDetailService;
 
 @Controller
-@SessionAttributes("data")
 public class PortfolioDetailController {
 	@Autowired
 	private IPortfolioDetailService portfolioDetailService;
@@ -29,7 +29,7 @@ public class PortfolioDetailController {
 		return "portfolio-details";
 	}
 	
-	@GetMapping(value= "/detail")
+	@PostMapping(value= "/detail")
 	public String showDetailPortfolio(HttpServletRequest request,Model model,@RequestBody PortfolioDetailDTO portfolioDetailDTO) {
 //		PortfolioDetailDTO portfolioDetailDTO = (PortfolioDetailDTO) request.getSession().getAttribute("data");
 		model.addAttribute("detail", portfolioDetailDTO);
