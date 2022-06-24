@@ -68,4 +68,13 @@ $('li').closest('ul');
 
 .closest(): sẽ bắt đầu tìm kiếm từ phần tử hiện tại và đi ngược lên với kết quả trả về là phần tử đầu tiên phù hợp tìm được.
 
+- 4 tính chất của OOP, được thể hiện trong java như thế nào (lý thuyết + mô tả qua một bài toán)
+- khi class imp interface thì phải lm gì
+- các loại collection thường dung
+- arrayList với linked list khác nhau thế nào, cái nào truy xuất nhanh hơn
+- các mệnh đề mà bản thân thường dùng trong sql
+- các loại join trong sql, khi nào thì dùng join nào
+- giả định một bài toán và một yêu cầu truy vấn data, xác định loại join, đâu là bảng chính, đâu là bảng phụ, giữa hai bảng là quan hệ 1-n, n-1 hay n-2
+- having trong sql 
+
  

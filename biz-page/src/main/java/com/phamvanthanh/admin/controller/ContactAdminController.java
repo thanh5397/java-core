@@ -20,4 +20,5 @@ public class ContactAdminController {
 		model.addAttribute("contacts", contactService.findAll());
 		return "/admin/contact";
 	}
+	
 }

@@ -32,6 +32,10 @@ $("#login").click(function() {
 $("#contact").click(function() {
 	$('#content').load('contact');
 });
+$("#btn-add-contact").click(function() {
+	$('#content').empty();
+	$('#content').load('add-contact');
+});
 var data_before;
 $(document).on('click','#btn-edit',function(){
 	    data_before = $('#example1 tbody tr').html();
