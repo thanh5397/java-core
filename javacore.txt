@@ -1,0 +1,288 @@
+Object
+đối tượng là một khái niệm được dùng để chỉ một thực thể cụ thể có trạng thái và hành vi. Một thực thể sẽ không được gọi là đối tượng nếu thực thể đó không thỏa mãn một trong các điều kiện trên.
+Trạng thái: Những đặc điểm của một đối tượng, chẳng hạn như đối tượng Sinh viên thì có mã, họ tên, ngày tháng năm sinh,...
+Hành vi: Những hành động mà một đối tượng thực hiện, ví dụ: Sinh viên thì có các hành vi như đi học, đi dã ngoại vui chơi giải trí,...
+
+Class
+Lớp là một tập hợp các đối tượng có cùng trạng thái và hành vi, vì vậy nó định nghĩa các tính chất của một tập hợp các đối tượng cùng kiểu.
+
+access_modifier: phạm vi truy cập của lớp, thuộc tính và phương thức.
+
+Tên lớp (class name): mỗi lớp có một tên duy nhất để phân biệt với các lớp khác trong cùng một phạm vi.
+
+Các thuộc tính (attributes): mô tả các trường để lưu dữ liệu cho mỗi đối tượng của lớp đang mô tả hay là lưu các tham chiếu đến các đối tượng của lớp khác.
+Sau này khi tạo lập một đối tượng của lớp thì mỗi thành phần dữ liệu trong đối tượng sẽ chứa hay liên kết với đối tượng dữ liệu cần thiết.
+
+Hệ thống các phương thức của lớp (methods): mỗi phương thức của lớp thực chất là một hàm được viết riêng cho các đối tượng của lớp, chỉ được phép gọi để tác động lên chính các đối tượng của lớp này.
+
+Access Modifier
+public: có thể truy cập ở mọi nơi trong Project.
+protected: truy cập được từ trong lớp khai báo, lớp con của lớp khai báo và các lớp cùng gói với lớp khai báo.
+default: truy cập được từ trong lớp khai báo và các lớp cùng gói với lớp khai báo.
+private: chỉ có thể truy cập bên trong lớp.
+
+Thuộc tính
+Thuộc tính là 1 biến được khai báo bên trong lớp nhưng ở bên ngoài một phương thức, hàm tạo hoặc 1 khối lệnh.
+
+Phương thức
+Phương thức là một hàm được viết riêng cho các đối tượng của lớp, chỉ được phép gọi để tác động lên chính các đối tượng của lớp này.
+
+Constructor
+Hàm tạo trong Java là hàm có cùng tên với lớp và không có giá trị trả về.
+
+hàm tạo mặc định (không có đối số) và hàm tạo có đối số.
+
+Hàm tạo mặc định là hàm tạo không có tham số đầu vào. Trong trường hợp người lập trình không định nghĩa bất kỳ hàm tạo nào thì trình biên dịch sẽ tự động tạo ra một phương thức tạo lập mặc định cho lớp này.
+Hàm tạo có đối số là các hàm tạo do người dùng định nghĩa với các tham số đầu vào khác nhau để khởi tạo dữ liệu cho đối tượng.
+
+Phạm vi truy cập (Access Modifier) của lớp, thuộc tính và phương thức
+public: có thể truy cập ở mọi nơi trong project.
+
+protected: truy cập được từ trong lớp khai báo, lớp con của lớp khai báo và các lớp cùng gói với lớp khai báo.
+
+default: truy cập được từ trong lớp khai báo và các lớp cùng gói với lớp khai báo.
+
+private: chỉ có thể truy cập bên trong lớp.
+
+Public Access Modifier
+Một lớp, phương thức, hàm tạo, interface (chi tiết về interface chúng ta sẽ học trong các bài sau),... được khai báo public có thể được truy cập từ các lớp khác.
+ Tuy nhiên, trong một số trường hợp, nếu class được tích hợp thuộc về 1 package khác thì chúng ta cần phải import (tích hợp) class đó vào trong class của chúng ta. 
+ Ngoài ra, vì Java có tính kế thừa (chi tiết về kế thừa chúng ta sẽ học trong các bài sau),
+ tất cả các thuộc tính và phương thức được khai báo public của lớp cha thì đều có thể được thừa kế từ các lớp con của nó.
+ 
+Protected Access Modifier
+Các thuộc tính, phương thức, hàm tạo được khai báo protected của một lớp chỉ có thể được truy cập từ các lớp con nằm trong package khác với package chứa lớp đó
+ (sử dụng thông qua tính kế thừa) hoặc bất kỳ lớp nào nằm trong cùng package chứa lớp protected đó.
+protected không được dùng để khai báo cho lớp và interface. 
+Các phương thức và thuộc tính của lớp có thể được khai báo protected,
+ tuy nhiên các thuộc tính và phương thức của interface không được khai báo protected.
+ 
+Private Access Modifier
+Các thuộc tính, phương thức và hàm tạo được khai báo private chỉ có thể được truy cập bên trong lớp.
+ Đây là mức truy câp có phạm vi nhỏ nhất trong 4 phạm vi truy cập của Java, các lớp và interface không thể được khai báo với phạm vi truy cập là private.
+ 
+Default Access Modifier (không có từ khóa)
+Một thuộc tính hoặc phương thức của một lớp mà không được khai báo với với bất kỳ phạm vi truy cập nào thì nó sẽ có phạm vi truy cập là mặc định.
+ Lúc này các thuộc tính và phương thức đó có thể truy cập được từ trong lớp khai báo và các lớp cùng gói với lớp khai báo.
+ 
+Đóng gói là sự che giấu bên trong dữ liệu riêng của mỗi đối tượng của lớp được khai báo và chỉ được truy xuất thông qua hệ thống các phương thức có sẵn của lớp (chỉ có thể gọi những phương thức có sẵn của lớp).
+Vì vậy, nó còn được gọi là data hiding (nghĩa là che giấu dữ liệu).
+
+Tạo ra cơ chế để ngăn ngừa việc gọi phương thức của lớp này tác động hay truy xuất dữ liệu của đối tượng thuộc về lớp khác.
+Dữ liệu riêng (khi được khai báo là private) của mỗi đối tượng được bảo vệ khỏi sự truy xuất không hợp lệ từ bên ngoài.
+Người lập trình có thể dựa vào cơ chế này để ngăn ngừa việc gán giá trị không hợp lệ vào thành phần dữ liệu của mỗi đối tượng.
+Cho phép thay đổi cấu trúc bên trong của một lớp mà không làm ảnh hưởng đến những lớp bên ngoài có sử dụng lớp đó.
+
+Để cài đặt tính đóng gói, chúng ta có 2 bước như sau:
+
+Khai báo các thuộc tính của đối tượng trong lớp là private để các lớp khác không thể truy cập trực tiếp/sửa đổi được.
+Cung cấp các phương thức getter/setter có phạm vi truy cập là public để truy cập và sửa đổi các giá trị của thuộc tính trong lớp. 
+Phương thức getter là phương thức truy cập vào thuộc tính của đối tượng và trả về các thuộc tính của đối tượng,
+ còn phương thức setter là phương thức truy cập vào thuộc tính của đối tượng và gán giá trị cho các thuộc tính của đối tượng đó.
+ 
+Khái niệm tổng quát hóa và đặc biệt hóa
+Quan hệ tổng quát hóa và đặc biệt hóa là 1 quan hệ thực sự rất tự nhiên và thông dụng trong thế giới thực.
+ Đối tượng đặc biệt hóa của một dạng đối tượng tổng quát sẽ có đầy đủ tính chất của loại đối tượng ban đầu và có thêm các đặc điểm riêng của nó.
+ Ví dụ hình chữ nhật lại là khái niệm tổng quát hóa của hình vuông, và ngược lại hình vuông là một trường hợp đặc biệt của hình chữ nhật.
+ Hình vuông có đầy đủ các tính chất của hình chữ nhật bởi vì hình chữ nhật là tổng quát của hình vuông; 
+ hơn nữa, hình vuông có những tính chất đặc biệt mà hình chữ nhật không có bởi vì hình vuông được đặc biệt hóa từ hình chữ nhật.
+Rất nhiều lớp đối tượng trong thế giới thực là đặc biệt hóa hay tổng quát hóa của lớp đối tượng khác.
+Quan hệ tổng quát hóa và đặc biệt hóa đóng vai trò rất quan trọng, hầu hết các ngôn ngữ lập trình hướng đối tượng đều hỗ trợ người lập trình cài đặt quan hệ này.
+
+Khái niệm "kế thừa" thường được dùng trong các ngôn ngữ lập trình hướng đối tượng để chuyển quan hệ tổng quát hóa và đặc biệt hóa của thế giới thực vào các chương trình máy tính.
+ Tính kế thừa cho phép ta xây dựng một lớp mới dựa trên các định nghĩa của một lớp đã có.
+ 
+Lợi ích của tính kế thừa
+Lớp con (lớp A) có thể tận dụng lại các thuộc tính và phương thức của lớp cha (lớp B) (nghĩa là các thuộc tính và phương thức của lớp B có thể được tái sử dụng bởi lớp A).
+Lớp A có thể định nghĩa thêm thuộc tính và phương thức mới của riêng nó và 
+có thể định nghĩa lại (hay còn gọi là ghi đè phương thức, overriding) phương thức được kế thừa từ lớp B cho phù hợp với mục đích của nó.
+
+3 dạng kế thừa :kế thừa từ Class, kế thừa từ lớp trừu tượng (Abstract class) và kế thừa từ Interface.
+
+Xây dựng lớp cha: những thông tin nào chung giữa các đối tượng (bao gồm thuộc tính và phương thức) thì chúng ta tập hợp lại tạo thành lớp cha.
+Xây dựng lớp con: những thông tin nào chỉ có trong từng đối tượng cụ thể thì chúng ta tập hợp lại tạo thành lớp con.
+
+Từ khóa super
+Nó được sử dụng để phân biệt các thành phần có cùng tên giữa lớp cha và lớp con.
+Nó được sử dụng để gọi hàm tạo của lớp cha từ lớp con.
+
+Tính đa hình (Polymorphism) trong Java được hiểu là trong từng trường hợp, hoàn cảnh khác nhau thì đối tượng có hình thái khác nhau tùy thuộc vào từng ngữ cảnh.
+Đối tượng có tính đa hình được xem như một đối tượng đặc biệt vì có lúc đối tượng này trở thành một đối tượng khác và cũng có lúc đối tượng này trở thành một đối tượng khác nữa (tùy vào từng hoàn cảnh).
+Sự "nhập vai" vào các đối tượng khác nhau này giúp cho đối tượng đa hình ban đầu có thể thực hiện những hành động khác nhau của từng đối tượng cụ thể.
+
+Tính trừu tượng trong Java là tính chất không thể hiện cụ thể mà chỉ nêu tên vấn đề.
+ Đó là một quá trình che giấu các hoạt động bên trong và chỉ hiển thị những tính năng thiết yếu của đối tượng tới người dùng. 
+Tính trừu tượng cho phép các lập trình viên loại bỏ tính chất phức tạp của đối tượng bằng cách chỉ đưa ra các thuộc tính 
+và phương thức cần thiết của đối tượng trong lập trình, cải thiện khả năng bảo trì của hệ thống.
+Tính trừu tượng giúp chúng ta tập trung vào những cốt lõi cần thiết của đối tượng thay vì quan tâm đến cách nó thực hiện.
+Tính trừu tượng cung cấp nhiều tính năng mở rộng khi sử dụng kết hợp với tính đa hình và kế thừa trong lập trình hướng đối tượng.
+
+Các phương thức chỉ có phần khai báo mà không có thân phương thức nằm trong cặp dấu {} và có một dấu chấm phẩy để kết thúc được gọi là phương thức trừu tượng.
+Để định nghĩa một phương thức là phương thức trừu tượng chúng ta sẽ sử dụng từ khóa abstract đứng trước tên phương thức.
+
+Để sử dụng phương thức trừu tượng này, chúng ta cần phải ghi đè (override) nó trong lớp con kế thừa trực tiếp lớp khai báo phương thức này.
+
+Lớp trừu tượng là lớp được khai báo với từ khóa abstract đứng trước tên của lớp.
+Nếu 1 lớp được khai báo là 1 lớp trừu tượng thì chúng ta không thể dùng trực tiếp nó để tạo ra đối tượng mà phải viết một lớp kế thừa của lớp trừu tượng đó.
+Lớp trừu tượng có thể có hoặc không có phương thức trừu tượng. Nếu một lớp có ít nhất 1 phương thức trừu tượng thì lớp đó phải được khai báo là lớp trừu tượng.
+Những lớp là lớp trừu tượng cũng không cần có phương thức khởi tạo.
+Một khi có một lớp nào đó kế thừa lớp trừu tượng thì lớp con đó bắt buộc phải override lại nội dung tất cả các phương thức trừu tượng có trong lớp đó.
+
+Overriding
+overriding được định nghĩa là ghi đè phương thức,
+có nghĩa là khi một lớp con kế thừa trực tiếp từ một lớp cha thì lớp con đó có thể định nghĩa lại một phương thức đã có trong lớp cha cho phù hợp với mục đích của nó.
+
+Quy tắc ghi đè phương thức
+Danh sách các đối số phải giống với phương thức được ghi đè.
+Kiểu trả về phải giống với kiểu trả về được khai báo trong phương thức được ghi đè của lớp cha.
+Mức truy cập của phương thức ghi đè phương thức ở lớp cha không được nhỏ hơn phương thức đó trong lớp cha.
+ Ví dụ: phương thức trong lớp cha được khai báo là public thì phương thức ghi đè phương thức đó trong lớp con không thể có phạm vi truy cập là private hoặc protected.
+Một phương thức được khai báo là final hoặc static thì phương thức không thể được ghi đè.
+Các hàm tạo của lớp cha không thể được ghi đè.
+
+Overloading
+overloading được định nghĩa là nạp chồng phương thức, có nghĩa là nếu trong một lớp có nhiều phương thức cùng tên nhưng:
+Khác nhau về số đối số truyền vào và các đối số có cùng kiểu dữ liệu.
+Có cùng số đối số truyền vào và các đối số không có cùng kiểu dữ liệu.
+Khác nhau trình tự kiểu dữ liệu của các đối số.
+
+Trong Java, không thể thực hiện nạp chồng phương thức chỉ bằng cách thay đổi kiểu trả về của phương thức đó.
+Hàm tạo cũng có thể được nạp chồng.
+
+Alias là khả năng mà tại 1 ô nhớ có nhiều đối tượng cùng trỏ tới
+Cơ chế gom rác tự động còn gọi là garbage collection. Cơ chế này tự động thu hồi bộ nhớ khi ô nhớ đó không còn đối tượng nào quản lý.
+
+Từ khóa static
+từ khóa static chủ yếu được dùng để quản lý bộ nhớ.
+ Chúng ta có thể sử dụng từ khóa static với các biến, các phương thức, các khối lệnh.
+ Từ khóa static thuộc về lớp chứ không thuộc về các đối tượng được tạo ra từ lớp.
+ Các biến được khai báo static được gọi là biến tĩnh, phương thức được khai báo static được gọi là phương thức tĩnh.
+ 
+Đặc điểm chung của các thành phần được khai báo static
+Được cấp phát bộ nhớ một lần duy nhất ngay khi biên dịch chương trình và ra đời trước đối tượng.
+Có thể dùng chung cho mọi đối tượng.
+Được truy xuất trực tiếp từ tên lớp mà không cần phải khởi tạo đối tượng của lớp đó.
+Được hủy khi kết thúc chương trình.
+
+Biến tĩnh (thuộc tính tĩnh) là biến dùng chung cho mọi đối tượng thuộc lớp.
+ Biến tĩnh cũng tương tự như hằng số nhưng biến tĩnh linh hoạt hơn đó là chúng ta có thể thay đổi giá trị khi cần thiết.
+ 
+Interface trong Java
+Trong Java, Interface (giao diện) là một kiểu dữ liệu tham chiếu tương tự như Class (lớp) nhưng chỉ có thể chứa hằng số và tên các phương thức, không có phần thân phương thức (phương thức trừu tượng). 
+Một lớp mô tả các thuộc tính và hành động của đối tượng còn Interface thì mô tả các hành động của lớp đó.
+Interface không thể được khởi tạo như lớp mà chỉ có thể được mở rộng từ các lớp khác hoặc được kế thừa từ các Interface khác.
+Trong Interface, chúng ta không thể khai báo hàm tạo và Interface không thể kế thừa từ một lớp mà chỉ có thể được mở rộng từ lớp và một Interface có thể được kế thừa lại từ nhiều Interface khác.
+Ngoại trừ lớp trừu tượng thì tất cả các lớp mở rộng Interface phải định nghĩa lại tất cả các phương thức của Interface.
+
+Từ khóa public cho biết Interface này có thể sử dụng ở bất kỳ package nào. 
+Nếu chúng ta không khai báo phạm vi truy cập cho Interface thì mặc định Interface này chỉ có thể được sử dụng trong package chứa nó.
+
+Một Interface có thể kế thừa nhiều Interface khác.
+ Khác với lớp là mỗi lớp chỉ có thể kế thừa một lớp thì Interface có thể kế thừa từ nhiều Interface khác, danh sách các Interface được kế thừa cách nhau bởi dấu phẩy.
+ 
+chúng ta đã tìm hiểu về từ khóa abstract thì đối với một lớp có các phương thức là phương thức trừu tượng thì lớp đó bắt buộc phải là một lớp trừu tượng,
+vì vậy chúng ta phải sử dụng từ khóa abstract,nhưng đối với Interface chúng ta không cần phải sử dụng từ khóa abstract khi khai báo nó.
+Tương tự, các phương thức là trừu tượng trong Interface cũng không cần phải sử dụng từ khóa abstract mà chỉ cần khai báo tên phương thức,
+phạm vi truy cập, kiểu trả về của phương thức và kết thúc bằng dấu chấm phẩy.
+
+Tất cả các phương thức trong Interface đều mặc định là public nên chúng ta không cần khai báo public và tương tự,
+các thuộc tính trong Interface phải là một hằng số và chúng ta cũng không cần phải khai báo static final và chỉ cần khai báo kiểu dữ liệu,
+tên biến và giá trị khởi tạo của hằng số đó. Tóm lại, bên trong Interface chỉ có hằng số hoặc tên phương thức, 
+phương thức không chứa phần thân (tức là không có phần nằm trong dấu { } và kết thúc bằng dấu chấm phẩy) hoặc cả hai.
+
+Implement Interface (tạm gọi là mở rộng, thực hiện Interface)
+Khi một lớp mở rộng 1 Interface thì lớp đó phải định nghĩa lại tất cả các phương thức của Interface đó.
+Trong trường hợp lớp đó không định nghĩa lại các phương thức của Interface thì nó phải được khai báo là một lớp trừu tượng.
+
+Nếu một lớp mở rộng 1 Interface thì trong lớp đó chúng ta phải sử dụng từ khóa implements, phía sau là tên của Interface.
+ Nếu lớp này vừa kế thừa từ một lớp khác và vừa mở rộng 1 Interface thì chúng ta sẽ tiến hành kế thừa trước sau đó mở rộng Interface
+ (tức là từ khóa extends sẽ luôn đứng trước từ khóa implements).
+ 
+Kế thừa từ Interface
+Một Interface có thể kế thừa từ Interface khác tương tự như cách mà một lớp kế thừa từ một lớp khác đó là chúng ta cũng sử dụng từ khóa extends. 
+Một lớp mở rộng từ Interface con sẽ kế thừa tất cả các phương thức có trong Interface đó (tức là phương thức của Interface con và Interface cha của Interface mà lớp đó implement).
+Trong Java, 1 Interface có thể kế thừa từ nhiều Interface và các Interface này được ngăn cách nhau bởi dấu phẩy.
+
+Dùng Interface làm kiểu dữ liệu
+Việc định nghĩa một Interface giống như định nghĩa một kiểu dữ liệu tham chiếu mới.
+Nếu chúng ta khai báo một đối tượng có kiểu dữ liệu là một Interface thì đối tượng đó phải được khởi tạo là một đối tượng của lớp implement Interface.
+
+đa luồng trong Java có thể hiểu đơn giản là xử lý nhiều luồng dữ liệu song song với nhau để thực hiện các nhiệm vụ khác nhau cùng một lúc.
+Tuy nói là cùng một lúc nhưng thời gian để chuyển qua lại giữa các luồng đó vẫn có dộ trễ nhưng rất ngắn (chỉ tính bằng đơn vị nano giây). 
+ 
+Multithreading được gọi là đa luồng, còn Multitasking được gọi là đa tiến trình. Đa luồng và đa tiến trình được sử dụng để tạo ra hệ thống đa nhiệm (multitasking).
+ Một chương trình được gọi là đa luồng khi chương trình đó có 2 luồng trở lên chạy song song với nhau và một luồng (thread) là đơn vị nhỏ nhất của tiến trình (process).
+ Luồng là đơn vị nhỏ nhất trong chương trình có thể thực hiện được một công việc riêng biệt và các luồng này được quản lý bởi máy ảo Java. 
+ Một luồng gồm có 4 thành phần chính đó là: định dang, một bộ đếm chương trình, một tập thanh ghi và ngăn xếp.
+ Một ứng dụng Java ngoài luồng chính có thể có các luồng khác thực thi đồng thời.
+ Đa luồng trong Java giúp công việc được hoàn thành một cách nhanh chóng.
+ 
+Thread là 1 lớp có thể tạo ra 1 lớp chạy đa tiến trình được.
+Trong Java, chúng ta có hai cách chính để tạo luồng đó là tạo 1 đối tượng của lớp kế thừa lớp Thread và cách thứ hai đó là implements từ 1 Interface có tên là Runnable.
+Trong phạm vi của bài ngày hôm nay, tôi chỉ nên khái quát về hai cách này, còn về chi tiết sang bài tiếp theo tôi sẽ trình bày kỹ hơn và đưa ra ví dụ cụ thể.
+
+Giống nhau: đều cùng được dùng để tạo luồng.
+Khác nhau: Nếu chúng ta tạo luồng bằng cách tạo 1 lớp kế thừa từ lớp Thread thì chúng ta sẽ không thể kế thừa thêm 1 lớp nào khác vì ngôn ngữ lập trình Java không hỗ trợ tính đa kế thừa.
+Còn nền chúng ta tạo luồng bằng cách implements Interface Runnable thì chúng ta có thể kế thừa một lớp khác ngoài lớp Thread.
+
+Để tạo luồng bằng cách kế thừa từ lớp Thread, chúng ta phải tạo một lớp kế thừa từ lớp Thread
+Để tạo luồng bằng cách implement Interface Runnable, chúng ta phải tạo một lớp implement Interface này.
+
+đồng bộ luồng trong Java chính là việc sắp xếp thứ tự các luồng khi truy xuất vào cùng một đối tượng (trong ví dụ trên là số tiền trong tài khoản) sao cho không có sự xung đột dữ liệu.
+Cơ chế đồng bộ này sẽ khóa hay đồng bộ dữ liệu sử dụng chung để tại một thời điểm chỉ có một luồng được thực thi (rút tiền hoặc chuyển tiền).
+Chỉ khi nào việc thực thi luồng này kết thúc thì luồng khác mới được thực hiện. Đây chính là cơ chế đồng bộ luồng trong Java.
+
+Để đồng bộ luồng trong Java, chúng ta sẽ sử dụng từ khóa synchronized.
+
+Phương thức sleep() của lớp Thread được sử dụng để tạm ngưng một Thread đang hoạt động trong một khoảng thời gian nhất định.
+
+Phương thức join() được sử dụng để đảm bảo cho quá trình thực thi của Thread đang chạy không bị gián đoạn bởi các Thread khác.
+Nói một cách khác, nếu một Thread đang trong quá trình được thực thi thì các Thread khác sẽ phải chờ đợi cho đến khi Thread đó thực thi xong. 
+join() được sử dụng khi trong một chương trình Java có nhiều hơn một Thread và chúng ta cần đảm bảo các Thread thực thi và kết thúc đúng theo thứ tự mà chúng đã được khởi tạo.
+
+Trong Java, ThreadPool được dùng để giới hạn số lượng Thread được chạy bên trong ứng dụng của chúng ta trong cùng một thời điểm.
+Nếu chúng ta không có sự giới hạn này, mỗi khi có một Thread mới được tạo ra và được cấp phát bộ nhớ bằng từ khóa new thì sẽ có vấn đề về bộ nhớ và hiệu suất, có thể dẫn đến lỗi crash chương trình.
+
+ThreadPool đã được xây dựng sẵn trong gói java.util.concurrent, vì vậy chúng ta không cần phải tạo một ThreadPool mà thay vào đó chúng ta sẽ sử dụng các lớp có sẵn của gói này.
+Java cung cấp cho chúng ta lớp Executor, interface của lớp Executor là ExecutorService.
+
+CountDownLatch là một lớp trong Java chuyên dùng để đếm. 
+Tại sao Java lại tạo ra một lớp riêng để đếm trong khi chúng ta hoàn toàn có thể thực hiện việc đếm bằng cách khác?
+Bởi vì trong lập trình đa luồng, việc đếm này sẽ rất khó và phức tạp,
+thường khi muốn đếm thì chúng ta phải sử dụng đến đồng bộ phương thức nếu không việc đếm sẽ không chính xác,
+vì lúc này trong hệ thống các luồng đang được xử lý song song và các biến sẽ được sử dụng một cách không tuần tự lúc đó kết quả đếm sẽ không chính xác và không như chúng ta mong muốn.
+
+Exception là một sự kiện chỉ xảy ra trong quá trình chương trình Java thực thi một câu lệnh nào đó và thông thường nó sẽ phá vỡ luồng làm việc của chương trình,
+tức là chương trình đang chạy sẽ lập tức ngừng lại và xuất hiện thông báo lỗi.
+Đó chính là Exception (ngoại lệ).
+
+Checked Exception là các Exception xảy ra tại thời điểm Compile time (là thời điểm chương trình đang được biên dịch). Những Exception này thường liên quan đến lỗi cú pháp (syntax) và bắt buộc chúng ta phải "bắt" (catch) nó.
+Unchecked Exception: là các Exception xảy ra tại thời điểm Runtime (là thời điểm chương trình đang chạy). Những Exception này thường liên quan đến lỗi logic và không bắt buộc chúng ta phải "bắt" (catch) nó.
+
+Try block chứa tập hợp các câu lệnh có thể xảy ra ngoại lệ. 
+Try block luôn được theo sau bởi catch block để xử lý ngoại lệ của nó.
+Try block phải được theo sau bởi catch block hoặc finally block hoặc cả hai.
+ 
+Catch block là nơi bạn xử lý các exception, nó phải đi kèm với try block.
+Một try block có thể có một hoặc nhiều catch block.
+Ta có thể bắt các exception khác nhau trong các catch block khác nhau.
+Khi một exception được tạo ra trong try block, đoạn code trong catch block tương ứng xử lý exception đó sẽ được thực thi. 
+
+Quy tắc 1. Một try block có thể nhiều catch block.
+
+Quy tắc 2. Một catch block xử lí exception chung có thể xử lý tất cả các exception, cho dù đó là ArrayIndexOutOfBoundException hay ArithaturesException hay NullPulumException hay bất kỳ loại exception nào.
+
+Quy tắc 3. Nếu không có exception xảy ra trong try block thì catch block hoàn toàn bị bỏ qua.
+
+Quy tắc 4. Các catch block tương ứng thực thi cho exception cụ thể đó:
+catch (ArithaturesException e) dùng để xử lí ngoại lệ ArithaturesException
+catch (NullPulumException e) dùng để xử lí ngoại lệ NullPulumException
+
+Quy tắc 5. Bạn cũng có thể throw exception, đây là phần nâng cao, tôi sẽ đề cập đến phần này trong một bài viết khác.
+
+
+
+
+
+
+
