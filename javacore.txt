@@ -280,6 +280,281 @@ catch (NullPulumException e) dùng để xử lí ngoại lệ NullPulumExceptio
 
 Quy tắc 5. Bạn cũng có thể throw exception, đây là phần nâng cao, tôi sẽ đề cập đến phần này trong một bài viết khác.
 
+Collections là một tập các lớp dùng để lưu trữ danh sách và có khả năng tự co dãn khi danh sách đó thay đổi.
+
+Framework là một tập hợp các thư viện (Library) đã được đóng gói để hỗ trợ phát triển ứng dụng dựa trên Framework đó.
+Đồng thời, Framework cung cấp các nguyên tắc, cấu trúc của ứng dụng mà chúng ta phải tuân thủ theo nó.
+
+Một Java Collections Framework là một tập hợp các lớp (class) và các interface dùng để hỗ trợ việc thao tác trên tập các đối tượng" 
+(chi tiết về interface tôi sẽ giới thiệu trong chương Lập trình hướng đối tượng
+, nhưng bạn có thể hiểu nôm na là 1 interface là 1 lớp rỗng chỉ chứa khai báo về tên phương thức
+, không có khai báo về thuộc tính hay thứ gì khác và các phương thức này cũng là phương thức rỗng).
+
+Interfaces	Kiểu dữ liệu trừu tượng (abstract) biểu diễn Collections (chi tiết về abstract tôi sẽ giới thiệu trong chương Lập trình hướng đối tượng).
+Implementations	Là sự triển khai các Interface, ví dụ như các Class.
+Algorithms (các thuật toán)	Là các phương thức dùng để thực thi các phép toán như tìm kiếm và sắp xếp trên các đối tượng mà triển khai các Interface.
+
+Là một tập hợp đại diện cho một nhóm các đối tượng, và được gọi là các phần tử (elements).
+Một số Interface Collection cho phép lưu trữ các phần tử giống nhau, còn một số khác thì không. Ngoài ra, các phần tử này có thể có thứ tự hoặc không có thứ tự tùy theo từng loại Collection khác nhau.
+Bao gồm các phương thức như thêm (add), xóa (clear), so sánh (compare) và duy trì (retainining) các đối tượng.
+Trong Interface Collections chúng ta có các Interface chính như: List Interface, Set, SortedSet, Map và SortedMap.
+
+List Interface	
+Các phần tử trong List Interface được sắp xếp có thứ tự và có thể có giá trị giống nhau.
+Set	
+Các phần tử trong Set là duy nhất (nghĩa là giá trị của các phần tử này không được giống nhau).
+SortedSet	
+Là 1 dạng riêng của Set Interface, trong đó giá trị của các phần tử mặc định được sắp xếp tăng dần.
+Map	
+Giá trị của mỗi phần tử trong Map bao gồm 2 phần đó là khóa (key) và giá trị tương ứng của key đó (value) và khóa của các phần tử này là duy nhất.
+SortedMap	
+Là 1 dạng riêng của Map Interface, trong đó giá trị key được sắp xếp tăng dần.
+
+LinkedList (Danh sách liên kết)	
+Là 1 cấu trúc dữ liệu lưu trữ các phần tử dưới dạng danh sách. Các phần tử trong LinkedList được sắp xếp có thứ tự và có thể có giá trị giống nhau.
+ArrayList	
+Là kiểu danh sách sử dụng cấu trúc mảng để lưu trữ phần tử. Thứ tự các phần tử dựa theo thứ tự lúc thêm vào và giá trị của các phần tử này có thể trùng nhau.
+HashSet	
+Thứ tự các phần tử trong HashSet không dựa theo thứ tự lúc thêm vào và giá trị của các phần tử này là duy nhất.
+TreeSet	
+Các phần tử trong TreeSet mặc định được sắp xếp tăng dần và giá trị của các phần tử này là duy nhất.
+HashMap	
+Giá trị của mỗi phần tử trong HashMap bao gồm 2 phần đó là khóa (key) và giá trị tương ứng của key đó (value) và khóa của các phần tử này là duy nhất.
+HashMap cho phép truy xuất trực tiếp dữ liệu bằng khóa duy nhất của nó.
+TreeMap	
+Giá trị của mỗi phần tử trong TreeMap bao gồm 2 phần đó là khóa (key) và giá trị tương ứng của key đó (value) và khóa của các phần tử này là duy nhất.
+Giá trị của các phần tử trong TreeMap được sắp xếp tăng dần.
+
+Iterator (lặp) trong Java
+Iterator là một Interface cung cấp một số các phương thức để duyệt (lặp) qua các phần tử của bất kỳ tập hợp nào.
+ Ngoài ra, Iterator còn có khả năng xóa những phần tử của một tập hợp trong quá trình lặp.
+ 
+Interface Comparable và Comparator
+2 Interface Comparable và Comparator để so sánh và sắp xếp vị trí 2 đối tượng của một Collection.
+
+List Interface
+Các phần tử trong List có thể được truy cập, thêm, sửa hoặc xóa thông qua vị trí của nó trong danh sách, và phần tử đầu tiên trong List sẽ có chỉ số là 0.
+
+Tạo mới một List Interface
+Implementations là sự triển khai các Interface (ví dụ như các Class),
+vì vậy để khai báo một List chúng ta cần phải dùng đến các Class để triển khai nó,
+
+Để khai báo List chúng ta cần phải import gói thư viện java.util.List,
+đối với ArrayList thì import gói thư viện java.util.ArrayList và
+với LinkedList thì import gói thư viện java.util.LinkedList.
+
+Hiển thị các phần tử có trong List
+Sử dụng vòng lặp for thông thường.
+Sử dụng vòng lặp for cải tiến duyệt theo đối tượng trong danh sách.
+Sử dụng Iterator.
+Iterator được sử dụng chung cho cả List, Set và Map.
+ Để sử dụng được Iterator chúng ta cần phải import gói thư viện java.util.Iterator của Java
+Sử dụng ListIterator.
+ListIterator chỉ áp dụng riêng đối với List (List Interface, ArrayList, LinkedList,...), không áp dụng đối với Set.
+Để sử dụng được ListIterator chúng ta cần phải import gói thư viện java.util.ListIterator
+
+Thêm phần tử vào trong List Interface
+Thêm phần tử sử dụng phương thức add().
+phương thức add() còn cho phép chúng ta thêm mới một phần tử mới vào một vị trí bất kỳ trong danh sách.
+
+Thêm phần tử sử dụng phương thức addAll().
+Java cung cấp cho chúng ta phương thức addAll() để thêm tất cả các phần tử của một List vào cuối List đã tồn tại.
+Lưu ý: kiểu dữ liệu của 2 List này phải giống nhau. 
+
+Truy cập phần tử
+Java cung cấp cho chúng ta phương thức get() để truy cập đến 1 phần tử bất kỳ trong List thông qua chỉ số của phần tử đó.
+
+Cập nhật giá trị của phần tử
+Để cập nhật giá trị của phần tử trong List, Java cung cấp cho chúng ta phương thức set(index, element)
+, trong đó index là chỉ số của phần tử cần cập nhật và element là phần tử mới để thay thế.
+
+Xóa phần tử
+Để xóa một phần tử khỏi List, Java cung cấp cho chúng ta 2 cách đó là xóa dựa vào chỉ số của phần tử và xóa trực tiếp phần tử đó (không cần biết đến chỉ số của nó).
+
+Xóa dựa vào chỉ số của phần tử.
+
+
+Xóa trực tiếp một phần tử.
+Với cách xóa này, nếu trong List có 2 phần tử giống nhau thì chương trình sẽ xóa phần tử đầu tiên trong 2 phần tử giống nhau đó ra khỏi danh sách (tức là phần tử có chỉ số index nhỏ hơn). 
+
+Tìm kiếm một phần tử
+Để tìm kiếm một phần tử trong List thì chúng ta có 3 phương pháp tìm kiếm như sau:
+Tìm kiếm trực tiếp phần tử.
+Để tìm kiếm trực tiếp phần tử, chúng ta sẽ sử dụng phương thức contains(). Kết quả trả về là true nếu tìm thấy, ngược lại trả về false.
+
+Tìm kiếm vị trí xuất hiện đầu tiên của 1 phần tử trong List.
+Để tìm kiếm vị trí xuất hiện đầu tiên của 1 phần tử trong List, chúng ta sẽ sừ dụng phương thức indexOf().
+Kết quả của phương thức này sẽ trả về chỉ số xuất hiện đầu tiên của phần tử đó trong danh sách, ngược lại nếu không tìm thấy trả về -1.
+
+Tìm kiếm vị trí xuất hiện cuối cùng của 1 phần tử trong List.
+Để tìm kiếm vị trí xuất hiện cuối cùng của 1 phần tử trong List, chúng ta sẽ sừ dụng phương thức lastIndexOf().
+Kết quả của phương thức này sẽ trả về chỉ số xuất hiện cuối cùng của phần tử đó trong danh sách, ngược lại nếu không tìm thấy trả về -1. 
+
+Sắp xếp các phần tử
+Để sắp xếp các phần tử trong List, Java cung cấp cho chúng ta một phương thức đơn giản nhất đó là sử dụng phương thức Collections.sort().
+Mặc định phương thức này sẽ sắp xếp tăng dần các phần tử trong List.
+Lưu ý: Để sử dụng được phương thức này, chúng ta cần phải import gói thư viện java.util.Collections của Java
+
+Sao chép danh sách
+Đối với List, chúng ta có thể sao chép các phần tử của 1 List này vào trong 1 List khác bằng cách sử dụng phương thức Collections.copy().
+Lưu ý: Khi sử dụng phương thức này để sao chép thì số phần tử của List cần sao chép (List nguồn) phải lớn hơn hoặc bằng với số phần tử của danh sách sao chép (List đích).
+
+Hoán vị các phần tử
+Để hoán vị các phần tử trong List, chúng ta sẽ sử dụng phương thức Collections.shuffle().
+ Lưu ý: phải import gói thư viện java.util.Collections.
+ 
+Set Interface là một loại Interface Collection.
+ Khác với List, các phần tử trong List có thể giống nhau, còn đối với Set, các phần tử trong Set là duy nhất (nghĩa là giá trị của các phần tử này không được giống nhau). 
+ 
+Tạo mới một Set Interface
+để khai báo một Set chúng ta cần phải dùng đến các Class để triển khai nó
+
+Hiển thị các phần tử có trong Set
+Sử dụng vòng lặp for cải tiến duyệt theo đối tượng trong danh sách.
+Sử dụng Iterator.
+
+Thêm phần tử vào trong Set Interface
+Thêm phần tử sử dụng phương thức add().
+
+Xóa phần tử
+Để xóa một phần tử khỏi Set, chúng ta sẽ sử dụng phương thức remove().
+
+Đếm số phần tử có trong Set
+
+Các toán tử giữa 2 Set trong Java
+
+Toán tử tập hợp con.
+Java cung cấp cho chúng ta phương thức containsAll() để xác định 1 Set có phải là tập hợp con của 1 Set khác hay không.
+
+Toán tử hợp
+Phương thức addAll() sẽ thực hiện phép toán hợp giữa set1 và set2 (tức là lấy các phần tử có trong set2 thêm vào trong set1).
+
+Toán tử giao
+Phương thức retainAll() sẽ loại bỏ các phần tử có trong set1 nhưng không có trong set2 (tức là tìm ra các phần tử chung giữa set1 và set2).
+
+Toán tử hiệu
+Phương thức removeAll() sẽ loại bỏ các phần tử có trong set1 và cũng có trong set2 (tức là loại bỏ các phần tử chung giữa set1 và set2).
+
+Set Interface là một loại Interface Collection.
+Khác với List, các phần tử trong List có thể giống nhau, còn đối với Set, các phần tử trong Set là duy nhất 
+(nghĩa là giá trị của các phần tử này không được giống nhau). 
+Vậy Set được sử dụng trong trường hợp nào?
+Chúng ta sẽ sử dụng Set khi chúng ta muốn lưu trữ một danh sách các phần tử không có sự trùng lặp hoặc khi chúng ta không quan tâm đến thứ tự của các phần tử trong danh sách đó.
+ 
+Tạo mới một Set Interface
+vì vậy để khai báo một Set chúng ta cần phải dùng đến các Class để triển khai nó, trong phần này chúng ta sẽ sử dụng 2 loại phổ biến nhất là HashSet và TreeSet.
+Đối với Set Interface có Class triển khai là HashSet thì các phần tử không được sắp xếp theo bất kỳ thứ tự nào,
+còn đối với Set Interface có Class triển khai là TreeSet thì thứ tự các phần tử trong Set được sắp xếp tăng dần.
+ 
+Lưu ý: Để khai báo Set chúng ta cần phải import gói thư viện java.util.Set, đối với HashSet thì import gói thư viện java.util.
+HashSet và với TreeSet thì import gói thư viện java.util.TreeSet. Đây đều là 3 gói thư viện có sẵn của Java. 
+
+Hiển thị các phần tử có trong Set
+Sử dụng vòng lặp for cải tiến duyệt theo đối tượng trong danh sách.
+
+Sử dụng Iterator.
+Để sử dụng được Iterator chúng ta cần phải import gói thư viện java.util.Iterator của Java
+
+Thêm phần tử vào trong Set Interface
+Thêm phần tử sử dụng phương thức add().
+
+Trường hợp 1: Phần tử thêm vào chưa có trong setInteger
+Trường hợp 2: Phần tử thêm vào đã tồn tại trong setInteger
+
+Xóa phần tử
+Để xóa một phần tử khỏi Set, chúng ta sẽ sử dụng phương thức remove(). 
+
+Đếm số phần tử có trong Set
+
+Các toán tử giữa 2 Set trong Java
+Toán tử tập hợp con.
+Java cung cấp cho chúng ta phương thức containsAll() để xác định 1 Set có phải là tập hợp con của 1 Set khác hay không.
+Phương thức này sẽ trả về true nếu set2 là tập hợp con của set1, ngược lại sẽ trả về false. 
+
+Toán tử hợp
+Phương thức addAll() sẽ thực hiện phép toán hợp giữa set1 và set2 (tức là lấy các phần tử có trong set2 thêm vào trong set1).
+
+Toán tử giao
+Phương thức retainAll() sẽ loại bỏ các phần tử có trong set1 nhưng không có trong set2 (tức là tìm ra các phần tử chung giữa set1 và set2).
+
+Toán tử hiệu
+Phương thức removeAll() sẽ loại bỏ các phần tử có trong set1 và cũng có trong set2 (tức là loại bỏ các phần tử chung giữa set1 và set2).
+
+SortedSet Interface trong Java
+SortedSet Interface là 1 dạng riêng của Set Interface nên nó có những đặc điểm của Set đó là các phần tử trong SortedSet là duy nhất
+(nghĩa là giá trị của các phần tử này không được giống nhau) và 
+SortedSet được sử dụng khi chúng ta muốn lưu trữ một danh sách các phần tử không có sự trùng lặp. 
+Ngoài ra, SortedSet có điểm vượt trội hơn so với Set là thứ tự các phần tử trong Set được sắp xếp tăng dần hoặc giảm dần (mặc định là tăng dần).
+
+Vì SortedSet là 1 dạng riêng của Set nên những phương thức của nó sẽ tương tự như những phương thức có trong Set.
+Trong bài này, tôi sẽ không trình bày lại những phương thức đó mà tôi sẽ giới thiệu những phương thức riêng của SortedSet để cho các bạn tìm hiểu. 
+ 
+Tạo mới và hiển thị các phần tử của 1 SortedSet
+Để khai báo một SortedSet, chúng ta cần phải dùng đến Class để triển khai nó, 
+trong phần này chúng ta sẽ sử dụng Class là TreeSet bởi vì các phần tử trong TreeSet được sắp xếp theo chiều tăng dần.
+
+Lưu ý: Để khai báo SortedSet chúng ta cần phải import gói thư viện java.util.SortedSet.
+
+Trích xuất một phần trong SortedSet
+Đối với SortedSet, Java cung cấp cho chúng ta các phương thức để trích xuất các phần tử trong SortedSet đó là subset(), headset() và tailset().
+
+Phương thức subSet().
+Phương thức subSet() sẽ trả về một SortedSet được trích xuất từ phần tử fromElement đến phần tử đứng trước phần tử toElement của một SortedSet cho trước.
+
+Phương thức headSet().
+Phương thức headSet() sẽ trả về một SortedSet được trích xuất từ phần tử đầu tiên đến phần tử đứng trước phần tử toElement của một SortedSet cho trước.
+
+Phương thức tailSet().
+Phương thức tailSet() sẽ trả về một SortedSet được trích xuất từ phần tử lớn hơn hoặc bằng phần tử fromElement đến phần tử cuối cùng của một SortedSet cho trước.
+
+Tìm phần tử nhỏ nhất và lớn nhất trong SortedSet
+Để tìm phần tử nhỏ nhất và lớn nhất trong SortedSet,
+Java cung cấp cho chúng ta 2 phương thức đó là first() (tìm phần tử nhỏ nhất) và last() (tìm phần tử lớn nhất).
+
+Map Interface trong Java
+Map là một tập các cặp khóa - giá trị (key - value). 
+Giá trị của các phần tử trong Map có thể giống nhau, nhưng khóa thì không được giống nhau (vì thế chúng ta có thể tạo ra 1 Set có các phần tử là khóa của Map).
+Dựa vào khóa, chúng ta có thể xác định được các giá trị value tương ứng với khóa đó.
+
+Tạo mới một Map Interface
+để khai báo một Map chúng ta cần phải dùng đến các Class để triển khai nó
+
+Lưu ý: Để khai báo Map chúng ta cần phải import gói thư viện java.util.Map,
+đối với HashMap thì import gói thư viện java.util.HashMap, 
+đối với LinkedHashMap thì import gói thư viện java.util.LinkedHashMap và 
+với TreeMap thì import gói thư viện java.util.TreeMap. 
+
+Các cách lấy giá trị của Map
+Sử dụng vòng lặp for cải tiến.
+Lấy toàn bộ các entry của Map.
+Để lấy toàn bộ các entry (1 entry sẽ bao gồm key và value tương ứng với key đó) của Map, Java cung cấp cho chúng ta phương thức entrySet(). 
+Phương thức này sẽ trả về 1 Set bao gồm các entry có trong Map.
+
+Lấy toàn bộ key của Map.
+Để lấy toàn bộ key của Map, Java cung cấp cho chúng ta phương thức keySet().
+Phương thức này sẽ trả về 1 Set bao gồm các key có trong Map.
+
+Lấy toàn bộ value của Map.
+Để lấy toàn bộ value của Map, Java cung cấp cho chúng ta phương thức values(). 
+Phương thức này sẽ trả về 1 tập hợp bao gồm các value có trong Map.
+
+Sử dụng Iterator.
+Để sử dụng được Iterator chúng ta cần phải import gói thư viện java.util.Iterator của Java.
+
+Thêm dữ liệu vào trong Map
+Để thêm dữ liệu vào trong Map, Java cung cấp cho chúng ta phương thức put().
+key là khóa, value là giá trị. Mỗi key sẽ tương ứng với một value cụ thể.
+
+Lấy dữ liệu value trong Map khi biết được key
+Để lấy dữ liệu value trong Map khi biết được key liên kết với value đó, Java cung cấp cho chúng ta phương thức get().
+Phương thức này sẽ trả về giá trị (value) tương ứng với key đó, nếu trong Map không có key đó thì phương thức này sẽ trả về giá trị null.
+
+
+
+
+
+
+
 
 
 
