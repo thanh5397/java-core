@@ -32,7 +32,8 @@ Hàm tạo trong Java là hàm có cùng tên với lớp và không có giá tr
 
 hàm tạo mặc định (không có đối số) và hàm tạo có đối số.
 
-Hàm tạo mặc định là hàm tạo không có tham số đầu vào. Trong trường hợp người lập trình không định nghĩa bất kỳ hàm tạo nào thì trình biên dịch sẽ tự động tạo ra một phương thức tạo lập mặc định cho lớp này.
+Hàm tạo mặc định là hàm tạo không có tham số đầu vào. 
+Trong trường hợp người lập trình không định nghĩa bất kỳ hàm tạo nào thì trình biên dịch sẽ tự động tạo ra một phương thức tạo lập mặc định cho lớp này.
 Hàm tạo có đối số là các hàm tạo do người dùng định nghĩa với các tham số đầu vào khác nhau để khởi tạo dữ liệu cho đối tượng.
 
 Phạm vi truy cập (Access Modifier) của lớp, thuộc tính và phương thức
@@ -548,6 +549,322 @@ key là khóa, value là giá trị. Mỗi key sẽ tương ứng với một va
 Lấy dữ liệu value trong Map khi biết được key
 Để lấy dữ liệu value trong Map khi biết được key liên kết với value đó, Java cung cấp cho chúng ta phương thức get().
 Phương thức này sẽ trả về giá trị (value) tương ứng với key đó, nếu trong Map không có key đó thì phương thức này sẽ trả về giá trị null.
+
+Xóa 1 entry trong Map
+Để xóa 1 entry trong Map, Java cung cấp cho chúng ta phương thức remove().
+
+Thay thế value của 1 entry trong Map
+Để thay thế value của 1 entry trong Map, Java cung cấp cho chúng ta 2 dạng của phương thức replace()
+
+Sao chép Map
+Để sao chép các entry có trong Map này vào trong 1 Map khác, Java cung cấp cho chúng ta phương thức putAll().
+
+SortedMap Interface trong Java
+SortedMap Interface là 1 dạng riêng của Map Interface nên nó có những đặc điểm của Map đó là SortedMap cũng bao gồm một tập các cặp khóa - giá trị (key - value).
+ Giá trị của các phần tử trong SortedMap có thể giống nhau, nhưng khóa thì không được giống nhau, và dựa vào khóa chúng ta có thể xác định được các giá trị value tương ứng với khóa đó.
+ Ngoài ra, SortedMap có điểm vượt trội hơn so với Map là các entry có trong SortedMap được sắp xếp tăng dần theo khóa.
+ 
+Các phương thức phổ biến
+Vì SortedMap là 1 dạng riêng của Map nên những phương thức của nó sẽ tương tự như những phương thức có trong Map.
+Trong bài này, tôi sẽ không trình bày lại những phương thức đó mà tôi sẽ giới thiệu những phương thức riêng của SortedMap để cho các bạn tìm hiểu. 
+
+Tạo mới và hiển thị các phần tử của 1 SortedMap
+Để khai báo một SortedMap, chúng ta cần phải dùng đến Class để triển khai nó, trong phần này chúng ta sẽ sử dụng Class là TreeMap bởi vì các entry trong TreeMap được sắp xếp tăng dần theo khóa.
+
+Lưu ý: Để khai báo SortedMap chúng ta cần phải import gói thư viện java.util.SortedMap.
+
+Trích xuất một phần trong SortedMap
+Đối với SortedMap, Java cung cấp cho chúng ta các phương thức để tạo 1 SortedMap con từ 1 SortedMap đã tồn tại đó là subMap(), headMap() và tailMap().
+
+Phương thức subMap().
+Công dụng: phương thức subMap() sẽ trả về một SortedMap con mà các giá trị key của nó có phạm vi từ fromKey đến toKey (không bao gồm toKey) của một SortedMap cho trước.
+
+Phương thức headMap().
+Công dụng: Phương thức headMap() sẽ trả về một SortedMap con mà các key của nó có giá trị nhỏ hơn toKey của một SortedMap cho trước.
+
+Phương thức tailMap().
+Phương thức tailMap() sẽ trả về một SortedMap con mà các key của nó có giá trị lớn hơn hoặc bằng fromKey của một SortedMap cho trước.
+
+Tìm giá trị khóa (key) nhỏ nhất và lớn nhất trong SortedMap
+Để tìm giá trị khóa (key) nhỏ nhất (đầu tiên) và lớn nhất (cuối cùng) trong SortedMap, Java cung cấp cho chúng ta 2 phương thức đó là firstKey() (tìm giá trị nhỏ nhất) và lastKey() (tìm giá trị lớn nhất).
+
+LinkedList (Danh sách liên kết) trong Java
+LinkedList (Danh sách liên kết) là một lớp triển khai của List Interface trong Collections Framework nên nó sẽ có một vài đặc điểm và phương thức tương đồng với List.
+Như đã nói trong bài Tổng quan về Collection trong Java, LinkedList là 1 cấu trúc dữ liệu lưu trữ các phần tử dưới dạng danh sách, 
+các phần tử trong LinkedList được sắp xếp có thứ tự và có thể có giá trị giống nhau.
+
+Các thao tác cơ bản trên danh sách liên kết
+Tạo mới một danh sách liên kết.
+Để khai báo một danh sách liên kết, chúng ta cần phải import gói thư viện java.util.LinkedList của Java.
+
+Hiển thị các phần tử có trong LinkedList.
+Sử dụng vòng lặp for thông thường.
+Sử dụng vòng lặp for cải tiến duyệt theo đối tượng trong danh sách.
+
+Sử dụng Iterator.
+Để sử dụng được Iterator chúng ta cần phải import gói thư viện java.util.Iterator của Java
+
+Sử dụng ListIterator.
+Để sử dụng được ListIterator chúng ta cần phải import gói thư viện java.util.ListIterator của Java.
+
+Thêm phần tử vào trong danh sách liên kết.
+Thêm phần tử sử dụng phương thức add().
+phương thức add() còn cho phép chúng ta thêm mới một phần tử mới vào một vị trí bất kỳ trong danh sách.
+
+Thêm phần tử sử dụng phương thức addAll().
+Java cung cấp cho chúng ta phương thức addAll() để thêm tất cả các phần tử của một Collection khác vào cuối 1 LinkedList đã tồn tại.
+Lưu ý: kiểu dữ liệu của Collection cần thêm vào và LinkedList này phải giống nhau.
+
+ Truy cập phần tử
+Để truy cập các phần tử (các nút) có trong 1 danh sách liên kết, Java cung cấp cho chúng ta 3 phương thức đó là get(), getFirst() và getLast().
+ Sau đây chúng ta sẽ tìm hiểu về 3 phương thức này.
+ 
+Phương thức get().
+Công dụng: truy cập đến 1 phần tử bất kỳ trong LinkedList thông qua chỉ số của phần tử đó. 
+, trong đó index là chỉ số của phần tử đó trong danh sách liên kết (0 <= index < (kích thước của danh sách - 1)).
+
+Phương thức getFirst().
+Công dụng: truy cập đến phần tử đầu tiên trong danh sách.
+
+Phương thức getLast().
+Công dụng: truy cập đến phần tử cuối cùng trong danh sách.
+
+Cập nhật giá trị của phần tử
+Để cập nhật giá trị của phần tử trong LinkedList, Java cung cấp cho chúng ta phương thức set().
+
+Xóa phần tử
+Để xóa phần tử trong LinkedList, Java cung cấp cho chúng ta 4 phương thức đó là remove(), removeFist(), removeLast() và removeAll(). Sau đây chúng ta sẽ cùng tìm hiểu về 4 phương thức này.
+
+remove()	Phương thức này được sử dụng trong 2 trường hợp: xóa dựa vào chỉ số của phần tử và xóa trực tiếp phần tử đó (không cần biết đến chỉ số của nó).
+removeFirst()	Xóa phần tử đầu tiên trong danh sách.
+removeLast()	Xóa phần tử cuối cùng trong danh sách.
+removeAll()	Xóa những phần tử có trong danh sách này mà cũng tồn tại trong 1 Collection khác (List, Set,...)
+
+ArrayList trong Java
+ArrayList là một lớp triển khai của List Interface trong Collections Framework nên nó sẽ có một vài đặc điểm và phương thức tương đồng với List.
+Như đã nói trong bài Tổng quan về Collection trong Java, ArrayList là một Collection kiểu danh sách sử dụng cấu trúc mảng để lưu trữ phần tử.
+Thứ tự các phần tử dựa theo thứ tự lúc thêm vào và giá trị của các phần tử này có thể trùng nhau.
+
+cả ArrayList và LinkedList đều là lớp triển khai của List Interface. 
+Vậy khi nào chúng ta sẽ sử dụng ArrayList và khi nào chúng ta sẽ sử dụng LinkedList? 
+Chúng ta sẽ sử dụng ArrayList khi ứng dụng của chúng ta cần truy xuất phần tử nhiều hơn cập nhật 
+và xóa phần tử và chúng ta sẽ sử dụng LinkedList khi ứng dụng của chúng ta cần cập nhật và xóa phần tử nhiều hơn là truy cập phần tử.
+
+Tạo mới một ArrayList
+Để khai báo một ArrayList, chúng ta cần phải import gói thư viện java.util.ArrayList của Java.
+
+Hiển thị các phần tử có trong ArrayList
+Hiển thị theo tên của ArrayList.
+Sử dụng vòng lặp for thông thường.
+Sử dụng vòng lặp for cải tiến duyệt theo đối tượng trong ArrayList.
+Sử dụng Iterator.
+Để sử dụng được Iterator chúng ta cần phải import gói thư viện java.util.Iterator của Java
+
+Sử dụng ListIterator.
+Vì ArrayList là một lớp triển khai của List Interface nên nó cũng có thể sử dụng ListIterator để duyệt qua các phần tử của nó.
+Để sử dụng được ListIterator chúng ta cần phải import gói thư viện java.util.ListIterator của Java.
+
+Thêm phần tử vào trong ArrayList
+Thêm phần tử sử dụng phương thức add().
+
+Bên cạnh đó, chúng ta có thể sử dụng phương thức addAll() để thêm tất cả các phần tử của một ArrayList khác vào 1 vị trí bất kỳ trong ArrayList đã tồn tại. 
+
+Truy cập phần tử
+Java cung cấp cho chúng ta phương thức get() để truy cập đến 1 phần tử bất kỳ trong ArrayList thông qua chỉ số của phần tử đó.
+
+Cập nhật giá trị của phần tử
+Để cập nhật giá trị của phần tử trong ArrayList, Java cung cấp cho chúng ta phương thức set(index, element), trong đó index là chỉ số của phần tử cần cập nhật và element là phần tử mới để thay thế. 
+
+Xóa phần tử
+Để xóa phần tử trong ArrayList, Java cung cấp cho chúng ta 2 phương thức có sẵn đó là phương thức clear() và phương thức remove().
+
+Phương thức clear().
+Phương thức clear() sẽ xóa tất cả các phần tử có trong ArrayList. 
+
+Phương thức remove().
+Phương thức remove() sẽ xóa phần tử ra khỏi ArrayList theo 2 cách đó là xóa dựa vào chỉ số của phần tử và xóa trực tiếp phần tử đó (không cần biết đến chỉ số của nó). 
+
+Tìm kiếm một phần tử
+Tìm kiếm trực tiếp phần tử.
+Để tìm kiếm trực tiếp phần tử, chúng ta sẽ sử dụng phương thức contains().
+Kết quả trả về là true nếu tìm thấy, ngược lại trả về false.
+
+Tìm kiếm vị trí xuất hiện đầu tiên của 1 phần tử trong ArrayList.
+Để tìm kiếm vị trí xuất hiện đầu tiên của 1 phần tử trong ArrayList, chúng ta sẽ sừ dụng phương thức indexOf().
+Kết quả của phương thức này sẽ trả về chỉ số xuất hiện đầu tiên của phần tử đó trong ArrayList, ngược lại nếu không tìm thấy trả về -1. 
+
+Tìm kiếm vị trí xuất hiện cuối cùng của 1 phần tử trong List.
+Để tìm kiếm vị trí xuất hiện cuối cùng của 1 phần tử trong ArrayList, chúng ta sẽ sừ dụng phương thức lastIndexOf().
+Kết quả của phương thức này sẽ trả về chỉ số xuất hiện cuối cùng của phần tử đó trong ArrayList, ngược lại nếu không tìm thấy trả về -1. 
+
+Chuyển ArrayList sang Array (mảng)
+Java cung cấp cho chúng ta phương thức toArray() để chuyển đổi một ArrayList sang mảng tương ứng.
+
+HashSet trong Java
+HashSet là Class triển khai phổ biến nhất của Set Interface nên nó sẽ có một vài đặc điểm và phương thức tương đồng với Set.
+Như đã nói trong bài Tổng quan về Collection trong Java, thứ tự các phần tử trong HashSet không dựa theo thứ tự lúc thêm vào và giá trị của các phần tử này là duy nhất. 
+
+Initial capacity và Load factor trong HashSet
+acity và Load factor trong HashSet
+Trong HashSet, chúng ta có 2 yếu tố ảnh hưởng trực tiếp tới hiệu suất của nó là Initial capacity (kích thước khởi tạo) và Load factor (tạm gọi là hệ số tải).
+Kích thước của 1 HashSet là số lượng bucket có trong HashSet (bucket ở đây là nơi mà chúng ta lưu trữ các value của HashSet).
+Kích thước khởi tạo của HashSet là kích thước ngay tại thời điểm nó được khởi tạo và mặc định là 24 = 16 và nó sẽ tăng lên gấp đôi khi kích thước của HashSet đạt đến ngưỡng
+Hệ số tải là chỉ số để đo xem đến ngưỡng nào thì kích thước (capacity) của HashSet sẽ tự động tăng lên. Giá trị mặc định của hệ số tải là 0.75f.
+
+Ý nghĩa của Initial capacity và Load factor đối với hiệu suất của HashSet: Đây là 2 yếu tố chính ảnh hưởng tới hiệu suất hoạt động của HashSet, 
+vì vậy việc lựa chọn kích thước ban đầu và hệ số tải phù hợp sẽ giúp cho hiệu suất hoạt động của HashSet đạt hiệu quả tốt trong những yêu cầu phức tạp mà chúng ta gặp phải khi lập trình với HashSet.
+
+Các thao tác cơ bản trên HashSet
+Tạo mới một HashSet
+Để khai báo một HashSet, chúng ta cần phải import gói thư viện java.util.HashSet của Java.
+
+Hiển thị các phần tử có trong HashSet.
+Hiển thị theo tên HashSet.
+
+Sử dụng vòng lặp for cải tiến duyệt theo đối tượng trong HashSet.
+Sử dụng Iterator.
+Để sử dụng được Iterator chúng ta cần phải import gói thư viện java.util.Iterator
+
+Thêm phần tử vào trong HashSet
+Thêm phần tử sử dụng phương thức add().
+
+Xóa phần tử
+Để xóa một phần tử khỏi HashSet, chúng ta sẽ sử dụng phương thức remove().
+
+Chuyển đổi HashSet thành mảng (Array)
+Để chuyển đổi 1 HashSet thành mảng, chúng ta sẽ sử dụng phương thức toArray() có sẵn của Java.
+
+TreeSet trong Java
+TreeSet là Class triển khai phổ biến nhất của SortedSet nên nó sẽ có một vài đặc điểm và phương thức tương đồng với SortedSet.
+Như đã nói trong bài Tổng quan về Collection trong Java, thứ tự các phần tử trong TreeSet mặc định được sắp xếp tăng dần và giá trị của các phần tử này là duy nhất.
+
+Tạo mới một TreeSet
+Để khai báo một TreeSet, chúng ta cần phải import gói thư viện java.util.TreeSet của Java.
+
+Hiển thị các phần tử có trong TreeSet
+Hiển thị theo tên TreeSet.
+Sử dụng vòng lặp for cải tiến duyệt theo đối tượng trong TreeSet.
+Sử dụng Iterator.
+Để sử dụng được Iterator chúng ta cần phải import gói thư viện java.util.Iterator
+
+Thêm phần tử vào trong TreeSet
+Thêm phần tử sử dụng phương thức add().
+
+Thêm phần tử sử dụng phương thức addAll().
+Java cung cấp cho chúng ta phương thức addAll() để thêm tất cả các phần tử của một Collection khác vào 1 TreeSet đã tồn tại. 
+Lưu ý: kiểu dữ liệu của Collection cần thêm vào và TreeSet này phải giống nhau.
+
+Xóa phần tử
+Để xóa một phần tử khỏi TreeSet, chúng ta sẽ sử dụng phương thức remove().
+
+Trích xuất một phần trong TreeSet
+Đối với TreeSet, Java cung cấp cho chúng ta các phương thức để trích xuất các phần tử trong TreeSet đó là subset(), headset() và tailset().
+
+Phương thức subSet().
+Công dụng: Phương thức subSet() sẽ trả về một SortedSet được trích xuất từ phần tử fromElement đến phần tử đứng trước phần tử toElement của một TreeSet cho trước.
+
+Phương thức headSet().
+Công dụng: Phương thức headSet() sẽ trả về một SortedSet được trích xuất từ phần tử đầu tiên đến phần tử đứng trước phần tử toElement của một TreeSet cho trước.
+
+Phương thức tailSet().
+Công dụng: Phương thức tailSet() sẽ trả về một SortedSet được trích xuất từ phần tử lớn hơn hoặc bằng phần tử fromElement đến phần tử cuối cùng của một TreeSet cho trước.
+
+Tìm phần tử nhỏ nhất và lớn nhất trong SortedSet
+Để tìm phần tử nhỏ nhất và lớn nhất trong SortedSet, Java cung cấp cho chúng ta 2 phương thức đó là first() (tìm phần tử nhỏ nhất) và last() (tìm phần tử lớn nhất).
+
+HashMap trong Java
+HashMap là một lớp triển khai của Map Interface trong Collections Framework nên nó sẽ có một vài đặc điểm và phương thức tương đồng với Map.
+Giá trị của mỗi phần tử trong HashMap bao gồm 2 phần đó là khóa (key) và giá trị tương ứng của key đó (value) và khóa của các phần tử này là duy nhất.
+HashMap cho phép truy xuất trực tiếp dữ liệu bằng khóa duy nhất của nó. Thứ tự các phần tử trong HashMap không dựa theo thứ tự lúc thêm vào
+
+Tạo mới một HashMap
+Để khai báo một HashMap, chúng ta cần phải import gói thư viện java.util.HashMap của Java.
+
+Hiển thị các phần tử có trong HashMap.
+Sử dụng vòng lặp for cải tiến.
+Hiển thị toàn bộ các entry của HashMap.
+Để lấy toàn bộ các entry của HashMap (1 entry sẽ bao gồm key và value tương ứng với key đó), Java cung cấp cho chúng ta phương thức entrySet(). 
+Phương thức này sẽ trả về 1 Set bao gồm các entry có trong HashMap.
+
+Lấy toàn bộ key của HashMap.
+Để lấy toàn bộ key của HashMap, Java cung cấp cho chúng ta phương thức keySet(). 
+Phương thức này sẽ trả về 1 Set bao gồm các key có trong HashMap. 
+
+Lấy toàn bộ value của HashMap.
+Để lấy toàn bộ value của HashMap, Java cung cấp cho chúng ta phương thức values(). Phương thức này sẽ trả về 1 tập hợp bao gồm các value có trong HashMap.
+
+Sử dụng Iterator.
+Để sử dụng được Iterator chúng ta cần phải import gói thư viện java.util.Iterator
+
+Lấy toàn bộ các entry của HashMap.
+
+Lấy toàn bộ key của HashMap.
+
+Lấy toàn bộ value của HashMap.
+
+Thêm dữ liệu vào trong HashMap
+Để thêm dữ liệu vào trong HashMap, Java cung cấp cho chúng ta phương thức put().
+
+Lấy dữ liệu value trong HashMap khi biết được key
+Để lấy dữ liệu value trong HashMap khi biết được key liên kết với value đó, Java cung cấp cho chúng ta phương thức get(). 
+Phương thức này sẽ trả về giá trị (value) tương ứng với key đó, nếu trong HashMap không có key đó thì phương thức này sẽ trả về giá trị null.
+
+Xóa 1 entry trong HashMap
+Để xóa 1 entry trong HashMap, Java cung cấp cho chúng ta phương thức remove().
+
+Thay thế value của 1 entry trong HashMap
+Để thay thế value của 1 entry trong HashMap, Java cung cấp cho chúng ta 2 dạng của phương thức replace()
+
+Sao chép HashMap
+Để sao chép các entry có trong HashMap này vào trong 1 HashMap khác, Java cung cấp cho chúng ta phương thức putAll().
+
+TreeMap trong Java
+Tương tự như HashMap, TreeMap là một lớp triển khai của Map Interface trong Collections Framework nên nó sẽ có một vài đặc điểm và phương thức tương đồng với Map.
+Tuy nhiên, giữa HashMap và TreeMap có sự khác biệt chính đó là thứ tự các phần tử trong HashMap không được sắp xếp theo bất kỳ thứ tự nào,
+trong khi đó TreeMap sắp xếp các phần tử theo thứ tự tăng dần của khóa.
+
+Tạo mới một TreeMap
+Để khai báo một TreeMap, chúng ta cần phải import gói thư viện java.util.TreeMap của Java.
+
+Hiển thị các phần tử có trong TreeMap
+Sử dụng vòng lặp for cải tiến.
+Hiển thị toàn bộ các entry của TreeMap.
+Để lấy toàn bộ các entry của TreeMap (1 entry sẽ bao gồm key và value tương ứng với key đó), Java cung cấp cho chúng ta phương thức entrySet(). 
+Phương thức này sẽ trả về 1 Set bao gồm các entry có trong TreeMap.
+
+Lấy toàn bộ key của TreeMap.
+Để lấy toàn bộ key của TreeMap, Java cung cấp cho chúng ta phương thức keySet(). 
+Phương thức này sẽ trả về 1 Set bao gồm các key có trong TreeMap.
+
+Lấy toàn bộ value của TreeMap.
+Để lấy toàn bộ value của TreeMap, Java cung cấp cho chúng ta phương thức values(). Phương thức này sẽ trả về 1 tập hợp bao gồm các value có trong TreeMap.
+
+Sử dụng Iterator.
+Để sử dụng được Iterator chúng ta cần phải import gói thư viện java.util.Iterator của Java.
+
+Lấy toàn bộ các entry của TreeMap.
+Lấy toàn bộ key của TreeMap.
+Lấy toàn bộ value của TreeMap.
+
+Thêm dữ liệu vào trong TreeMap
+Để thêm dữ liệu vào trong TreeMap, Java cung cấp cho chúng ta phương thức put().
+
+Lấy dữ liệu value trong TreeMap khi biết được key
+Để lấy dữ liệu value trong TreeMap khi biết được key liên kết với value đó, Java cung cấp cho chúng ta phương thức get(). 
+Phương thức này sẽ trả về giá trị (value) tương ứng với key đó, nếu trong TreeMap không có key đó thì phương thức này sẽ trả về giá trị null.
+
+Xóa 1 entry trong TreeMap
+Để xóa 1 entry trong TreeMap, Java cung cấp cho chúng ta phương thức remove().
+
+Thay thế value của 1 entry trong TreeMap
+Để thay thế value của 1 entry trong TreeMap, Java cung cấp cho chúng ta 2 dạng của phương thức replace()
+
+Sao chép TreeMap
+Để sao chép các entry có trong TreeMap này vào trong 1 TreeMap khác, Java cung cấp cho chúng ta phương thức putAll().
+
+
+
+
 
 
 
